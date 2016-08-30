@@ -3,7 +3,14 @@
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
-	<title>Unify - Responsive Website Template</title>
+	
+	<?php
+		session_start();
+		global $title;
+	
+	?>
+	
+	<title> <?=$title?> activatie</title>
 
 	<!-- Meta -->
 	<meta charset="utf-8">
@@ -70,10 +77,20 @@
 							</ul>
 						</li>
 						<li class="topbar-devider"></li>
-						*/ ?>
 						<li><a href="page_faq.html">Help</a></li>
 						<li class="topbar-devider"></li>
-						<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Login</a></li>
+						*/ ?>
+						
+						<? if ($_SESSION[controlactiva]==true){ ?>
+							
+							<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Cerrar sesión</a></li>
+						<? } 
+						else {
+						?> 
+							<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Login</a></li>
+							<li class="topbar-devider"></li>
+							<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Registrar</a></li>
+						<? } ?>
 					</ul>
 				</div>
 				<!-- End Topbar -->

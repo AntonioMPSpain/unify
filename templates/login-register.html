@@ -7,27 +7,28 @@
 		</ul>
 
 		<div id="cd-login"> <!-- log in form -->
-			<form class="cd-form">
+			<form class="cd-form" action="_control-user.php" method="post">
 
 				<p class="fieldset">
 					<label class="image-replace cd-username" for="signin-email">DNI</label>
-					<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="DNI sin letra">
+					<input class="full-width has-padding has-border" id="signin-login" name="signin-login" type="text" placeholder="DNI Sin Letra">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
 
 				<p class="fieldset">
 					<label class="image-replace cd-password" for="signin-password">Contraseña</label>
-					<input class="full-width has-padding has-border" id="signin-password" type="text"  placeholder="Contraseña">
+					<input class="full-width has-padding has-border" id="signin-password" name="signin-password" type="password"  placeholder="Contraseña">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
 
 				<p class="fieldset">
 					<input class="full-width" type="submit" value="Acceder">
 				</p>
+				
 			</form>
 
 			<p class="cd-form-bottom-message"><a href="javascript:void(0);">¿Olvidó su contraseña?</a></p>
-			<!-- <a href="javascript:void(0);" class="cd-close-form">Close</a> -->
+			<a href="javascript:void(0);" class="cd-close-form">Close</a>
 		</div> <!-- cd-login -->
 
 		<div id="cd-signup"> <!-- sign up form -->
@@ -38,13 +39,31 @@
 					<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="DNI">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
-
+				
+				<p class="fieldset">
+					<label class="image-replace cd-username" for="signup-username">Nombre</label>
+					<input class="full-width has-padding has-border" id="signup-nombre" type="text" placeholder="Nombre">
+					<span class="cd-error-message">Error message here!</span>
+				</p>
+				
+				<p class="fieldset">
+					<label class="image-replace cd-username" for="signup-username">Apellidos</label>
+					<input class="full-width has-padding has-border" id="signup-apellidos" type="text" placeholder="Apellidos">
+					<span class="cd-error-message">Error message here!</span>
+				</p>
+				
 				<p class="fieldset">
 					<label class="image-replace cd-email" for="signup-email">E-mail</label>
 					<input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
-
+				
+				<p class="fieldset">
+					<label class="image-replace cd-email" for="signup-email">Repetir e-mail</label>
+					<input class="full-width has-padding has-border" autocomplete="off" id="signup-repetiremail" type="email" placeholder="Repetir e-mail">
+					<span class="cd-error-message">Error message here!</span>
+				</p>
+				
 				<p class="fieldset">
 					<label class="image-replace cd-password" for="signup-password">Contraseña</label>
 					<input class="full-width has-padding has-border" id="signup-password" type="text"  placeholder="Contraseña">
@@ -53,7 +72,7 @@
 
 				<p class="fieldset">
 					<input type="checkbox" id="accept-terms">
-					<label for="accept-terms">I agree to the <a href="page_terms.html">Terms</a></label>
+					<label for="accept-terms">Acepto las <a href="page_terms.html">condiciones de servicio</a></label>
 				</p>
 
 				<p class="fieldset">
@@ -75,11 +94,11 @@
 				</p>
 
 				<p class="fieldset">
-					<input class="full-width has-padding" type="submit" value="Reset password">
+					<input class="full-width has-padding" type="submit" value="Reestablecer contraseña">
 				</p>
 			</form>
 
-			<p class="cd-form-bottom-message"><a href="javascript:void(0);">Back to log-in</a></p>
+			<p class="cd-form-bottom-message"><a href="javascript:void(0);">Volver atrás</a></p>
 		</div> <!-- cd-reset-password -->
 		<a href="javascript:void(0);" class="cd-close-form">Close</a>
 	</div> <!-- cd-user-modal-container -->

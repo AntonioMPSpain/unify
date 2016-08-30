@@ -1,5 +1,5 @@
 <? 
-include_once "config.php";
+include_once "_config.php";
 include ($templatepath."header.html");
 
 ?>
