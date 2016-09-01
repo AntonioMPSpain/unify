@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+	RewriteEngine On 
+	
+	RewriteBase /web/
+	
+	#RewriteCond %{HTTPS} !on
+	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	
+	RewriteRule portada index.php [NC,L]
+	
+
+</IfModule>
