@@ -99,9 +99,15 @@
 						<li class="topbar-devider"></li>
 						*/ ?>
 						
-						<? if ($_SESSION[controlactiva]){ ?>
-							
-							<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Cerrar sesión</a></li>
+						<? if ($_SESSION[controlactiva]){ ?> 
+							<? if ($_SESSION[nivel]==1){ ?>
+								
+						
+								<li><a href="<?=$backendpath?>">Backend</a></li>
+								<li class="topbar-devider"></li>
+						
+						<? } ?>
+							<li><a href="_control-user.php?logout">Cerrar sesión</a></li>
 						<? } 
 						else {
 							

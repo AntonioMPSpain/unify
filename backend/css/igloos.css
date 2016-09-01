@@ -1,0 +1,771 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	IGLOOS.CSS
+\*------------------------------------*/
+/*
+Author: 
+	jEsuSdA
+Twitter:
+	@jesusda
+Author URL: 
+	jesusda.com
+Ultima modificación:
+	22/11/2012
+
+Descripción:
+	Igloos contiene diversos igloss del framework inuit y algunos igloos propios.
+/*****************************************************************/
+
+/*Imported iogloos*/
+@import url(bootstrap.css);
+
+/*****************************************************************/
+/*Direct load igloos*/
+/*****************************************************************/
+
+/*------------------------------------*\
+	$GRID
+\*------------------------------------*/
+/*
+Page wrapper. Apply to the body where possible, as per: http://csswizardry.com/2011/01/using-the-body-element-as-a-wrapper/
+*/
+.wrapper{
+	max-width:940px;
+	margin:0 auto;
+	padding:0 10px;
+}
+
+/*
+Most frameworks rely on class="end" or similar to remove the margin from the last column in a row of grids. We don't want to do that so we use a combination of margin- and negative margin-left. It's clever...
+We also allow you to use grid items as stand alone columns or in a series of columns. To use a series just wrap them all in <div class="grids">...</div>
+*/
+.grids{
+	clear:both;
+	max-width:960px;
+	margin:0 0 0 -2.083%;
+	list-style:none; /* So we can make grids out of lists */
+}
+
+/*
+Here we are using an attribute selector to detect the string 'grid-' in an element's class.
+This works by assuming that anything we call grid-<n> we also want to be a grid item. It means less code and less for you to remember!
+
+Ensure any grid item's FIRST class is a grid-<n> class. e.g.
+VALID: class="grid-4 text-centre"
+INVALID: class="left grid-4"
+*/
+[class^="grid-"]{
+	float:left;
+	margin:0 2.083% 0 0;
+}
+.grids [class^="grid-"]{
+	margin:0 0 0 2.083%;
+}
+.grid-1{ width:6.25% }
+.grid-2{ width:14.583% }
+.grid-3{ width:22.917% }
+.grid-4{ width:31.25% }
+.grid-5{ width:39.583% }
+.grid-6{ width:47.917% }
+.grid-7{ width:56.25% }
+.grid-8{ width:64.583% }
+.grid-9{ width:72.917% }
+.grid-10{ width:81.25% }
+.grid-11{ width:89.583% }
+.grid-12{ width:97.917%; margin:0 }
+
+/*****************************************************************/
+
+/*------------------------------------*\
+	BREADCRUMB
+\*------------------------------------*/
+/*
+How to use breadcrumbs:
+
+<ol class="nav breadcrumb">
+	<li><a href="#">Home</a></li>
+	<li><a href="#">Tutorials</a></li>
+	<li><a href="#">CSS</a></li>
+	<li>Creating a breadcrumb</li>
+</ol>
+*/
+/*
+Create a breadcrumb trail navigation.
+*/
+.nav.breadcrumb li{
+	font-weight:bold;
+}
+.nav.breadcrumb a{
+	font-weight:normal;
+}
+
+/*
+Here we set up the arrows using CSS generated content.
+If you require this to work in IE7 uncomment the marked sections below...
+*/
+.nav.breadcrumb li:before{
+	content:"\0020\00BB\0020"; /* This is the CSS entity for ‘ » ’ */
+}
+.nav.breadcrumb li:first-child:before{
+	content:normal;
+}
+
+/*
+IE7 support
+Uncomment when supporting IE7
+*/
+.nav.breadcrumb li{
+	background:url(pics-base/splitter.png) left center no-repeat;
+}
+.nav.breadcrumb li:first-child{
+	background:none;
+}
+
+/*****************************************************************/
+
+/*------------------------------------*\
+	DROPDOWN MENU
+\*------------------------------------*/
+/*
+How to use dropdown menú:
+
+<ul id="nav" class="dropdown cf"> <!-- Apply the clearfix so we can remove the overflow:hidden; later on. -->
+	<li><a href="#">Home</a></li>
+	<li>
+		<a href="#">About</a>
+		<ul>
+			<li><a href="#">About us</a></li>
+			<li><a href="#">The board</a></li>
+		</ul>
+	</li>
+	<li><a href="#">Products</a></li>
+	<li><a href="#">Contact</a></li>
+</ul>
+
+*/
+/*
+Create a pure CSS dropdown.
+*/
+#nav.dropdown{
+	overflow:visible;
+}
+.dropdown li{
+	position:relative;
+}
+.dropdown a{
+	display:block;
+}
+.dropdown ul{ /* Set up the dropdown and hide it off-screen. */
+	list-style:none;
+	margin:0;
+	position:absolute;
+	left:-99999px;
+	top:100%;
+	background:#fff; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	background:rgba(255,255,255,0); /* But! Let's make the background fully transparent where we can, we don't actually want to see it if we can help it... */
+}
+.dropdown li:hover ul{ /* Bring the dropdown back onto screen when you hover its parent li. */
+	left:0;
+}
+#nav.dropdown ul li{ /* Remove floats etc from dropdown list items. */
+	position:static;
+	float:none;
+}
+.dropdown ul a{
+	white-space:nowrap; /* Stop the list items breaking. */
+}
+
+/*--- HOVER STYLES ---*/
+.dropdown li:hover a{ /* These create persistent hover states, meaning the top-most link stays hovered when your cursor has moved down the list. */
+	text-decoration:underline;
+}
+.dropdown li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effect. */
+	text-decoration:none;
+}
+.dropdown ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	text-decoration:underline;
+}
+/*****************************************************************/
+
+/*------------------------------------*\
+	KEYWORDS
+\*------------------------------------*/
+/*
+Howto use keywords:
+
+<ul class="keywords">
+	<li>CSS</li>
+	<li>Framework</li>
+	<li>Code</li>
+	<li>Library</li>
+</ul>
+
+*/
+/*
+Create a list of keywords by adding a single class of keywords to a <ul>:
+*/
+.keywords{
+	list-style:none;
+	margin:0 0 1.5em;
+}
+.keywords li{
+	display:inline;
+	text-transform:lowercase;
+}
+.keywords li:first-of-type{
+	text-transform:capitalize;
+}
+.keywords li:after{
+	content:", ";
+}
+.keywords li:last-of-type:after{
+	content:"";
+}
+
+/*****************************************************************/
+
+/*------------------------------------*\
+	FLEXYSLIDES
+\*------------------------------------*/
+/*Some css for the slides jquery plugin*/
+
+/*Browser Resets */
+
+.flex-container a:active, .flexslider a:active, .flex-container a:focus, .flexslider a:focus {
+		outline: none;
+		}
+
+.slides, .flex-control-nav, .flex-direction-nav {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	} 
+
+/* FlexSlider Necessary Styles */ 
+.flexslider {
+	margin: 0; 
+	padding: 0;
+	}
+
+.flexslider .slides > li {
+	display: none;
+	-webkit-backface-visibility: hidden;
+/* Hide the slides before the JS is loaded. Avoids image jumping */	
+	} 
+	
+.flexslider .slides img {
+	width: 100%;
+	display: block;
+	}
+
+.flex-pauseplay span {
+	text-transform: capitalize;
+	}
+
+/* Clearfix for the .slides element */
+.slides:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+	} 
+	
+html[xmlns] .slides {
+	display: block;
+	} 
+
+* html .slides {
+	height: 1%;
+	}
+
+/* No JavaScript Fallback */
+/* If you are not using another script, such as Modernizr, make sure you
+ * include js that eliminates this class on page load */
+.no-js .slides > li:first-child {
+	display: block;
+	}
+
+
+/* FlexSlider Default Theme*/
+
+.flexslider {
+	margin: 0 0 60px; 
+	background: #fff;
+	border: 4px solid #fff; 
+	position: relative;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-o-border-radius: 4px;
+	border-radius: 4px;
+	box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	-webkit-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 4px rgba(0,0,0,.2);
+	-o-box-shadow: 0 1px 4px rgba(0,0,0,.2); 
+	zoom: 1;
+	}
+	
+.flex-viewport {
+	max-height: 2000px;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease; 
+	transition: all 1s ease;
+	}
+	
+.loading .flex-viewport {
+	max-height: 300px;
+	}
+.flexslider .slides {
+	zoom: 1;
+	}
+
+.carousel li {
+	margin-right: 5px
+	}
+
+
+/* Direction Nav */
+.flex-direction-nav {
+	*height: 0;
+	}
+	
+.flex-direction-nav a {
+	width: 30px;
+	height: 30px;
+	margin: -20px 0 0;
+	display: block;
+	background: url(pics-base/bg_direction_nav.png) no-repeat 0 0;
+	position: absolute;
+	top: 50%;
+	cursor: pointer;
+	text-indent: -9999px;
+	opacity: 0;
+	-webkit-transition: all .3s ease;
+	}
+
+.flex-direction-nav .flex-next {
+	background-position: 100% 0;
+	right: -36px;
+	}
+	
+.flex-direction-nav .flex-prev {
+	left: -36px;
+	}
+
+.flexslider:hover .flex-next {
+	opacity: 0.8;
+	right: 5px;
+	}
+	
+.flexslider:hover .flex-prev {
+	opacity: 0.8;
+	left: 5px;
+	}
+
+.flexslider:hover .flex-next:hover, .flexslider:hover .flex-prev:hover {
+	opacity: 1;
+	}
+
+.flex-direction-nav .flex-disabled {
+	opacity: .3!important;
+	filter:alpha(opacity=30);
+	cursor: default;
+	}
+
+/* Control Nav */
+
+.flex-control-nav {
+	width: 100%;
+	position: absolute;
+	bottom: -40px;
+	text-align: center;
+	}
+
+.flex-control-nav li {
+	margin: 0 6px;
+	display: inline-block;
+	zoom: 1; 
+	*display: inline;
+	}
+	
+.flex-control-paging li a {
+	width: 11px;
+	height: 11px;
+	display: block;
+	background: #666;
+	background: rgba(0,0,0,0.5);
+	cursor: pointer;
+	text-indent: -9999px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	-o-border-radius: 20px;
+	border-radius: 20px;
+	box-shadow: inset 0 0 3px rgba(0,0,0,0.3);
+	}
+
+.flex-control-paging li a:hover { 
+	background: #333; 
+	background: rgba(0,0,0,0.7);
+}
+
+.flex-control-paging li a.flex-active { 
+	background: #000;
+	background: rgba(0,0,0,0.9);
+	cursor: default;
+	}
+
+.flex-control-thumbs {
+	margin: 5px 0 0;
+	position: static;
+	overflow: hidden;
+	}
+
+.flex-control-thumbs li {
+	width: 25%;
+	float: left;
+	margin: 0;
+	}
+
+.flex-control-thumbs img {
+	width: 100%;
+	display: block;
+	opacity: .7;
+	cursor: pointer;
+	}
+	
+.flex-control-thumbs img:hover {
+	opacity: 1;
+	}
+
+.flex-control-thumbs .flex-active {
+	opacity: 1;
+	cursor: default;
+	}
+
+@media screen and (max-width: 860px) 
+{
+	.flex-direction-nav .flex-prev {opacity: 1; left: 0;}
+	.flex-direction-nav .flex-next {opacity: 1; right: 0;}
+}
+
+
+
+
+
+/*****************************************************************/
+/*------------------------------------*\
+	SHADOWBOX
+\*------------------------------------*/
+
+#sb-title-inner,#sb-info-inner,#sb-loading-inner,div.sb-message {
+font-family:HelveticaNeue-Light,"Helvetica Neue",Helvetica,Arial,sans-serif;
+font-weight:200;
+color:#fff;
+}
+
+#sb-container {
+position:fixed;
+top:0;
+left:0;
+z-index:999;
+text-align:left;
+visibility:hidden;
+display:none;
+margin:0;
+padding:0;
+}
+
+#sb-overlay {
+position:relative;
+height:100%;
+width:100%;
+}
+
+#sb-wrapper {
+position:absolute;
+visibility:hidden;
+width:100px;
+}
+
+#sb-wrapper-inner {
+position:relative;
+border:1px solid #303030;
+overflow:hidden;
+height:100px;
+}
+
+#sb-body-inner {
+position:absolute;
+height:100%;
+width:100%;
+background-color: #000;
+}
+
+#sb-player.html {
+height:100%;
+overflow:auto;
+}
+
+#sb-body img {
+border:none;
+}
+
+#sb-loading-inner {
+position:absolute;
+font-size:14px;
+line-height:24px;
+height:24px;
+top:50%;
+margin-top:-12px;
+width:100%;
+text-align:center;
+}
+
+#sb-loading-inner span {
+background:url(pics-base/loading2.gif) 50% 50% no-repeat !important;
+padding-left:34px;
+display:inline-block;
+color: transparent;
+}
+
+#sb-body,#sb-loading {
+position:relative;
+height:100%;
+}
+
+#sb-title,#sb-info {
+position:relative;
+overflow:hidden;
+margin:0;
+padding:0;
+}
+
+#sb-title,#sb-title-inner {
+height:26px;
+line-height:26px;
+}
+
+#sb-title-inner {
+font-size:16px;
+}
+
+#sb-info,#sb-info-inner {
+height:20px;
+line-height:20px;
+}
+
+#sb-info-inner {
+font-size:12px;
+}
+
+#sb-nav {
+float:right;
+height:16px;
+width:45%;
+padding:2px 0;
+}
+
+#sb-nav a {
+display:block;
+float:right;
+height:16px;
+width:16px;
+margin-left:3px;
+cursor:pointer;
+background-repeat:no-repeat;
+}
+
+
+#sb-nav-close {
+background:url(pics-base/close.png) 100% 100% no-repeat;
+padding-right: 20px;
+
+}
+
+a#sb-nav-close
+{
+width: 36px;
+color: #fff;
+font-weight: bold;
+font-size: 110%;
+	}
+
+
+#sb-nav-next {
+background-image:url(pics-base/next.png);
+}
+
+#sb-nav-previous {
+background-image:url(pics-base/previous.png);
+}
+
+#sb-nav-play {
+background-image:url(pics-base/play.png);
+}
+
+#sb-nav-pause {
+background-image:url(pics-base/pause.png);
+}
+
+#sb-counter {
+float:left;
+width:45%;
+}
+
+#sb-counter a {
+text-decoration:none;
+cursor:pointer;
+color:#fff;
+padding:0 4px 0 0;
+}
+
+#sb-counter a.sb-counter-current {
+text-decoration:underline;
+}
+
+div.sb-message {
+font-size:12px;
+text-align:center;
+padding:10px;
+}
+
+div.sb-message a:link,div.sb-message a:visited {
+color:#fff;
+text-decoration:underline;
+}
+
+
+#sb-player , #sb-body-inner object, #sb-body-inner embed,  #sb-body-innervideo {
+  height: 100%;
+}
+
+
+
+
+.float-left { float: left; }
+img.float-left {margin-right: 1em;}
+
+.float-right { float: right; }
+img.float-right {margin-left: 1em;}
+
+
+
+
+
+/*****************************************************************/
+/*------------------------------------*\
+	BOTONES SOCIALES
+\*------------------------------------*/
+
+/* USE THIS HTML CODE:
+
+		<ul class="botones-sociales">
+				<li class="btn-favorite"><a href="#" title="Añadir a mis Marcadores">Favorito</a></li>		
+				<li class="btn-rss"><a href="#" title="Suscribirse por RSS">RSS</a></li>		
+				<li class="btn-linkedin"><a href="#"  title="Linkedin">Linkedin</a></li>
+				<li class="btn-twitter"><a href="#"  title="Twitter">Twitter</a></li>
+				<li class="btn-facebook"><a href="#"  title="Facebook">Facebook</a></li>
+				<li class="btn-youtube"><a href="#"  title="YouTube">Youtube</a></li>
+				<li class="btn-flickr"><a href="#"  title="Flickr">Flickr</a></li>
+		</ul>	
+
+*/
+
+
+ul.botones-sociales li
+{
+	list-style: none;	
+	}
+
+ul.botones-sociales li a
+{
+	width: 24px;
+	height: 23px;
+	display: block;
+	background: 	url('pics-base/social-icons3.png') 0 0 transparent;	
+	float: left;
+	font-size: 0;
+/*	padding-top: -1000px;	*/
+color: transparent;
+	}
+
+ul.botones-sociales li.btn-favorite a:hover
+{	background-position: 	0 100%;
+	}
+ul.botones-sociales li.btn-facebook a
+{	background-position: 	144px 0;
+	}
+ul.botones-sociales li.btn-facebook a:hover
+{	background-position: 	144px 100%;
+	}
+ul.botones-sociales li.btn-twitter a
+{	background-position: 	120px 0;
+	}
+ul.botones-sociales li.btn-twitter a:hover
+{	background-position: 	120px 100%;
+	}
+ul.botones-sociales li.btn-youtube a
+{	background-position: 	96px 0;
+	}
+ul.botones-sociales li.btn-youtube a:hover
+{	background-position: 	96px 100%;
+	}
+ul.botones-sociales li.btn-linkedin a
+{	background-position: 	72px 0;
+	}
+ul.botones-sociales li.btn-linkedin a:hover
+{	background-position: 	72px 100%;
+	}
+ul.botones-sociales li.btn-flickr a
+{	background-position: 	48px 0;
+	}
+ul.botones-sociales li.btn-flickr a:hover
+{	background-position: 	48px 100%;
+	}
+ul.botones-sociales li.btn-rss a
+{	background-position: 	24px 0;
+	}
+ul.botones-sociales li.btn-rss a:hover
+{	background-position: 	24px 100%;
+	}
+
+
+
+
+
+
+
+
+
+
+
+/*****************************************************************/
+/*------------------------------------*\
+	CSS TOOLS
+\*------------------------------------*/
+/*Some css directives to made coding easy*/
+
+.clearfix , .clearfix:after
+{	clear: both;
+  *zoom: 1;
+	}
+
+.clearfix:before, .clearfix:after 
+{	content: "";
+	display: table;
+}
+
+.align-center
+{
+	text-align: center;
+	}
+
+.align-center *
+{
+	margin: auto;	
+	}
+
+
+
+/*****************************************************************/

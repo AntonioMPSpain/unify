@@ -1,0 +1,84 @@
+/*------------------------------------*\
+	HACKS IE 9
+\*------------------------------------*/
+/*
+Author:
+	jEsuSdA
+Twitter:
+	@jesusda
+Author URL:
+	jesusda.com
+Ultima modificación:
+	20150528
+
+Descripción:
+	HACKS para internet exploter 9.
+/*****************************************************************/
+
+
+
+/*------------------------------------*\
+	OTROS HACKS
+\*------------------------------------*/
+
+.ie .botones-sociales {
+width:9em!important;
+}
+
+.ie div.clearfix {
+height:0!important;
+}
+
+html.ie {
+overflow-x:hidden;
+}
+
+.ie body {
+width:100%;
+}
+
+/*.ie .banner-shadow */
+{
+display:none;
+}
+
+.ie .publicaciones H2.titlesubsectionmedium {
+background:url(pics/h2-destacadosmedium.png) no-repeat left top transparent;
+}
+
+.ie .articulo-publicacion H3.noticia {
+background-image:none!important;
+}
+
+.ie #menu-main {
+text-align:center!important;
+}
+
+.ie #menu-main * {
+margin:auto;
+}
+
+.ie .blog-foto SPAN.video {
+background:url(pics/noticia-video.png) 50% 50% repeat;
+}
+
+.ie #cabecera UL.mainmenu LI {
+ 	list-style: none;
+ 	display: block;
+}
+
+.ie .botones-sociales UL LI A {
+margin:0;
+}
+
+.ie .botones-sociales UL LI A {
+margin:0;
+}
+
+.ie div.botones-sociales.mainmenu {
+  width: 10em;
+}
+
+.ie #cabecera .botones-sociales UL LI {
+    display: inline !important;
+}

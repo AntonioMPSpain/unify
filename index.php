@@ -2,6 +2,12 @@
 include_once "_config.php";
 include ($templatepath."header.html");
 
+$salir=$_GET['salir']; 
+if ($salir==true){
+	header("Location: _control-user.php?logout");
+	exit();
+}
+	
 ?>
 
 		<!--=== Slider ===-->

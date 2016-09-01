@@ -1,8 +1,9 @@
 <?
 
 $baseUrl = "https://".$_SERVER[HTTP_HOST]."/";
-$path = "";
+$path = "web/";
 $imgpath = "img/";
 $templatepath = "templates/";
+$backendpath = "backend/";
 
 ?>

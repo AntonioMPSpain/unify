@@ -1,0 +1,41 @@
+/*------------------------------------*\
+	HACKS IE 8
+\*------------------------------------*/
+/*
+Author:
+	jEsuSdA
+Twitter:
+	@jesusda
+Author URL:
+	jesusda.com
+Ultima modificación:
+	25/08/2012
+
+Descripción:
+	HACKS para internet exploter 8.
+/*****************************************************************/
+
+
+
+/*------------------------------------*\
+	OTROS HACKS
+\*------------------------------------*/
+.forms input[type=radio] {
+border:0!important;
+}
+
+a.btnindex {
+font-size:0!important;
+color:transparent!important;
+height:20px;
+width:30px;
+}
+
+.useraccess label strong,#agenda p strong {
+padding-top:1px!important;
+padding-bottom:1px!important;
+}
+
+th,td {
+text-align:left!important;
+}

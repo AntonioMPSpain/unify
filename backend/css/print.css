@@ -1,0 +1,196 @@
+/*------------------------------------*\
+	PRINT CSS
+\*------------------------------------*/
+/*
+Author:
+	jEsuSdA
+Twitter:
+	@jesusda
+Author URL:
+	jesusda.com
+Ultima modificación:
+	25/08/2012
+
+Descripción:
+	Hoja de estilos específica para impresión
+/*****************************************************************/
+
+/*------------------------------------*\
+	ESTILOS POR DEFECTO
+\*------------------------------------*/
+
+* {
+max-height:none!important;
+min-height:0!important;
+height:auto!important;
+max-width:none!important;
+min-width:0!important;
+width:auto!important;
+color:#000!important;
+background:#fff!important;
+font:18px/1.4em normal normal Sassoon, Arial, Helvetica, sans-serif!important;
+text-align:left!important;
+text-transform:none!important;
+text-decoration:none!important;
+word-spacing:.2em!important;
+letter-spacing:.01em!important;
+}
+
+body {
+padding-bottom:3em!important;
+max-width:45em!important;
+margin-bottom:1em!important;
+}
+
+bodys:after {
+display:block!important;
+clear:both!important;
+content:"Versión específica para Impresión"!important;
+position:fixed!important;
+bottom:0!important;
+margin-left:auto!important;
+margin-right:auto!important;
+border-top:thin solid #000!important;
+border-left:thin solid #000!important;
+border-right:thin solid #000!important;
+padding:.1px!important;
+width:100%!important;
+height:auto!important;
+background:Silver!important;
+color:#000!important;
+font-size:smaller!important;
+text-align:center!important;
+word-spacing:normal!important;
+letter-spacing:normal!important;
+line-height:normal!important;
+}
+
+a[href] {
+text-decoration:underline!important;
+color:#204A87!important;
+}
+
+a[href]:hover {
+background:#FFF!important;
+color:#000!important;
+}
+
+a[href]:active {
+background:transparent!important;
+text-decoration:none!important;
+}
+
+img {
+border:none!important;
+max-width:90%!important;
+}
+
+a[href] img {
+border:medium solid #204A87!important;
+}
+
+input,textarea,select {
+background:#FFF!important;
+color:#000!important;
+}
+
+input[type=text],input[type=password] {
+min-height:1.2em!important;
+}
+
+textarea {
+min-height:4em!important;
+}
+
+button,input[type=file],input[type=submit],input[type=button],input[type=reset],input[type=image] {
+padding:.1px!important;
+min-width:2em!important;
+height:1.2em!important;
+background:Silver!important;
+color:#000!important;
+text-align:center!important;
+}
+
+a[accesskey]:after,button[accesskey]:after,input[accesskey]:after,label[accesskey]:after,legend[accesskey]:after,textarea[accesskey]:after {
+margin-left:.3em;
+content:"(" attr(accesskey) ")";
+color:Red;
+}
+
+acronym[title]:after,abbr[title]:after {
+margin-left:.3em;
+content:"(" attr(title) ")";
+color:#9DB029;
+font-size:80%;
+}
+
+b,strong,em {
+font-weight:700!important;
+}
+
+h1,h2,h3,h4,h5,h6 {
+font-weight:700!important;
+}
+
+h1 {
+font-size:160%!important;
+line-height:1em!important;
+}
+
+h2 {
+font-size:140%!important;
+line-height:1.2em!important;
+}
+
+h3 {
+font-size:120%!important;
+line-height:1.4em!important;
+}
+
+h4 {
+font-size:110%!important;
+line-height:1.4em!important;
+}
+
+h5 {
+font-size:100%!important;
+line-height:1.2em!important;
+}
+
+h6 {
+font-size:90%!important;
+line-height:1.2em!important;
+}
+
+hr {
+height:5px!important;
+background-color:#555753!important;
+color:#000!important;
+border:5px solid #555753!important;
+}
+
+dt {
+font-weight:bolder;
+}
+
+dd {
+font-size:90%!important;
+}
+
+table {
+margin:auto auto 1em!important;
+border:1px solid #555753!important;
+border-collapse:collapse!important;
+}
+
+td {
+margin:0!important;
+padding:.5em!important;
+border:1px solid #555753!important;
+border-collapse:collapse!important;
+}
+
+.wrapper {
+width:100%!important;
+}
+

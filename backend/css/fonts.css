@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*------------------------------------*\
+	FONTS.CSS
+\*------------------------------------*/
+/*
+Author: 
+	jEsuSdA
+Twitter:
+	@jesusda
+Author URL: 
+	jesusda.com
+Ultima modificación:
+	09/10/2013
+
+
+/*------------------------------------*\
+	$FONTS
+\*------------------------------------*/
+/* http://www.fontsquirrel.com/fontface/generator */
+
+@font-face {
+    font-family: 'netto';
+    src: url('fonts/NettoWeb.eot');
+    src: url('fonts/NettoWeb.eot?#iefix') format('embedded-opentype'),
+         url('fonts/NettoWeb.woff') format('woff'),
+         url('fonts/NettoOT.ttf') format('truetype'),
+         url('fonts/NettoOT.svg#netto') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'netto-light';
+    src: url('fonts/NettoWeb-Light.eot');
+    src: url('fonts/NettoWeb-Light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/NettoWeb-Light.woff') format('woff'),
+         url('fonts/NettoOT-Light.ttf') format('truetype'),
+         url('fonts/NettoOT-Light.svg#netto-light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'netto-bold';
+    src: url('fonts/NettoWeb-Bold.eot');
+    src: url('fonts/NettoWeb-Bold.eot?#iefix') format('embedded-opentype'),
+         url('fonts/NettoWeb-Bold.woff') format('woff'),
+         url('fonts/NettoOT-Bold.ttf') format('truetype'),
+         url('fonts/NettoOT-Bold.svg#netto-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
