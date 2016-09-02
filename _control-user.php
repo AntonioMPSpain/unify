@@ -3,7 +3,6 @@
 session_start();
 include("_cone.php"); 
 include("_config.php"); 
-include("_funciones.php"); 
 
 
 if (isset($_REQUEST['logout'])){

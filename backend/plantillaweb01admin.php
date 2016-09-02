@@ -11,7 +11,7 @@ $f = explode("/", $_SERVER['PHP_SELF']);
 $menu=$f[count($f)-1];
 settype($id, 'integer');
 $link_c=conectar();
-$Query_c = pg_query($link_c,"SELECT * FROM configuracion WHERE id=1;");// or die ("e1-".pg_error()); 
+$Query_c = pg_query($link_c,"SELECT * FROM configuracion WHERE id=1;");// or die ("e1-".pg_error());  
 $data_c = pg_fetch_array($Query_c);
 $c_telefono=$data_c["c_telefono"];
 $c_email=$data_c["c_email"];
@@ -223,17 +223,12 @@ $c_ano=$data_c["c_ano"];
 						?>
 						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-book"></i> Cursos</a></li>
 						<li><a href="zona-privada_admin_profesores_1.php"><i class="icon-user"></i> Profesores</a></li>
-						<li><a href="zona-privada_admin_usuario.php"><i class="icon-th"></i> Usuarios</a>
-							<ul>
-								<li><a href="usuario_desde_web.php"><i class="icon-th"></i> Nuevos Usuarios Web</a></li>
-								<li><a href="zona-privada_admin_suscrito.php"><i class="icon-th"></i> Suscritos Web</a></li>
-							</ul>
-						</li>
+						<li><a href="zona-privada_admin_usuario.php"><i class="icon-th"></i> Usuarios</a></li>
 						<li><a href="e_inicio.php"><i class="icon-book"></i> Encuestas</a></li>
 						<li><a href="zona-privada_admin_comunicaciones_5_historico-de-envios.php"><i class="icon-envelope"></i> Comunicaciones</a></li>						
 						<li><a href="zona-privada_admin_informes_1.php"><i class="icon-edit"></i> Informes</a></li>											
 						<li><a href="admin_trabajo.php"><i class="icon-edit"></i> Ofertas de trabajo</a></li> 											
-						<li><a href="admin_contenido.php"><i class="icon-edit"></i> Publicaciones</a></li>											
+						<li><a href="admin_contenido.php"><i class="icon-edit"></i> Publicaciones</a></li> 											
 						<li><a href="#"><i class="icon-edit"></i> Configuración</a>	
 							<ul>
 								<li><a href="zona-privada_admin_cuentas.php"><i class="icon-lock"></i> Gestión de Cuentas</a></li>

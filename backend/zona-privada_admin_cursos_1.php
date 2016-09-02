@@ -1,6 +1,6 @@
 <?
-include("../_funciones.php"); 
-include("../_cone.php"); 
+include("_funciones.php"); 
+include("_cone.php");
 require_once('lib_actv_api.php');
 $safe="Gestión de Cursos";
 $accion=strip_tags($_GET['accion']); 
