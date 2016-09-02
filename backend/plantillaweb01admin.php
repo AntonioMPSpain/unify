@@ -241,7 +241,6 @@ $c_ano=$data_c["c_ano"];
 								<li><a href="etiqueta.php"><i class="icon-film"></i> Áreas/Etiquetas</a></li>
 								<li><a href="provincia_comunidad.php"><i class="icon-film"></i>Comunidad/Provincia</a></li>
 								<li><a href="provincia.php"><i class="icon-film"></i>Provincias</a></li>
-								<li><a href="etiqueta.php">Áreas/Etiquetas</a></li>
 								<li><a href="c_n_noticias.php">Nº Noticias Inicio</a></li>
 								<li><a href="__informes.php">Textos Informes</a></li>
 								<li><a href="z_admin_boletin_oficial.php">Boletines oficiales</a></li>

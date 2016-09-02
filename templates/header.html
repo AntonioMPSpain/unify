@@ -100,10 +100,10 @@
 						*/ ?>
 						
 						<? if ($_SESSION[controlactiva]){ ?> 
-							<? if ($_SESSION[nivel]==1){ ?>
+							<? if (($_SESSION[nivel]==1)||($_SESSION[nivel]==2)){ ?>
 								
 						
-								<li><a href="<?=$backendpath?>zona-privada_admin_cursos_1.php">Backend</a></li>
+								<li><a href="<?=$backendpath?>zona-privada_admin_cursos_1.php">Administración</a></li>
 								<li class="topbar-devider"></li>
 						
 						<? } ?>
