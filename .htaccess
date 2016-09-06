@@ -1,4 +1,5 @@
 <IfModule mod_rewrite.c>
+	Options -MultiViews
 	RewriteEngine On 
 	
 	RewriteBase /web/
@@ -9,7 +10,10 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	
+	RewriteRule perfil/opciones perfil.php [NC,L]
+	RewriteRule perfil perfil.php [NC,L]
 	RewriteRule portada index.php [NC,L]
+	
 	
 
 </IfModule>

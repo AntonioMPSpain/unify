@@ -80,7 +80,7 @@ body.header-fixed-space-default {
 	padding: 4px 0;
 	padding-left: 0;
 	list-style: none;
-	min-width: 100px;
+	min-width: 108px;
 	position: absolute;
 	background: #f0f0f0;
 }
@@ -175,6 +175,7 @@ body.header-fixed-space-default {
 .header .logo img {
 	z-index: 1;
 	margin: 20px 0;
+	max-height: 60px;
 	position: relative;
 }
 
@@ -232,7 +233,6 @@ body.header-fixed-space-default {
 	color: #687074;
 	font-size: 15px;
 	font-weight:400;
-	text-transform: uppercase;
 }
 
 .header .navbar-nav > .active > a {
@@ -400,7 +400,7 @@ body.header-fixed-space-default {
 	.header .navbar-nav > li > a {
 		bottom: -2px;
 		position: relative;
-		padding: 9px 30px 9px 20px;
+		padding: 9px 20px 9px 10px;
 	}
 
 	.header .navbar-nav > li > a,
@@ -497,7 +497,7 @@ body.header-fixed-space-default {
 .header .dropdown-submenu > a:after {
     top: 8px;
     right: 9px;
-    font-size: 11px;
+    font-size: 10px;
     content: "\f105";
     position: absolute;
     font-weight: normal;
@@ -513,8 +513,16 @@ body.header-fixed-space-default {
 
 .header .dropdown > a:after {
     top: 9px;
-    right: 15px;
+    right: 5px;
     content: "\f107";
+}
+
+.header .sindesplegable > a:after {
+    content: "" ;
+}
+
+.header .sindesplegable > a {
+	padding-right: 10px !important;
 }
 
 .header .dropdown-submenu > .dropdown-menu {
