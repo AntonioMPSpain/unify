@@ -12,6 +12,7 @@
 		/** pestañas activas **/
 		
 		$portadaactive="";
+		$formacionactive="";
 		
 		$uri=$_SERVER["REQUEST_URI"];
 		if(stripos($uri,"asdasdasd.php") !== false){
@@ -19,7 +20,11 @@
 		}
 		elseif (stripos($uri,"publicacion") !== false){
 			
-		}		
+		}
+		elseif (stripos($uri,"formacion") !== false){
+			$formacionactive=" active ";
+			$title = "formacion | ".$title;
+		}			
 		elseif (stripos($uri,"perfil") !== false){
 			$title = "perfil | ".$title;
 		}
@@ -221,71 +226,15 @@
 
 
 						<!-- Formación -->
-						<li class="dropdown ">
-							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+						<li class="dropdown <?=$formacionactive?>">
+							<a href="formacion" class="dropdown-toggle" data-toggle="dropdown">
 								Formación
 							</a>
 							<ul class="dropdown-menu">
-								<!-- About Pages -->
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">About Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_about2.html">About Us </a></li>
-										<li><a href="page_about3.html">About Us 1</a></li>
-										<li><a href="page_about1.html">About Us 2</a></li>
-										<li><a href="page_about.html">About Us 3</a></li>
-										<li><a href="page_about_me.html">About Me </a></li>
-										<li><a href="page_about_me1.html">About Me 1</a></li>
-										<li><a href="page_about_me2.html">About Me 2</a></li>
-										<li><a href="page_about_our_team.html">About Our Team</a></li>
-										<li><a href="page_about_our_team1.html">About Our Team 1</a></li>
-										<li><a href="page_about_our_team2.html">About Our Team 2</a></li>
-									</ul>
-								</li>
-								<!-- End About Pages -->
-
-								<!-- Service Pages -->
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Service Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_services.html">Our Services</a></li>
-										<li><a href="page_services1.html">Our Services 1</a></li>
-										<li><a href="page_services2.html">Our Services 2</a></li>
-										<li><a href="page_services3.html">Our Services 3</a></li>
-									</ul>
-								</li>
-								<!-- End Service Pages -->
-
-								<!-- Contacts -->
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Contact Pages
-									</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_contact1.html">Contacts Default</a></li>
-										<li><a href="page_contact2.html">Contacts Option 1</a></li>
-										<li><a href="page_contact3.html">Contacts Option 2</a></li>
-										<li><a href="page_contact4.html">Contacts Option 3</a></li>
-										<li><a href="page_contact_advanced.php">Contacts Advanced</a></li>
-									</ul>
-								</li>
-								<!-- End Contacts -->
-
-								<!-- Profile Pages -->
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Profile Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_profile.html">Profile Main Page</a></li>
-										<li><a href="page_profile_me.html">Profile Overview</a></li>
-										<li><a href="page_profile_users.html">Profile Users</a></li>
-										<li><a href="page_profile_projects.html">Profile Projects</a></li>
-										<li><a href="page_profile_comments.html">Profile Comments</a></li>
-										<li><a href="page_profile_history.html">Profile History</a></li>
-										<li><a href="page_profile_settings.html">Profile Settings</a></li>
-									</ul>
-								</li>
-								<!-- End Profile Pages -->
-
+								<li><a href="formacion">Toda</a></li>
+								<li><a href="formacion_permanente">Permanente</a></li>
+								<li><a href="formacion_online">Online</a></li>
+								<li><a href="formacion_historico">Histórico</a></li>
 							</ul>
 						</li>
 						<!-- End Formación -->
@@ -333,14 +282,14 @@
 								</li>
 							</ul>
 						</li>
-						<!-- End Productos Pages -->
+						<!-- End Productos -->
 						<!-- Productos2 -->
-						<li class="dropdown active">
+						
+						<li class="dropdown">
 							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 								Productos2
 							</a>
 							<ul class="dropdown-menu">
-								<!-- About Pages -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Aislamiento</a>
 									<ul class="dropdown-menu">
@@ -353,12 +302,9 @@
 										<li><a href="page_about_me2.html">Accesorios de montaje para aislamiento </a></li>
 									</ul>
 								</li>
-								<!-- End About Pages -->
-								
 								
 								<li><a href="page_invoice.html">Bloques de vidrio</a></li>
 
-								<!-- Contacts -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 										Cementos, morteros y yesos
@@ -371,9 +317,7 @@
 										<li><a href="page_contact_advanced.php">Contacts Advanced</a></li>
 									</ul>
 								</li>
-								<!-- End Contacts -->
 
-								<!-- Profile Pages -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Circulación y accesos</a>
 									<ul class="dropdown-menu">
@@ -386,11 +330,9 @@
 										<li><a href="page_profile_settings.html">Profile Settings</a></li>
 									</ul>
 								</li>
-								<!-- End Profile Pages -->
 
 								<li><a href="page_invoice.html">Cubiertas y tejados</a></li>
 
-								<!-- Job Pages -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Estructuras</a>
 									<ul class="dropdown-menu">
@@ -401,12 +343,10 @@
 										<li><a href="page_jobs_inner2.html">Jobs Description Min</a></li>
 									</ul>
 								</li>
-								<!-- End Job Pages -->
 								
 								<li><a href="page_invoice.html">Gravas y áridos</a></li>
 								<li><a href="page_invoice.html">Herramientas para construcción</a></li>
 								
-																<!-- Pricing Tables -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Iluminación</a>
 									<ul class="dropdown-menu">
@@ -417,9 +357,7 @@
 										<li><a href="page_pricing.html">Default Pricing Tables</a></li>
 									</ul>
 								</li>
-								<!-- End Pricing Tables -->
 
-								<!-- Login and Registration -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Impermeabilización</a>
 									<ul class="dropdown-menu">
@@ -432,9 +370,7 @@
 										<li><a href="page_login2.html">Login Option 2 </a></li>
 									</ul>
 								</li>
-								<!-- End Login and Registration -->
 
-								<!-- FAQs Pages -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Instalaciones</a>
 									<ul class="dropdown-menu">
@@ -442,9 +378,7 @@
 										<li><a href="page_faq.html">FAQs Basic</a></li>
 									</ul>
 								</li>
-								<!-- End FAQs Pages -->
 
-								<!-- Email Tempaltes -->
 								<li class="dropdown-submenu">
 									<a href="javascript:void(0);">Particiones y elementos de división espacial</a>
 									<ul class="dropdown-menu">
@@ -454,13 +388,6 @@
 												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_aqua.html">Corporate Aqua Color</a></li>
 												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_blue.html">Corporate Blue Color</a></li>
 												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_brown.html">Corporate Brown Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_dark_blue.html">Corporate Dark Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_green.html">Corporate Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_light_green.html">Corporate Light Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_grey.html">Corporate Grey Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_orange.html">Corporate Orange Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_purple.html">Corporate Purple Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_red.html">Corporate Red Color</a></li>
 											</ul>
 										</li>
 										<li class="dropdown-submenu">
@@ -469,13 +396,6 @@
 												<li><a target="_blank" href="Email-Templates/flat/email_flat_aqua.html">Flat Aqua Color</a></li>
 												<li><a target="_blank" href="Email-Templates/flat/email_flat_blue.html">Flat Blue Color</a></li>
 												<li><a target="_blank" href="Email-Templates/flat/email_flat_brown.html">Flat Brown Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_dark_blue.html">Flat Dark Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_green.html">Flat Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_light_green.html">Flat Light Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_grey.html">Flat Grey Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_orange.html">Flat Orange Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_purple.html">Flat Purple Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_red.html">Flat Red Color</a></li>
 											</ul>
 										</li>
 										<li class="dropdown-submenu">
@@ -484,21 +404,14 @@
 												<li><a target="_blank" href="Email-Templates/modern/email_modern_aqua.html">Modern Aqua Color</a></li>
 												<li><a target="_blank" href="Email-Templates/modern/email_modern_blue.html">Modern Blue Color</a></li>
 												<li><a target="_blank" href="Email-Templates/modern/email_modern_brown.html">Modern Brown Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_dark_blue.html">Modern Dark Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_green.html">Modern Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_light_green.html">Modern Light Green Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_grey.html">Modern Grey Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_orange.html">Modern Orange Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_purple.html">Modern Purple Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_red.html">Modern Red Color</a></li>
 											</ul>
 										</li>
 									</ul>
 								</li>
-								<!-- End Email Tempaltes -->
 
 							</ul>
 						</li>
+					
 						<!-- End Productos2 -->
 						
 						<!-- Profesionales -->
