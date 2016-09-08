@@ -1,3 +1,13 @@
+<?
+
+include_once("_funciones.php"); 
+include_once("_cone.php");
+include_once "_config.php";
+
+global $imgbannerspath;
+
+?>
+
 <script type="text/javascript">
 	function onClick(e) {
 		var idanuncio = e.getAttribute('id');
@@ -5,7 +15,7 @@
 		var post = 'idanuncio='+idanuncio+'&idbanner='+idbanner;
 		
 		var req = new XMLHttpRequest();
-		req.open('POST', 'p_stats.php', true);
+		req.open('POST', '<?php echo ($backendpath); ?>p_stats.php', true);
 		req.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 		req.onreadystatechange = function(){
 			if (req.readyState !== 4 || req.status !== 200) return;
@@ -23,7 +33,7 @@
 				var img = document.getElementById("img_"+idbanner);
 				
 				img.onload="";
-				img.src = "imagen/"+images[x];
+				img.src = <?php echo json_encode($imgbannerspath); ?>+images[x];
 				
 				var b = document.getElementsByClassName("banner_"+idbanner);
 				b[0].id = anuncios[x];
@@ -48,9 +58,7 @@
 </script>
 
 
-<?php
-include_once("_funciones.php"); 
-include_once("_cone.php"); 
+<?
 
 function esBannerActivo($idbanner){
 	
@@ -154,8 +162,9 @@ function getBanner($idbanner){
 			$images = json_encode($images);
 			$links = json_encode($links); 
 			
+			global $imgbannerspath;
 			$banner = '<div class="banner_'.$idbanner.' publicidad '.$classbanner.'" id="'.$primeridanuncio.'" idbanner='.$idbanner.' onClick="onClick(this)" style="margin-bottom:10px;"><a id="link_'.$idbanner.'" href="'.$primerlink.'" target="_blank">
-						<img onload=\'changeImage('.$idbanner.','.$anuncios.','.$images.','.$links.',2, '.$x.');\' id="img_'.$idbanner.'" style="width:'.$width.'px; height='.$height.'px;" width="'.$width.'" height="'.$height.'" src="imagen/'.$primerimg.'" alt=""></a></div>';	
+						<img class="img-responsive full-width" onload=\'changeImage('.$idbanner.','.$anuncios.','.$images.','.$links.',2, '.$x.');\' id="img_'.$idbanner.'" style="width:'.$width.'px; height='.$height.'px;" width="'.$width.'" height="'.$height.'" src="'. $imgbannerspath.$primerimg .'" alt=""></a></div>';	
 		
 		}
 		

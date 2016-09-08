@@ -383,7 +383,7 @@ $_SESSION[error]="";
 	<div class="grid-9 contenido-principal">
 	<div class="clearfix"></div>
 	<div class="pagina zonaprivada blog">
-	<h2 class="titulonoticia">Alumnos [Actividad. <?=$curso["nombre"];?>]<?=$textomodalidad?></h2>
+	<h2 class="titulonoticia">Alumnos [<?=$curso["id"]?> <?=$curso["nombre"];?>]<?=$textomodalidad?></h2>
 		<br />
 		
 	<div class="bloque-lateral buscador">

@@ -2,6 +2,7 @@
 include_once("_funciones.php"); 
 include_once("_cone.php"); 
 include_once("p_funciones.php"); 
+include_once("_config.php"); 
 
 $safe="Publicidad Banners";
 $titulo1="publicidad";
@@ -53,11 +54,8 @@ if ($accion=="guardar"){
 	$imagen1=($_POST['imagen1']);
 	$imagen2=($_POST['imagen2']);
 	
-	$c_directorio_img = "/var/www/web";
-	
 	/** IMAGEN 1
 	pasar a función**/
-	
 	
 	$nombre_archivo = $_FILES['userfile']['name']; 
 	if (!isset($nombre_archivo)){
@@ -83,7 +81,7 @@ if ($accion=="guardar"){
 			$archiv=sanear_string($nombre_archivo)."_";
 			$archivv=$archiv.=time();
 			$archivv=$archivv.".".$extension;
-			$destino = $c_directorio_img."/imagen/".$archivv;	
+			$destino = $wwwpath.$imgbannerspath.$archivv;	
 			
 			
 			 if (move_uploaded_file ($_FILES['userfile']['tmp_name'],$destino)){	
@@ -124,7 +122,7 @@ if ($accion=="guardar"){
 			$archiv=sanear_string($nombre_archivo)."_";
 			$archivv=$archiv.=time();
 			$archivv=$archivv.".".$extension;
-			$destino = $c_directorio_img."/imagen/".$archivv;	
+			$destino = $wwwpath.$imgbannerspath.$archivv;	
 			
 			
 			 if (move_uploaded_file ($_FILES['userfile2']['tmp_name'],$destino)){	
@@ -261,7 +259,7 @@ include("plantillaweb01admin.php");
 				<? 
 				if ($imagen1<>""){?>
 					<span class="actions">
-						<a href="imagen/<?=$imagen1?>" ><img SRC="imagen/<?=$imagen1?>" ><i class="icon-zoom-in"></i> Ver</a>
+						<a href="<?=$b_imgbannerspath.$imagen1?>"><img SRC="<?=$b_imgbannerspath.$imagen1?>"><i class="icon-zoom-in"></i> Ver</a>
 						<a onclick="return confirmar('&iquest;Eliminar elemento?')" href="p_anuncio.php?accion=borrarfoto1&id=<?=$id?>"><i class="icon-trash"></i> Eliminar</a>
 					</span>
 				<? } else{ ?> 
@@ -275,7 +273,7 @@ include("plantillaweb01admin.php");
 				<? 
 				if ($imagen2<>""){?>
 					<span class="actions">
-						<a href="imagen/<?=$imagen2?>" rel="shadowbox[galery]" ><img SRC="imagen/<?=$imagen2?>"><i class="icon-zoom-in"></i> Ver</a>
+						<a href="<?=$b_imgbannerspath.$imagen2?>" rel="shadowbox[galery]" ><img SRC="<?=$b_imgbannerspath.$imagen2?>"><i class="icon-zoom-in"></i> Ver</a>
 						<a onclick="return confirmar('&iquest;Eliminar elemento?')" href="p_anuncio.php?accion=borrarfoto2&id=<?=$id?>"><i class="icon-trash"></i> Eliminar</a>
 					</span>
 				<? } else{ ?> 

@@ -29,11 +29,11 @@ if (isset($_REQUEST['logout'])){
 }
 else{
 	
-	$usuario=$_POST['signin-login'];
+	$usuario=strtolower($_POST['signin-login']);
 	$pass=$_POST['signin-password'];
 	
 	if (($usuario<>"")){ 
-		$sql="SELECT * FROM usuario WHERE confirmado=1 AND login='$usuario' AND borrado=0 ORDER BY id ASC;";
+		$sql="SELECT * FROM usuario WHERE confirmado=1 AND LOWER(login)='$usuario' AND borrado=0 ORDER BY id ASC;";
 		$result = posgre_query($sql);
 	
 		if ($data = pg_fetch_array($result)){
