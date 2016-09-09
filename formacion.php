@@ -33,7 +33,7 @@ elseif ($m=="permanente"){
 }
 
 include ($templatepath."header.html");
-include ($templatepath."formacion2.html");
+include ($templatepath."formacion.html");
 include ($templatepath."footer.html");
 
 include("plantillaweb01.php");

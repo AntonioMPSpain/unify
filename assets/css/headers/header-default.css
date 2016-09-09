@@ -49,6 +49,7 @@ body.header-fixed-space-default {
 	list-style: none;
 	position: relative;
 	padding-bottom: 15px;
+	font-size:20px;
 }
 
 .header .topbar ul.loginbar > li > a,

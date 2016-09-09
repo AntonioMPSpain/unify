@@ -411,7 +411,7 @@ include("plantillaweb01admin.php");
 							<div class="control-group">
 								<label class="control-label" for="inputName">Precio:</label>
 									<div class="controls">
-										<input <?=$disabled?> type="number" min=0 id="inputName" class="input-mini" name="precio" value="<?=$precio?>" />
+										<input <?=$disabled?> type="number" step="0.01" min=0 id="inputName" class="input-mini" name="precio" value="<?=$precio?>" />
 									</div>
 							</div>
 							

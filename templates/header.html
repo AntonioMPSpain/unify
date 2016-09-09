@@ -8,7 +8,6 @@
 		session_start();
 		global $title;
 		
-		
 		/** pestañas activas **/
 		
 		$portadaactive="";
@@ -23,14 +22,20 @@
 		}
 		elseif (stripos($uri,"formacion") !== false){
 			$formacionactive=" active ";
-			$title = "formacion | ".$title;
+			$title = "Formación | ".$title;
 		}			
 		elseif (stripos($uri,"perfil") !== false){
-			$title = "perfil | ".$title;
+			$title = "Perfil | ".$title;
+		}			
+		elseif (stripos($uri,"404") !== false){
+			$title = "404 | ".$title;
+		}	
+		elseif ((stripos($uri,"portada") !== false) || ($uri=="/web/")){
+			$portadaactive=" active ";
+			$title = "Portada | ".$title;
 		}
 		else{
-			$portadaactive=" active ";
-			$title = "portada | ".$title;
+			
 		}
 		
 		
@@ -70,6 +75,7 @@
 	
 	<!-- CSS Page Style -->
 	<link rel="stylesheet" href="assets/css/pages/profile.css">
+	<link rel="stylesheet" href="assets/css/pages/page_404_error.css">
 	
 	<!-- CSS Theme -->
 	<link rel="stylesheet" href="assets/css/theme-colors/red.css" id="style_color">
@@ -127,10 +133,24 @@
 										<a href="#">Mis cursos </i></a>
 									</li>
 									<li><a href="perfil">Perfil</a></li>
-									<li><a href="_control-user.php?logout">Cerrar sesión</a></li>
+									<li></li>
 								</ul>
 							</li>
+							
+							<li class="topbar-devider"></li>
+							
+							<li class="hoverSelector">
+								<i class="fa fa-bell-o"></i>
+							</li>
+							
+							<li class="topbar-devider"></li>
+							
+							<li>
+								<a title="Cerrar sesión" href="_control-user.php?logout"><i class="fa fa-sign-out"></i></a>
+								
+							</li>
 
+							
 						<? } 
 						else {
 							
@@ -140,7 +160,19 @@
 							<li class="topbar-devider"></li>
 							<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Registrar</a></li>
 						<? } ?>
+					
+						
 					</ul>
+					
+					<!-- Social Links -->
+						<ul class="social-icons">
+							<li><a href="https://www.facebook.com/pages/Activatie/783928711720244" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
+							<li><a href="https://twitter.com/activatie" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
+							<li><a href="https://es.linkedin.com/in/activatie-ab907bba" data-original-title="Linkedin" class=" social_linkedin"></a></li>
+							<li><a href="https://twitter.com/activatie" data-original-title="Youtube" class="rounded-x social_youtube"></a></li>
+							<li><a href="https://www.youtube.com/channel/UCFwdS1lgUFVRIejymj-8UYA" data-original-title="RSS" class=" social_rss"></a></li>
+						</ul>
+						<!-- End Social Links -->
 				</div>
 				<!-- End Topbar -->
 
@@ -178,7 +210,7 @@
 													<ul class="list-unstyled equal-height-list">
 														<li><h3>Noticias</h3></li>
 
-														<li><a href="shortcode_typo_general.html"><i class="fa fa-sort-alpha-asc"></i> Portada</a></li>
+														<li><a href="<?=$actividadpath?>m/noticias"><i class="fa fa-sort-alpha-asc"></i> Portada</a></li>
 														<li><a href="shortcode_typo_headings.html"><i class="fa fa-magic"></i> Nuevas</a></li>
 														<li><a href="shortcode_typo_dividers.html"><i class="fa fa-ellipsis-h"></i> Populares</a></li>
 														<li><a href="shortcode_typo_blockquote.html"><i class="fa fa-quote-left"></i> Más visitadas</a></li>
@@ -223,22 +255,14 @@
 						</li>
 						<!-- End Actividad -->
 
-
-
 						<!-- Formación -->
-						<li class="dropdown ">
-							<a href="formacion" class="dropdown-toggle <?=$formacionactive?>" data-toggle="dropdown">
+						<li class="dropdown sindesplegable <?=$formacionactive?>">
+							<a href="formacion" >
 								Formación
 							</a>
-							<ul class="dropdown-menu">
-								<li><a href="formacion">Toda</a></li>
-								<li><a href="formacion_permanente">Permanente</a></li>
-								<li><a href="formacion_online">Online</a></li>
-								<li><a href="formacion_historico">Histórico</a></li>
-							</ul>
 						</li>
 						<!-- End Formación -->
-						
+
 						<!-- Productos -->
 						<li class="dropdown mega-menu-fullwidth">
 							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
