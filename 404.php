@@ -1,6 +1,7 @@
 <? 
 include_once "_config.php";
-include ($templatepath."header.html");
-include ($templatepath."404.html");
-include ($templatepath."footer.html");
+include_once "_funciones.php";
+include ($templatepath."header.php");
+include ($templatepath."404.php");
+include ($templatepath."footer.php");
 ?>

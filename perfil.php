@@ -1,15 +1,15 @@
 <?
 
 include_once "_config.php";
-include ($templatepath."header.html");
+include ($templatepath."header.php");
 
 
 
-include ($templatepath."perfil_izquierda.html");
-include ($templatepath."perfil_opciones.html");
+include ($templatepath."perfil_izquierda.php");
+include ($templatepath."perfil_opciones.php");
 
 
-include ($templatepath."footer.html");
+include ($templatepath."footer.php");
 
 
 ?>

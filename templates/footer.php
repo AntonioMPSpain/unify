@@ -3,16 +3,12 @@
 		<div id="footer-v2" class="footer-v2">
 			<div class="footer">
 				<div class="container">
+					
+				<? include ($templatepath."slider-colegios.php"); ?>
 					<div class="row">
-						<!-- About -->
-						<div class="col-md-3 md-margin-bottom-40">
-							<a href="portada"><img id="logo-footer" class="footer-logo" src="<?=$imgpath?>activatie-logo.png" alt=""></a>
-							
-						</div>
-						<!-- End About -->
 
 						<!-- Link List -->
-						<div class="col-md-3 md-margin-bottom-40">
+						<div class="col-md-4 md-margin-bottom-40">
 							<div class="headline"><h2 class="heading-sm">Links</h2></div>
 							<ul class="list-unstyled link-list">
 								<li><a href="#">Sobre activatie</a><i class="fa fa-angle-right"></i></li>
@@ -25,7 +21,7 @@
 						<!-- End Link List -->
 
 						<!-- Latest Tweets -->
-						<div class="col-md-3 md-margin-bottom-40">
+						<div class="col-md-4 md-margin-bottom-40">
 							<div class="latest-tweets">
 								<div class="headline"><h2 class="heading-sm">Latest Tweets</h2></div>
 								<div class="latest-tweets-inner">
@@ -51,7 +47,7 @@
 						<!-- End Latest Tweets -->
 
 						<!-- Address -->
-						<div class="col-md-3 md-margin-bottom-40">
+						<div class="col-md-4 md-margin-bottom-40">
 							<div class="headline"><h2 class="heading-sm">Contact Us</h2></div>
 							<address class="md-margin-bottom-40">
 								<i class="fa fa-home"></i>25, Lorem Lis Street, California, US <br />
@@ -59,15 +55,9 @@
 								<i class="fa fa-globe"></i>Website: <a href="#">www.htmlstream.com</a> <br />
 								<i class="fa fa-envelope"></i>Email: <a href="mailto:info@anybiz.com">info@anybiz.com</a>
 							</address>
+							
+							<? include $templatepath."social-links.php"; ?>
 
-							<!-- Social Links -->
-							<ul class="social-icons">
-								<li><a href="#" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
-								<li><a href="#" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
-								<li><a href="#" data-original-title="Goole Plus" class="rounded-x social_googleplus"></a></li>
-								<li><a href="#" data-original-title="Linkedin" class="rounded-x social_linkedin"></a></li>
-							</ul>
-							<!-- End Social Links -->
 						</div>
 						<!-- End Address -->
 					</div>
@@ -76,7 +66,7 @@
 
 			<div class="copyright">
 				<div class="container">
-					<p class="text-center"><?=$year?> &copy; PLATAFORMA COLEGIAL ACTIVATIE S.L. - Todos los derechos reservados</p>
+					<p class="text-center">PLATAFORMA COLEGIAL ACTIVATIE S.L. <?=$year?> &copy; Todos los derechos reservados</p>
 				</div>
 			</div><!--/copyright-->
 		</div>
@@ -93,6 +83,7 @@
 	<!-- JS Implementing Plugins -->
 	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
 	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
+	<script type="text/javascript" src="assets/plugins/jquery.parallax.js"></script>
 	<script type="text/javascript" src="assets/plugins/parallax-slider/js/modernizr.js"></script>
 	<script type="text/javascript" src="assets/plugins/parallax-slider/js/jquery.cslider.js"></script>
 	<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>

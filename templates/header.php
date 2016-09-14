@@ -13,24 +13,21 @@
 		$portadaactive="";
 		$formacionactive="";
 		
-		$uri=$_SERVER["REQUEST_URI"];
-		if(stripos($uri,"asdasdasd.php") !== false){
+		$uri=getUri();
+		if (contieneUri("publicacion") !== false){
 			
 		}
-		elseif (stripos($uri,"publicacion") !== false){
-			
-		}
-		elseif (stripos($uri,"formacion") !== false){
+		elseif (contieneUri("formacion") !== false){
 			$formacionactive=" active ";
 			$title = "Formación | ".$title;
 		}			
-		elseif (stripos($uri,"perfil") !== false){
+		elseif (contieneUri("perfil") !== false){
 			$title = "Perfil | ".$title;
 		}			
-		elseif (stripos($uri,"404") !== false){
+		elseif (contieneUri("404") !== false){
 			$title = "404 | ".$title;
 		}	
-		elseif ((stripos($uri,"portada") !== false) || ($uri=="/web/")){
+		elseif ((contieneUri("portada") !== false) || ($uri=="/web/")){
 			$portadaactive=" active ";
 			$title = "Portada | ".$title;
 		}
@@ -61,7 +58,7 @@
 
 	<!-- CSS Header and Footer -->
 	<link rel="stylesheet" href="assets/css/headers/header-default.css">
-	<link rel="stylesheet" href="assets/css/footers/footer-v1.css">
+	<link rel="stylesheet" href="assets/css/footers/footer-v2.css">
 
 	<!-- CSS Implementing Plugins -->
 	<link rel="stylesheet" href="assets/plugins/animate.css">
@@ -154,25 +151,23 @@
 						<? } 
 						else {
 							
-							include ($templatepath."login-register.html");
+							include ($templatepath."login-register.php");
 						?> 
 							<li class="cd-log_reg"><a class="cd-signin" href="javascript:void(0);">Login</a></li>
 							<li class="topbar-devider"></li>
-							<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Registrar</a></li>
+							<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Registro</a></li>
+							<li class="topbar-devider"></li>
+							<li><a href="contacto">Contacto</a></li>
 						<? } ?>
 					
 						
 					</ul>
 					
-					<!-- Social Links -->
-						<ul class="social-icons">
-							<li><a href="https://www.facebook.com/pages/Activatie/783928711720244" data-original-title="Facebook" class="rounded-x social_facebook"></a></li>
-							<li><a href="https://twitter.com/activatie" data-original-title="Twitter" class="rounded-x social_twitter"></a></li>
-							<li><a href="https://es.linkedin.com/in/activatie-ab907bba" data-original-title="Linkedin" class=" social_linkedin"></a></li>
-							<li><a href="https://twitter.com/activatie" data-original-title="Youtube" class="rounded-x social_youtube"></a></li>
-							<li><a href="https://www.youtube.com/channel/UCFwdS1lgUFVRIejymj-8UYA" data-original-title="RSS" class=" social_rss"></a></li>
-						</ul>
-						<!-- End Social Links -->
+					
+					<? 
+						echo file_get_contents ($baseUrl.$path.$templatepath."social-links.php?right"); 
+					?>
+					
 				</div>
 				<!-- End Topbar -->
 

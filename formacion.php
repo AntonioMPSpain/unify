@@ -32,9 +32,9 @@ elseif ($m=="permanente"){
 	$titulo2="permanente";
 }
 
-include ($templatepath."header.html");
-include ($templatepath."formacion.html");
-include ($templatepath."footer.html");
+include ($templatepath."header.php");
+include ($templatepath."formacion.php");
+include ($templatepath."footer.php");
 
 include("plantillaweb01.php");
 

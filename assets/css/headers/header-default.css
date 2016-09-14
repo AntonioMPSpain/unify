@@ -261,6 +261,10 @@ body.header-fixed-space-default {
     .header .navbar-toggle {
         display: block;
     }
+    
+    .social-icons{
+    	display:none;
+    }
 
     .header .navbar-collapse.collapse {
         display: none !important;

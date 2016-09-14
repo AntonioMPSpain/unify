@@ -1,6 +1,8 @@
-<? 
+<?
+
 include_once "_config.php";
-include ($templatepath."header.html");
+include_once "_funciones.php";
+include ($templatepath."header.php");
 
 
 $salir=$_GET['salir']; 
@@ -61,7 +63,6 @@ if ($salir==true){
 			/** FIN BANNER **/
 			?>
 			
-		<? include ($templatepath."slider-colegios.html"); ?>
 		</div>
 		<!--=== End Content ===-->
 
@@ -70,6 +71,6 @@ if ($salir==true){
 <?
 
 
-include ($templatepath."footer.html");
+include ($templatepath."footer.php");
 
 ?>

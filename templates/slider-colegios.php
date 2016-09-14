@@ -3,10 +3,10 @@ include_once "_config.php";
 ?>
 
 <!-- Owl Clients v1 -->
-<div class="headline"><h2>Our Clients</h2></div>
+<div class="headline"><h2 class="heading-sm">Colegios y colaboradores</h2></div>
 <div class="owl-clients-v1">
 	<div class="item">
-		<img style="height:90px; width:195px;"  src="<?=$imglogospath?>logo-albacete.png" alt="">
+		<a target="_blank" href="https://wwdadaw.com"><img style="height:90px; width:195px;"  src="<?=$imglogospath?>logo-albacete.png" alt=""></a>
 	</div>
 	<div class="item">
 		<img style="height:90px; width:195px;" src="<?=$imglogospath?>logo-grancanaria.jpg" alt="">
