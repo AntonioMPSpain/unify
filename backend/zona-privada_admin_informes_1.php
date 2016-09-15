@@ -1,6 +1,6 @@
 <?
 include("_funciones.php"); 
-include("_cone.php");
+include("_cone.php"); 
 
 session_start();
 
@@ -45,7 +45,7 @@ include("plantillaweb01admin.php");
 				<h4>Pagos:</h4>
 					<ol>
 					
-					<?	if (($_SESSION[nivel]==1)||($_SESSION[idcolegio]==114)){	?>		
+					<?	if (($_SESSION[nivel]==1)||($_SESSION[idcolegio]==114)||($_SESSION[idcolegio]==111)){	?>		
 						<li><a href="informe_pagotpv.php"><i class="icon-file"></i>Pagos con tarjeta bancaria</a></li>
 					<? } ?>	
 					<li><a href="informe_transferenciaspendientes.php"><i class="icon-file"></i>Transferencias pendientes de validar</a></li>

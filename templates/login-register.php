@@ -1,16 +1,16 @@
 <div class="cd-user-modal"> <!-- this is the entire modal form, including the background -->
 	<div class="cd-user-modal-container"> <!-- this is the container wrapper -->
 		<ul class="cd-switcher">
-			<li><a href="javascript:void(0);">Acceder</a></li>
-			<li><a href="javascript:void(0);">Registrar</a></li>
+			<li><a href="javascript:void(0);">Login</a></li>
+			<li><a href="javascript:void(0);">Registro</a></li>
 		</ul>
 
 		<div id="cd-login"> <!-- log in form -->
 			<form class="cd-form" action="_control-user.php" method="post">
 
 				<p class="fieldset">
-					<label class="image-replace cd-username" for="signin-email">DNI</label>
-					<input class="full-width has-padding has-border" id="signin-login" name="signin-login" type="text" placeholder="DNI Sin Letra">
+					<label class="image-replace cd-username" for="signin-email">NIF</label>
+					<input class="full-width has-padding has-border" id="signin-login" name="signin-login" type="text" placeholder="NIF (sin letra)">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
 
@@ -34,8 +34,8 @@
 			<form class="cd-form">
 
 				<p class="fieldset">
-					<label class="image-replace cd-username" for="signup-username">DNI</label>
-					<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="DNI">
+					<label class="image-replace cd-username" for="signup-username">NIF</label>
+					<input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="NIF">
 					<span class="cd-error-message">Error message here!</span>
 				</p>
 				

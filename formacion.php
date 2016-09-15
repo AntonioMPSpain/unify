@@ -2,41 +2,35 @@
 
 $c_directorio_img = "/var/www/web";
 
-include("_config.php");
-include("_funciones.php");
-include("_cone.php");
+include_once "_config.php";
 
-$accion=($_REQUEST['accion']);
+$accion=($_REQUEST['accion']); 
 $texto=$_REQUEST['texto'];
 $m=$_REQUEST['m'];
 
 if ($m=="historico"){
 	$asc=" DESC ";
 	$sqlquitar=" AND fecha_fin_publicacion<'NOW()' ";
-	$titulo1="Formación";
-	$titulo2="Histórico";
 }
 else{
 	$asc=" ASC ";
 	$sqlquitar=" AND fecha_publicacion<='NOW()' AND fecha_fin_publicacion>='NOW()' ";
-	$titulo1="Próximas";
-	$titulo2="actividades";
 }
 
-if ($m=="online"){
-	$titulo1="Formación";
-	$titulo2="online";	
-}
-elseif ($m=="permanente"){
-	$titulo1="Formación";
-	$titulo2="permanente";
-}
+
+
 
 include ($templatepath."header.php");
-include ($templatepath."formacion.php");
-include ($templatepath."footer.php");
 
-include("plantillaweb01.php");
+
+$curso["nombre"]="Lo curso asdasd";
+$curso["fecha_inicio"]="10/10/2016";
+$curso["modalidad"]="[presencial y online]";
+$curso["area"]="Seguridad y salud";
+$twig->display('formacion.php', array('curso'=>$curso));
+
+//include ($templatepath."formacion.php");
+include ($templatepath."footer.php");
 
 ?>
 <!--Arriba pantilla1-->
@@ -52,9 +46,7 @@ include("plantillaweb01.php");
 		echo $banner;
 		/** FIN BANNER **/
 		
-		?>
-		<h2 style="visibility:hidden;" class="titlesubsection titlesubsectionmedium"></h2>
-		<?
+		
 		$c1=1;
 		$pagina=strip_tags(($_GET['pagina']));	
 		if ($registros==""){
@@ -321,8 +313,6 @@ include("plantillaweb01.php");
 	<div class="clearfix"></div>
 </div>
 <? 
-
-include("plantillaweb02.php");
 
 ?>
 

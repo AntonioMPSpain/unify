@@ -1,5 +1,7 @@
 <?
 
+/** Rutas **/
+
 $baseUrl = "https://".$_SERVER[HTTP_HOST]."/";
 $path = "web/";
 $wwwpath = "/var/www/".$path;
@@ -16,15 +18,18 @@ $actividadpath = "../actividad/";
 $rsspath = "rss/";
 
 
-
-
-
-
-
-
-
 /** Fechas **/
 $year = date("Y");
+
+
+
+include_once "_funciones.php";
+include_once "_twig.php";
+include_once "_cone.php";
+
+
+
+
 
 
 

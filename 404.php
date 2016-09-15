@@ -1,7 +1,8 @@
 <? 
 include_once "_config.php";
-include_once "_funciones.php";
+
 include ($templatepath."header.php");
-include ($templatepath."404.php");
+$twig->display('404.php', array());
 include ($templatepath."footer.php");
+
 ?>

@@ -1,6 +1,3 @@
-
-
-
 <!--=== Profile ===-->
 <div class="container content profile">
 	<div class="row">

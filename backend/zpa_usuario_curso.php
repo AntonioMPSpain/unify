@@ -135,38 +135,38 @@ if (isset($_REQUEST['datos'])){
 	if ($datos=="inscritos"){
 		if ($modalidad==2){
 			if ($cursodual==1){	// Saca modo online
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND estado=0 AND (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)";
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND estado=0 AND (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos";
 		
 			}
 			else{ // Presencial
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND  estado=0 AND (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)";
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND  estado=0 AND (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos";
 			}
 		}else{
-			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND estado=0 AND (modalidad<>2) AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)" ;
+			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=0 AND estado=0 AND (modalidad<>2) AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos" ;
 		}
 	}
 	elseif ($datos=="espera"){
 		if ($modalidad==2){
 			if ($cursodual==1){	// Saca modo online
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0  ORDER BY  fechahora)" ;//or die (pg_error());  
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0  ORDER BY  fechahora) ORDER BY apellidos" ;//or die (pg_error());  
 			}
 			else{				// Presencial
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0  ORDER BY fechahora)" ;//or die (pg_error());  
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0  ORDER BY fechahora) ORDER BY apellidos" ;//or die (pg_error());  
 			}
 		}else{
-			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad<>2) AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora )" ;//or die (pg_error());  	
+			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE espera=1 AND estado=0 AND  (modalidad<>2) AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora ) ORDER BY apellidos" ;//or die (pg_error());  	
 		}
 	}
 	elseif ($datos=="bajas"){
 		if ($modalidad==2){
 			if ($cursodual==1){	// Saca modo online
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND  (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)" ;//or die (pg_error());  
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND  (modalidad=2) AND inscripciononlinepresencial=2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos" ;//or die (pg_error());  
 			}
 			else{				// Presencial
-				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND  (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)" ;//or die (pg_error());  
+				$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND  (modalidad=2) AND inscripciononlinepresencial=1 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos" ;//or die (pg_error());  
 			}
 		}else{
-			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND modalidad<>2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora)" ;//or die (pg_error());  
+			$sql = "SELECT * FROM usuario WHERE borrado=0 AND id IN (SELECT idusuario FROM curso_usuario WHERE estado<>0 AND modalidad<>2 AND nivel<>'3' AND idcurso='$idcurso' AND borrado=0 ORDER BY fechahora) ORDER BY apellidos" ;//or die (pg_error());  
 		}
 	}
 
