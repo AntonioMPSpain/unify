@@ -14,5 +14,12 @@ function contieneUri($texto){
 	else return false;
 }
 
+function getFechaConMes($fecha){
+    
+	return (strftime("%d de %B de %Y", strtotime($fecha)));
+
+}
+
+
 
 ?>

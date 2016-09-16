@@ -49,6 +49,7 @@ include("plantillaweb01admin.php");
 <table class="align-center"> 
 	<tr>
 		<th>Etiqueta</th>
+		<th>Color</th>
 		<th>&nbsp;Acci&oacute;n&nbsp;</th>
 	</tr> 
 	<?php       
@@ -56,6 +57,7 @@ include("plantillaweb01admin.php");
    while($row = pg_fetch_array($result)) { 
       ?><tr>
 	  	<td align="left"><?=$row["texto"]?> </td>
+	  	<td style="background:<?=$row["color"]?>" ></td>
 		<td>
 		<a href="etiqueta.php?id=<?=$row["id"]?>&accion=borrar" onclick="return confirmar('&iquest;Eliminar elemento? \n\n')" class="btn btn-primary">eliminar</a> 
 		<a href="etiqueta2.php?id=<?=$row["id"]?>&accion=editar" class="btn btn-primary">editar</a>

@@ -6,10 +6,6 @@ $baseUrl = "https://".$_SERVER[HTTP_HOST]."/";
 $path = "web/";
 $wwwpath = "/var/www/".$path;
 
-$imgpath = "img/";
-$imglogospath = $imgpath."logos/";
-$imgcursospath = $imgpath."cursos/";
-$imgbannerspath = $imgpath."banners/";
 
 $templatepath = "templates/";
 $backendpath = "backend/";
@@ -18,15 +14,23 @@ $actividadpath = "../actividad/";
 $rsspath = "rss/";
 
 
-/** Fechas **/
-$year = date("Y");
+$imgpath = "img/";
+$imglogospath = $imgpath."logos/";
+$imgcursospath = $imgpath."cursos/";
+$imgbannerspath = $imgpath."banners/";
+$imgcursosbackendpath = $backendpath."imagen/";
 
 
+/** Includes **/
 
+setlocale(LC_TIME, 'es_ES.UTF-8');
 include_once "_funciones.php";
 include_once "_twig.php";
 include_once "_cone.php";
 
+
+/** Fechas **/
+$year = date("Y");
 
 
 

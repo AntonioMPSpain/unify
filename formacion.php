@@ -19,33 +19,42 @@ else{
 
 
 
+$result=posgre_query("SELECT * FROM curso WHERE borrado=0 AND (estado=1 OR estado=2) $sqlquitar $busqueda ORDER BY fecha_inicio $asc, RANDOM();") ;
+
+$i=0;
+while ($row = pg_fetch_array($result)){
+	
+	$curso = "";
+	
+	$curso['id'] = $idcurso = $row['id'];
+	$curso['nombre'] = $row['nombre'];
+	$curso['modalidad'] = $row['modalidad'];
+	$curso['fecha_inicio'] = getFechaConMes($row['fecha_inicio']);
+	$curso['imagen'] = $imgcursosbackendpath.$row['imagen'];
+	
+	$resultet=posgre_query("SELECT etiqueta.color, etiqueta.tipo,etiqueta.texto FROM etiqueta,curso_etiqueta WHERE curso_etiqueta.idcurso='$idcurso' AND etiqueta.id=curso_etiqueta.idetiqueta AND etiqueta.borrado=0;") ; 
+	if ($rowet = pg_fetch_array($resultet)){
+		$curso['area'] = $rowet["texto"];
+		$curso['color'] = $rowet["color"];
+	}
+	
+	$cursos[$i] = $curso;
+	$i++;
+}
 
 include ($templatepath."header.php");
+$twig->display('formacion.php', array('cursos'=>$cursos));
 
 
-$curso["nombre"]="Lo curso asdasd";
-$curso["fecha_inicio"]="10/10/2016";
-$curso["modalidad"]="[presencial y online]";
-$curso["area"]="Seguridad y salud";
-$twig->display('formacion.php', array('curso'=>$curso));
+/** BANNER **/
+include_once($backendpath."p_funciones.php"); 
+$idbanner = 4;
+$banner = getBanner($idbanner);
+echo $banner;
+/** FIN BANNER **/
 
-//include ($templatepath."formacion.php");
-include ($templatepath."footer.php");
+//include ($templatepath."footer.php");
 
-?>
-<!--Arriba pantilla1-->
-<div class="grid-8 contenido-principal">
-<div class="clearfix"></div>
-	<div class="pagina blog publicaciones index">
-	<?
-	
-		/** BANNER **/
-		include_once($backendpath."p_funciones.php"); 
-		$idbanner = 4;
-		$banner = getBanner($idbanner);
-		echo $banner;
-		/** FIN BANNER **/
-		
 		
 		$c1=1;
 		$pagina=strip_tags(($_GET['pagina']));	
@@ -262,57 +271,5 @@ include ($templatepath."footer.php");
 		 <?
 		} //fin del while
 		
-		?> <div class="clearfix"></div> <?
 
-		if($total_paginas > 1) { ?>
-			<div class="pagination">
-				<ul>
-					<li<? if ($pagina==1){?> class="disabled"<? }?>><a href="formacion.php?m=<?=$m?>&pagina=<?=(1)?>&texto=<?=$texto?>&actividad=<?=$actividad?>" title="Ver primeros Resultados">Primeros</a></li><?
-					if(($pagina - 1) > 0) { ?>
-						<li><a href="formacion.php?m=<?=$m?>&pagina=<?=($pagina-1)?>&texto=<?=$texto?>&actividad=<?=$actividad?>" title="Ver anteriores Resultados">Anteriores</a></li>
-						<?
-					}
-					$a=$pagina-2;
-					$b=$pagina+2;
-					for ($i=1; $i<=$total_paginas; $i++){ 
-						if ($pagina == $i) {
-							?><li class="disabled"><a><?=$pagina?></a></li><?
-						} else {
-							if (($a<$i)&&($b>$i)){
-								?>
-								<li><a href="formacion.php?m=<?=$m?>&pagina=<?=$i?>&texto=<?=$texto?>&actividad=<?=$actividad?>"><?=$i?></a></li>
-								<?
-							}
-						}	
-					}
-					if(($pagina + 1)<=$total_paginas) { ?>
-						 <li><a href="formacion.php?m=<?=$m?>&pagina=<?=($pagina+1)?>&texto=<?=$texto?>&actividad=<?=$actividad?>" title="Ver siguientes Resultados">Siguientes</a></li>
-						<?
-					} ?>
-					<li<? if ($pagina==$total_paginas){?> class="disabled"<? }?>><a href="formacion.php?m=<?=$m?>&pagina=<?=$total_paginas?>&texto=<?=$texto?>&actividad=<?=$actividad?>" title="Ver &uacute;ltimos resultados">&Uacute;ltimos</a></li>
-				</ul>
-			</div>
-		<?
-		}?>
-		<!--FIN PAGINADOR-->	
-						
-	</div>
-	<!--fin pagina blog-->
-	
-	<?
-	
-	/** BANNER **/
-	include_once("p_funciones.php");
-	$idbanner = 6;
-	$banner = getBanner($idbanner);
-	echo $banner;
-	/** FIN BANNER **/
-	
-	?>
-	
-	<div class="clearfix"></div>
-</div>
-<? 
-
-?>
-
+		

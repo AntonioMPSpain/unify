@@ -570,6 +570,7 @@
 						<!-- End Trabajo -->
 
 						<!-- Search Block -->
+						<!--
 						<li>
 							<i class="search fa fa-search search-btn"></i>
 							<div class="search-open">
@@ -581,6 +582,7 @@
 								</div>
 							</div>
 						</li>
+						-->
 						<!-- End Search Block -->
 					</ul>
 				</div><!--/end container-->
