@@ -5,32 +5,41 @@
 		<!-- Profile Content -->
 		<div class="col-md-12"> 
 			<div class="profile-body">
-					
-					
 					{% for curso in cursos %}
-					
-						{% if (loop.index % 3) == 1 %} 
-						
+						{% if (loop.index % 4) == 1 %} 
 							<div class="row">
-							    
 						{% endif %}
 					
 					    {% block curso %}
-						    <div class="col-sm-4">
+						    <div class="col-sm-3">
 								<div class="easy-block-v1">
-									<img class="img-responsive" src="{{ curso.imagen }}" alt=" {{ curso.nombre }} ">
+									<a href="{{ curso.link }}"><img class="img-responsive" src="{{ curso.imagen }}" alt=" {{ curso.nombre }} "></a>
 									<div class="mascara-video"></div>
-									{% if curso.area!="" %} <div style="background-color: {{ curso.color }} ;" class="easy-block-v1-badge rgba-red"> {{ curso.area }} </div> {% endif %}
+									{% if curso.area!="" %} <a href=" {{ curso.linkarea }}"><div style="background-color: {{ curso.color }} ;" class="easy-block-v1-badge rgba-red"> {{ curso.area }} </div></a> {% endif %}
 								</div>
 								<div class="projects">
-									<h2><a class="color-dark" href="#"> {{ curso.nombre }} </a></h2>
-									<ul class="list-unstyled list-inline blog-info-v2">
-										<li><a class="color-green" href="#"> {{ curso.modalidad }} </a></li>
+									<h2><a class="color-dark" href=" {{ curso.link }}"> {{ curso.nombre }} </a></h2>
+								
+									<ul class="list-unstyled ">
+										<li><i class="fa fa-info-circle"></i> Modalidad: <strong>{{ curso.modalidad }}</strong></li>
+										<li><i class="fa fa-clock-o"></i> Inicio: <strong>{{ curso.fecha_inicio }}</strong></li>
+										{% if curso.modalidad==3 %} 
+											<li><i class="fa fa-clock-o"></i> Plazo de realización: <strong>{{ curso.realizacion }} días</strong></li> 
+										{% else %}
+											<li>
+												<i class="fa fa-times-circle-o"></i> Fin inscripción: 
+												{% if curso.realizacion==0 %}
+													<strong>¡Hoy!</strong>
+												{% elseif curso.realizacion==1 %}
+													<strong>{{ curso.realizacion }}</strong> día restante
+												{% else %}
+													<strong>{{ curso.realizacion }}</strong> días restantes
+												{% endif %}
+											</li> 
+										{% endif %}
 									</ul>
+
 									
-									<ul class="list-unstyled list-inline blog-info-v2">
-										<li><i class="fa fa-clock-o"></i> Inicio: {{ curso.fecha_inicio }} </li>
-									</ul>
 									
 								</div>
 							</div>
@@ -50,7 +59,7 @@
 					    {% else %}
 					    
 					    
-						    {% if ((loop.index % 3) == 0) %} 
+						    {% if ((loop.index % 4) == 0) %} 
 							
 								</div><!--/end row-->
 								<hr>

@@ -8,12 +8,12 @@
 					<div class="row">
 
 						<!-- Link List -->
-						<div class="col-md-4 md-margin-bottom-40">
+						<div class="col-md-3 md-margin-bottom-40">
 							<div class="headline"><h2 class="heading-sm">Links</h2></div>
 							<ul class="list-unstyled link-list">
 								<li><a href="#">Sobre activatie</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Preguntas frecuentes</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Contacto</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="contacto">Contacto</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Aviso legal</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Política de venta</a><i class="fa fa-angle-right"></i></li>
 							</ul>
@@ -21,9 +21,9 @@
 						<!-- End Link List -->
 
 						<!-- Latest Tweets -->
-						<div class="col-md-4 md-margin-bottom-40">
+						<div class="col-md-9 md-margin-bottom-40">
 							<div class="latest-tweets">
-								<div class="headline"><h2 class="heading-sm">Latest Tweets</h2></div>
+								<div class="headline"><h2 class="heading-sm">Tweets</h2></div>
 								<div class="latest-tweets-inner">
 									<i class="fa fa-twitter"></i>
 									<p>
@@ -42,24 +42,20 @@
 										<small class="twitter-time">4 hours ago</small>
 									</p>
 								</div>
+								<div class="latest-tweets-inner">
+									<i class="fa fa-twitter"></i>
+									<p>
+										<a href="#">@htmlstream</a>
+										At vero seos etodela casdasdasdacusamus et as daasda asda asda aa asdw
+										<a href="#">http://t.co/sBav7dm</a>
+										<small class="twitter-time">4 hours ago</small>
+									</p>
+								</div>
+								
 							</div>
 						</div>
 						<!-- End Latest Tweets -->
 
-						<!-- Address -->
-						<div class="col-md-4 md-margin-bottom-40">
-							<div class="headline"><h2 class="heading-sm">Contact Us</h2></div>
-							<address class="md-margin-bottom-40">
-								<i class="fa fa-home"></i>25, Lorem Lis Street, California, US <br />
-								<i class="fa fa-phone"></i>Phone: 800 123 3456 <br />
-								<i class="fa fa-globe"></i>Website: <a href="#">www.htmlstream.com</a> <br />
-								<i class="fa fa-envelope"></i>Email: <a href="mailto:info@anybiz.com">info@anybiz.com</a>
-							</address>
-							
-							<? include $templatepath."social-links.php"; ?>
-
-						</div>
-						<!-- End Address -->
 					</div>
 				</div>
 			</div><!--/footer-->

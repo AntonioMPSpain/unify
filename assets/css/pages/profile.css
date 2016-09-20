@@ -702,8 +702,10 @@
 
 .profile .projects h2 {
 	margin: 0 0 5px;
-	font-size: 22px;
+	font-size: 18px;
+	line-height: 24px;
 	font-weight: 200;
+	margin-bottom:15px;
 }
 
 .profile .projects h3 {
