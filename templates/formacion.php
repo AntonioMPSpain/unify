@@ -14,9 +14,12 @@
 <div class="container content profile">
 	<div class="row">
 		
+		
 		<!-- Profile Content -->
 		<div class="col-md-12"> 
+			<div class="margin-bottom-20 col-md-offset-2">{{ banner1|raw }}</div>
 			<div class="profile-body">
+				
 					{% for curso in cursos %}
 						{% if (loop.index % 4) == 1 %} 
 							<div class="row">
@@ -64,6 +67,7 @@
 										</div><!--/end row-->
 				
 										</div>
+										<div class="margin-top-20 col-md-offset-2">{{ banner2|raw }}</div>
 									</div>
 									<!-- End Profile Content -->
 								</div>
@@ -75,9 +79,12 @@
 					    
 						    {% if ((loop.index % 4) == 0) %} 
 							
+								
 								</div><!--/end row-->
-								<hr>
-								    
+								
+						   		{% if ((loop.index % 8) == 0) %} 
+								<div class="margin-top-20 margin-bottom-20 col-md-offset-2">{{ banner2|raw }}</div>
+								{% endif %}
 							{% endif %}
 						{% endif %}
 					{% endfor %}

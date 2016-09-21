@@ -274,6 +274,10 @@ body.header-fixed-space-default {
     	display:none;
     }
 
+    .social-icons-movil{
+    	display:block;
+    }
+    
     .header .navbar-collapse.collapse {
         display: none !important;
     }

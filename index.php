@@ -11,7 +11,10 @@ if ($salir==true){
 	exit();
 }
 	
+		include ($templatepath."slider.php");
 ?>
+
+		
 
 		<!--=== Slider ===-->
 		<div class="slider-inner">
@@ -53,15 +56,6 @@ if ($salir==true){
 			<p>Aliquam quis varius nisl. Praesent egestas magna efficitur enim posuere rutrum. Vivamus nulla velit, tempus id tempus nec, lacinia et leo. Nullam fringilla commodo facilisis. Maecenas mi eros, feugiat eget arcu sit amet, posuere efficitur ex. Nulla vel felis facilisis turpis porta euismod. Aenean vel enim nec nisl varius feugiat vitae nec urna. Duis feugiat molestie ex, non tincidunt tortor finibus in. Pellentesque quis ultricies augue. Nulla et lacus semper quam ornare cursus sit amet a sem. Vivamus semper lectus dui, faucibus dignissim enim feugiat vitae. Morbi fermentum odio neque, a molestie nunc volutpat ac. In ut aliquam est. Pellentesque est elit, pulvinar a magna sit amet, vestibulum fermentum neque. Aliquam vel lorem ut tortor tristique pretium eget vitae dolor.</p>
 
 			<p>Vestibulum dictum nec libero ut euismod. Fusce posuere sit amet libero vitae ornare. Curabitur posuere semper ipsum in efficitur. Etiam pellentesque felis sodales, blandit eros vel, dignissim turpis. Phasellus ullamcorper rhoncus enim, a consequat libero sagittis at. Mauris in pharetra elit. Suspendisse in urna dictum, tincidunt odio eget, vehicula turpis. Sed eget quam consequat, aliquam magna non, aliquam ipsum.</p>
-							
-			<?
-			/** BANNER **/
-			include_once($backendpath."p_funciones.php"); 
-			$idbanner = 1;
-			$banner = getBanner($idbanner);
-			echo $banner;
-			/** FIN BANNER **/
-			?>
 			
 		</div>
 		<!--=== End Content ===-->

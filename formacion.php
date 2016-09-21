@@ -76,16 +76,19 @@ while ($row = pg_fetch_array($result)){
 	$i++;
 }
 
-include ($templatepath."header.php");
-$twig->display('formacion.php', array('cursos'=>$cursos));
-include ($templatepath."footer.php");
-
-/** BANNER **/
+/** BANNERS **/
 include_once($backendpath."p_funciones.php"); 
 $idbanner = 4;
-$banner = getBanner($idbanner);
-echo $banner;
-/** FIN BANNER **/
+$banner1 = getBanner($idbanner);
+$idbanner = 6;
+$banner2 = getBanner($idbanner);
+/** FIN BANNERS **/
+
+include ($templatepath."header.php");
+$twig->display('formacion.php', array('cursos'=>$cursos, 'banner1'=>$banner1, 'banner2'=>$banner2));
+include ($templatepath."footer.php");
+
+
 
 
 	

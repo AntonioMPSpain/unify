@@ -10,6 +10,11 @@
 						<!-- Link List -->
 						<div class="col-md-3 md-margin-bottom-40">
 							<div class="headline"><h2 class="heading-sm">Enlaces</h2></div>
+							<div class="margin-bottom-5">
+							<? 
+								echo file_get_contents ($baseUrl.$path.$templatepath."social-links.php?movil"); 
+							?>
+							</div>
 							<ul class="list-unstyled link-list">
 								<li><a href="#">Conoce activatie</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Preguntas frecuentes</a><i class="fa fa-angle-right"></i></li>
@@ -30,10 +35,14 @@
 			</div><!--/footer-->
 
 			<div class="copyright">
+				
 				<div class="container">
 					<p class="text-center">PLATAFORMA COLEGIAL ACTIVATIE S.L. <?=$year?> &copy; Todos los derechos reservados</p>
 				</div>
+
+				
 			</div><!--/copyright-->
+			
 		</div>
 		<!--=== End Footer v2 ===-->
 		
@@ -55,7 +64,9 @@
 	<script type="text/javascript" src="assets/plugins/login-signup-modal-window/js/main.js"></script> <!-- Gem jQuery -->
 	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>	
+	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	
 	<!-- JS Customization -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
@@ -66,12 +77,14 @@
 	<script type="text/javascript" src="assets/js/plugins/parallax-slider.js"></script>
 	<script type="text/javascript" src="assets/js/forms/reg.js"></script>
 	<script type="text/javascript" src="assets/js/forms/checkout.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			App.init();
 			OwlCarousel.initOwlCarousel();
 			StyleSwitcher.initStyleSwitcher();
 			ParallaxSlider.initParallaxSlider();
+			RevolutionSlider.initRSfullWidth();
 		});
 	</script>
 	<!--[if lt IE 9]>

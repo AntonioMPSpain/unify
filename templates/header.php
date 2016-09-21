@@ -69,6 +69,7 @@
 	<link rel="stylesheet" href="assets/plugins/login-signup-modal-window/css/style.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+	<link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
 	
 	<!-- CSS Page Style -->
 	<link rel="stylesheet" href="assets/css/pages/profile.css">
@@ -97,7 +98,7 @@
 				<!-- Topbar -->
 				<div class="topbar">
 					<ul class="loginbar pull-right">
-						<? /* 
+					<? /* 
 						<li class="hoverSelector">
 							<i class="fa fa-globe"></i>
 							<a>Languages</a>
@@ -147,7 +148,6 @@
 								
 							</li>
 
-							
 						<? } 
 						else {
 							
@@ -162,7 +162,6 @@
 					
 						
 					</ul>
-					
 					
 					<? 
 						echo file_get_contents ($baseUrl.$path.$templatepath."social-links.php?right"); 

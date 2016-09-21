@@ -1,9 +1,8 @@
 <?
 
-include_once "../_config.php";
-
 $webpath = "../";
-$b_imgbannerspath = $webpath.$imgbannerspath;
+$imgpath = "img/";
+$b_imgbannerspath = $webpath.$imgpath."banners/";
 
 
 ?>

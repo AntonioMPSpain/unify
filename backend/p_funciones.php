@@ -163,8 +163,8 @@ function getBanner($idbanner){
 			$links = json_encode($links); 
 			
 			global $imgbannerspath;
-			$banner = '<div class="banner_'.$idbanner.' publicidad '.$classbanner.'" id="'.$primeridanuncio.'" idbanner='.$idbanner.' onClick="onClick(this)" style="margin-bottom:10px;"><a id="link_'.$idbanner.'" href="'.$primerlink.'" target="_blank">
-						<img class="img-responsive full-width" onload=\'changeImage('.$idbanner.','.$anuncios.','.$images.','.$links.',2, '.$x.');\' id="img_'.$idbanner.'" style="width:'.$width.'px; height='.$height.'px;" width="'.$width.'" height="'.$height.'" src="'. $imgbannerspath.$primerimg .'" alt=""></a></div>';	
+			$banner = '<div class="banner_'.$idbanner.' publicidad '.$classbanner.'" id="'.$primeridanuncio.'" idbanner='.$idbanner.' onClick="onClick(this)" ><a id="link_'.$idbanner.'" href="'.$primerlink.'" target="_blank">
+						<img style="border:1px solid #e4e9f0;" class="img-responsive" onload=\'changeImage('.$idbanner.','.$anuncios.','.$images.','.$links.',2, '.$x.');\' id="img_'.$idbanner.'" style="width:'.$width.'px; height='.$height.'px;" width="'.$width.'" height="'.$height.'" src="'. $imgbannerspath.$primerimg .'" alt=""></a></div>';	
 		
 		}
 		
