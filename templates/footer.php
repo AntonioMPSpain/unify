@@ -9,53 +9,22 @@
 
 						<!-- Link List -->
 						<div class="col-md-3 md-margin-bottom-40">
-							<div class="headline"><h2 class="heading-sm">Links</h2></div>
+							<div class="headline"><h2 class="heading-sm">Enlaces</h2></div>
 							<ul class="list-unstyled link-list">
-								<li><a href="#">Sobre activatie</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="#">Conoce activatie</a><i class="fa fa-angle-right"></i></li>
 								<li><a href="#">Preguntas frecuentes</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="contacto">Contacto</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Aviso legal</a><i class="fa fa-angle-right"></i></li>
-								<li><a href="#">Política de venta</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="Contacto">Contacto</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="AvisoLegal">Aviso legal</a><i class="fa fa-angle-right"></i></li>
+								<li><a href="PoliticaVenta">Política de venta</a><i class="fa fa-angle-right"></i></li>
 							</ul>
 						</div>
 						<!-- End Link List -->
 
-						<!-- Latest Tweets -->
-						<div class="col-md-9 md-margin-bottom-40">
-							<div class="latest-tweets">
-								<div class="headline"><h2 class="heading-sm">Tweets</h2></div>
-								<div class="latest-tweets-inner">
-									<i class="fa fa-twitter"></i>
-									<p>
-										<a href="#">@htmlstream</a>
-										At vero seos etodela ccusamus et
-										<a href="#">http://t.co/sBav7dm</a>
-										<small class="twitter-time">2 hours ago</small>
-									</p>
-								</div>
-								<div class="latest-tweets-inner">
-									<i class="fa fa-twitter"></i>
-									<p>
-										<a href="#">@htmlstream</a>
-										At vero seos etodela ccusamus et
-										<a href="#">http://t.co/sBav7dm</a>
-										<small class="twitter-time">4 hours ago</small>
-									</p>
-								</div>
-								<div class="latest-tweets-inner">
-									<i class="fa fa-twitter"></i>
-									<p>
-										<a href="#">@htmlstream</a>
-										At vero seos etodela casdasdasdacusamus et as daasda asda asda aa asdw
-										<a href="#">http://t.co/sBav7dm</a>
-										<small class="twitter-time">4 hours ago</small>
-									</p>
-								</div>
-								
-							</div>
-						</div>
-						<!-- End Latest Tweets -->
-
+					<?	
+					$tweets = getFooterTweets();
+					$twig->display('tweets.php', array('tweets'=>$tweets));
+					?>
+					
 					</div>
 				</div>
 			</div><!--/footer-->

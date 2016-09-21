@@ -1,3 +1,15 @@
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+	<div class="container">
+		<h1 class="pull-left">Formación</h1>
+		<ul class="pull-right breadcrumb">
+			
+			
+		</ul>
+	</div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
+
 <!--=== Profile ===-->
 <div class="container content profile">
 	<div class="row">
@@ -18,10 +30,13 @@
 									{% if curso.area!="" %} <a href=" {{ curso.linkarea }}"><div style="background-color: {{ curso.color }} ;" class="easy-block-v1-badge rgba-red"> {{ curso.area }} </div></a> {% endif %}
 								</div>
 								<div class="projects">
+									
 									<h2><a class="color-dark" href=" {{ curso.link }}"> {{ curso.nombre }} </a></h2>
-								
 									<ul class="list-unstyled ">
-										<li><i class="fa fa-info-circle"></i> Modalidad: <strong>{{ curso.modalidad }}</strong></li>
+										{% if curso.privado==1 %}
+											<li><i class="fa fa-lock"></i> Privado: <strong>Solo colegiados</strong></li>
+										{% endif %}
+										<li><i class="fa fa-info-circle"></i> Modalidad: <strong>{{ curso.modalidadtexto }}</strong></li>
 										<li><i class="fa fa-clock-o"></i> Inicio: <strong>{{ curso.fecha_inicio }}</strong></li>
 										{% if curso.modalidad==3 %} 
 											<li><i class="fa fa-clock-o"></i> Plazo de realización: <strong>{{ curso.realizacion }} días</strong></li> 
@@ -38,7 +53,6 @@
 											</li> 
 										{% endif %}
 									</ul>
-
 									
 									
 								</div>

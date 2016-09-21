@@ -247,7 +247,7 @@
 /*Default Breadcrumbs*/
 .breadcrumbs {
   overflow: hidden;
-  padding: 10px 0 6px;
+  padding: 25px 0 6px;
   border-bottom: solid 1px #eee;
   background: url(../img/patterns/breadcrumbs.png) repeat;
 }
@@ -6511,7 +6511,7 @@
 
 .link-list a {
 	color: #eee;
-	font-size: 11px;
+	font-size: 14px;
 	padding: 6px 0px;
 	display: inline-block;
 	text-transform: uppercase;

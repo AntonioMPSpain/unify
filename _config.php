@@ -27,6 +27,7 @@ setlocale(LC_TIME, 'es_ES.UTF-8');
 include_once "_funciones.php";
 include_once "_twig.php";
 include_once "_cone.php";
+include_once "_twitter.php";
 
 
 /** Fechas **/

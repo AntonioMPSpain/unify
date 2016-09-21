@@ -706,6 +706,10 @@
 	line-height: 24px;
 	font-weight: 200;
 	margin-bottom:15px;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	hyphens: auto;
 }
 
 .profile .projects h3 {

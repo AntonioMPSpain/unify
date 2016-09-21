@@ -42,6 +42,7 @@ while ($row = pg_fetch_array($result)){
 	$nombre = $row['nombre'];
 	$modalidad = $row['modalidad'];	
 	$imagen = $row['imagen'];
+	$privado = $row['privado'];
 	$fecha_inicio = $row['fecha_inicio'];
 	$fecha_fin_inscripcion=$row["fecha_fin_publicacion"];	
 	$modalidadtexto = getModalidadTexto($modalidad);
@@ -50,7 +51,9 @@ while ($row = pg_fetch_array($result)){
 	
 	$curso['id'] = $idcurso;
 	$curso['nombre'] = $nombre;
-	$curso['modalidad'] = $modalidadtexto;
+	$curso['modalidad'] = $modalidad;
+	$curso['privado'] = $privado;
+	$curso['modalidadtexto'] = $modalidadtexto;
 	$curso['imagen'] = $imgcursosbackendpath.$imagen;
 	
 	if ($modalidad==3){
@@ -61,6 +64,7 @@ while ($row = pg_fetch_array($result)){
 		$curso['fecha_inicio'] = getFechaConMes($fecha_inicio);
 		$curso['realizacion'] = diasRestantes($fecha_fin_inscripcion);
 	}
+	
 	
 	$resultet=posgre_query("SELECT etiqueta.color, etiqueta.tipo,etiqueta.texto FROM etiqueta,curso_etiqueta WHERE curso_etiqueta.idcurso='$idcurso' AND etiqueta.id=curso_etiqueta.idetiqueta AND etiqueta.borrado=0;") ; 
 	if ($rowet = pg_fetch_array($resultet)){

@@ -11,10 +11,12 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	
-	RewriteRule portada index.php [NC,L]
-	RewriteRule perfil perfil.php [NC,L]
-	RewriteRule contacto contacto.php [NC,L]
-	RewriteRule formacion formacion.php [NC,L]
+	RewriteRule Portada index.php [NC,L]
+	RewriteRule Perfil perfil.php [NC,L]
+	RewriteRule Contacto contacto.php [NC,L]
+	RewriteRule AvisoLegal avisolegal.php [NC,L]
+	RewriteRule PoliticaVenta politicaventa.php [NC,L]
+	RewriteRule Formacion formacion.php [NC,L]
 	RewriteRule formacion_permanente formacion.php?m=permanente [NC,L]
 	RewriteRule formacion_online formacion.php?m=online [NC,L]
 	RewriteRule formacion_historico formacion.php?m=historico [NC,L]

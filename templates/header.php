@@ -157,7 +157,7 @@
 							<li class="topbar-devider"></li>
 							<li class="cd-log_reg"><a class="cd-signup" href="javascript:void(0);">Registro</a></li>
 							<li class="topbar-devider"></li>
-							<li><a href="contacto">Contacto</a></li>
+							<li><a href="Contacto">Contacto</a></li>
 						<? } ?>
 					
 						
@@ -252,7 +252,7 @@
 
 						<!-- Formación -->
 						<li class="dropdown sindesplegable <?=$formacionactive?>">
-							<a href="formacion" >
+							<a href="Formacion" >
 								Formación
 							</a>
 						</li>

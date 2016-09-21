@@ -18,12 +18,17 @@ session_start();
 $_SESSION['captcha_id'] = $str;
 
 ?>
-
+<!--=== Breadcrumbs ===-->
+<div class="breadcrumbs">
+	<div class="container">
+		<h1 class="pull-left">Contacto</h1>
+	</div>
+</div><!--/breadcrumbs-->
+<!--=== End Breadcrumbs ===-->
 <!--=== Content Part ===-->
 <div class="container content">
 	<div class="row margin-bottom-30">
 		<div class="col-md-12 mb-margin-bottom-30">
-			<div class="headline"><h2>Formulario de contacto</h2></div>
 			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat.</p><br>
 

@@ -10,23 +10,29 @@ $acess_token_secret = "BZVWtKzoM98tfyeO9wOwyrTkdbNB86jMAjfLWHW32FoWx";
 
 $twitter = new TwitterOAuth($consumer_key, $consumer_key_secret, $access_token, $access_token_secret);
 
-getFooterTweets();
-
 function getFooterTweets(){
 	
 	global $twitter;
-	$content = $twitter->get("statuses/user_timeline", ["screen_name" => activatie, "include_rts" => false,"count" => 7 , "exclude_replies" => true ]);
+	$numTweets = 3;
+	$content = $twitter->get("statuses/user_timeline", ["screen_name" => activatie, "include_rts" => false,"count" => 30 , "exclude_replies" => true ]);
 	
 	$i=0;
 	$tweets = "";
+	
 	foreach ($content as $cont){
 		
-		echo $cont->text."<br>";
-		$tweets[$i]=$cont->text;
+		$asda = $cont->created_at."<br>";
+		$tweet["tweet"] = buscarLinkGenerarHTML($cont->text);
+		$tweet["tiempo"] = time_elapsed_string(($cont->created_at));
+		$tweets[$i] = $tweet;
+		$i++;
+		
+		if ($i==$numTweets){
+			break;
+		}
 	}
 	
-	
-	return $content;
+	return $tweets;
 	
 }
 
