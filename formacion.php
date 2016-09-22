@@ -33,11 +33,38 @@ else{
 	$sqlquitar=" AND fecha_publicacion<='NOW()' AND fecha_fin_publicacion>='NOW()' ";
 }
 
-$result=posgre_query("SELECT * FROM curso WHERE borrado=0 AND (estado=1 OR estado=2) $sqlquitar $busqueda ORDER BY fecha_fin_publicacion $asc, fecha_inicio $asc, RANDOM();") ;
+$numCursos = 0;
+$numCursosPermanentes = 0;
+$cadencia = INF;
+$rand = 0;
 
-$i=0;
-while ($row = pg_fetch_array($result)){
+if ($m<>"permanente"){
+	$result=posgre_query("SELECT * FROM curso WHERE modalidad!=3 AND borrado=0 AND (estado=1 OR estado=2) $sqlquitar $busqueda ORDER BY fecha_fin_publicacion $asc, fecha_inicio $asc, RANDOM();") ;
+	$numCursos = pg_num_rows($result);
+}
+
+if ($m<>"online"){
+	$resultPermanentes=posgre_query("SELECT * FROM curso WHERE modalidad=3 AND borrado=0 AND (estado=1 OR estado=2) $sqlquitar $busqueda ORDER BY RANDOM();") ;
+	$numCursosPermanentes = pg_num_rows($resultPermanentes);
+	
+	if ($numCursosPermanentes > 0){
+		$cadencia = ceil($numCursos/$numCursosPermanentes);
+		$rand = rand(0,$cadencia-1);
+	}
+	
+}
+
+$totalCursos = $numCursos + $numCursosPermanentes;
+
+for ($i=0;$i<$totalCursos;$i++){
+	
+	if ((($i % $cadencia)==$rand) && ($row = pg_fetch_array($resultPermanentes))){
 		
+	}
+	else{
+		$row = pg_fetch_array($result);
+	}
+
 	$idcurso = 	$row['id'];
 	$nombre = $row['nombre'];
 	$modalidad = $row['modalidad'];	
@@ -65,7 +92,6 @@ while ($row = pg_fetch_array($result)){
 		$curso['realizacion'] = diasRestantes($fecha_fin_inscripcion);
 	}
 	
-	
 	$resultet=posgre_query("SELECT etiqueta.color, etiqueta.tipo,etiqueta.texto FROM etiqueta,curso_etiqueta WHERE curso_etiqueta.idcurso='$idcurso' AND etiqueta.id=curso_etiqueta.idetiqueta AND etiqueta.borrado=0;") ; 
 	if ($rowet = pg_fetch_array($resultet)){
 		$curso['area'] = $rowet["texto"];
@@ -73,7 +99,6 @@ while ($row = pg_fetch_array($result)){
 	}
 	
 	$cursos[$i] = $curso;
-	$i++;
 }
 
 /** BANNERS **/
@@ -84,8 +109,17 @@ $idbanner = 6;
 $banner2 = getBanner($idbanner);
 /** FIN BANNERS **/
 
+/** BREADSCRUMBS **/
+
+$breadcrumbs = "";
+
+$breadcrumb1["titulo"] = "Formación";
+$breadcrumbs["p1"] = $breadcrumb1;
+
+/** FIN BREADCRUMBS **/
+
 include ($templatepath."header.php");
-$twig->display('formacion.php', array('cursos'=>$cursos, 'banner1'=>$banner1, 'banner2'=>$banner2));
+$twig->display('formacion.php', array('cursos'=>$cursos, 'breadcrumbs'=>$breadcrumbs,'banner1'=>$banner1, 'banner2'=>$banner2));
 include ($templatepath."footer.php");
 
 

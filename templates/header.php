@@ -182,14 +182,7 @@
 			<div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
 				<div class="container">
 					<ul class="nav navbar-nav">
-						<!-- Home -->
-						<li class="dropdown sindesplegable <?=$portadaactive?>">
-							<a href="portada" >
-								Portada
-							</a>
-						</li>
-						<!-- End Home -->
-
+						
 						<!-- Actividad -->
 						<li class="dropdown mega-menu-fullwidth">
 							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
@@ -257,10 +250,10 @@
 						</li>
 						<!-- End Formación -->
 
-						<!-- Productos -->
+						<!-- Materiales -->
 						<li class="dropdown mega-menu-fullwidth">
 							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-								Productos
+								Materiales
 							</a>
 							<ul class="dropdown-menu">
 								<li>
@@ -300,137 +293,7 @@
 								</li>
 							</ul>
 						</li>
-						<!-- End Productos -->
-						<!-- Productos2 -->
-						<!--
-						<li class="dropdown active">
-							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-								Productos2
-							</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Aislamiento</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_about2.html">Aislamiento térmico </a></li>
-										<li><a href="page_about3.html">Aislamiento acústico aéreo </a></li>
-										<li><a href="page_about1.html">Aislamiento acústico ruido de impacto </a></li>
-										<li><a href="page_about.html">Aislamiento ecológico </a></li>
-										<li><a href="page_about_me.html">Insonorización de espacios </a></li>
-										<li><a href="page_about_me1.html">Pequeñas soluciones de aislamiento </a></li>
-										<li><a href="page_about_me2.html">Accesorios de montaje para aislamiento </a></li>
-									</ul>
-								</li>
-								
-								<li><a href="page_invoice.html">Bloques de vidrio</a></li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-										Cementos, morteros y yesos
-									</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_contact1.html">Contacts Default</a></li>
-										<li><a href="page_contact2.html">Contacts Option 1</a></li>
-										<li><a href="page_contact3.html">Contacts Option 2</a></li>
-										<li><a href="page_contact4.html">Contacts Option 3</a></li>
-										<li><a href="page_contact_advanced.php">Contacts Advanced</a></li>
-									</ul>
-								</li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Circulación y accesos</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_profile.html">Profile Main Page</a></li>
-										<li><a href="page_profile_me.html">Profile Overview</a></li>
-										<li><a href="page_profile_users.html">Profile Users</a></li>
-										<li><a href="page_profile_projects.html">Profile Projects</a></li>
-										<li><a href="page_profile_comments.html">Profile Comments</a></li>
-										<li><a href="page_profile_history.html">Profile History</a></li>
-										<li><a href="page_profile_settings.html">Profile Settings</a></li>
-									</ul>
-								</li>
-
-								<li><a href="page_invoice.html">Cubiertas y tejados</a></li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Estructuras</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_jobs.html">Jobs Main Page</a></li>
-										<li><a href="page_jobs1.html">Jobs Main Page 1</a></li>
-										<li><a href="page_jobs_inner.html">Jobs Description Default</a></li>
-										<li><a href="page_jobs_inner1.html">Jobs Description Basic</a></li>
-										<li><a href="page_jobs_inner2.html">Jobs Description Min</a></li>
-									</ul>
-								</li>
-								
-								<li><a href="page_invoice.html">Gravas y áridos</a></li>
-								<li><a href="page_invoice.html">Herramientas para construcción</a></li>
-								
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Iluminación</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_pricing_colorful.html">Colorful Pricing Tables</a></li>
-										<li><a href="page_pricing_flat.html">Flat Pricing Tables</a></li>
-										<li><a href="page_pricing_light.html">Light Pricing Tables</a></li>
-										<li><a href="page_pricing_mega.html">Mega Pricing Tables</a></li>
-										<li><a href="page_pricing.html">Default Pricing Tables</a></li>
-									</ul>
-								</li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Impermeabilización</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_registration.html">Registration Page</a></li>
-										<li><a href="page_login.html">Login Page</a></li>
-										<li><a href="page_registration1.html">Registration Option</a></li>
-										<li><a href="page_login1.html">Login Option</a></li>
-										<li><a href="page_login_and_registration.html">Login/Registration Option</a></li>
-										<li><a href="page_registration2.html">Registration Option 2</a></li>
-										<li><a href="page_login2.html">Login Option 2 </a></li>
-									</ul>
-								</li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Instalaciones</a>
-									<ul class="dropdown-menu">
-										<li><a href="page_faq1.html">FAQs Page</a></li>
-										<li><a href="page_faq.html">FAQs Basic</a></li>
-									</ul>
-								</li>
-
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Particiones y elementos de división espacial</a>
-									<ul class="dropdown-menu">
-										<li class="dropdown-submenu">
-											<a href="javascript:void(0);">Email Corporate</a>
-											<ul class="dropdown-menu">
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_aqua.html">Corporate Aqua Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_blue.html">Corporate Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/corporate/email_corporate_brown.html">Corporate Brown Color</a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu">
-											<a href="javascript:void(0);">Email Flat</a>
-											<ul class="dropdown-menu">
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_aqua.html">Flat Aqua Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_blue.html">Flat Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/flat/email_flat_brown.html">Flat Brown Color</a></li>
-											</ul>
-										</li>
-										<li class="dropdown-submenu">
-											<a href="javascript:void(0);">Email Modern</a>
-											<ul class="dropdown-menu">
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_aqua.html">Modern Aqua Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_blue.html">Modern Blue Color</a></li>
-												<li><a target="_blank" href="Email-Templates/modern/email_modern_brown.html">Modern Brown Color</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-
-							</ul>
-						</li>
-					-->
-						<!-- End Productos2 -->
+						<!-- End Materiales -->
 						
 						<!-- Profesionales -->
 						<li class="dropdown">
@@ -568,6 +431,14 @@
 						</li>
 						<!-- End Trabajo -->
 
+						<!-- APPs -->
+						<li class="dropdown sindesplegable <?=$appsactive?>">
+							<a href="Apps" >
+								APPs
+							</a>
+						</li>
+						<!-- End APPs -->
+						
 						<!-- Search Block -->
 						<!--
 						<li>

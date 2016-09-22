@@ -106,6 +106,7 @@ function generarFactura($idusuario, $tipo, $idgenerica, $rectificativa, $tipopag
 		$result3 = posgre_query($sql3);
 		if ($row3 = pg_fetch_array($result3)){
 			$idempresa = $row3['idempresa'];
+			$idusuariofisico = 0;
 			if (($idempresa!="")&&($idempresa>0)){
 				$idusuariofisico = $idusuario;
 				$idusuario = $idempresa;

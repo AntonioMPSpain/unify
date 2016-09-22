@@ -14,9 +14,9 @@ if ($salir==true){
 		include ($templatepath."slider.php");
 ?>
 
-		
-
-		<!--=== Slider ===-->
+	
+		<!--=== Slider ===-->	
+<!--
 		<div class="slider-inner">
 			<div id="da-slider" class="da-slider">
 				<div class="da-slide">
@@ -41,9 +41,10 @@ if ($salir==true){
 					<span class="da-arrows-next"></span>
 				</div>
 			</div>
-		</div><!--/slider-->
+		</div>
+-->
+		<!--/slider-->
 		<!--=== End Slider ===-->
-
 		
 		<!--=== Content ===-->
 		<div class="container content-md">
