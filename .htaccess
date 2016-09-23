@@ -17,8 +17,8 @@
 	RewriteRule AvisoLegal avisolegal.php [NC,L]
 	RewriteRule PoliticaVenta politicaventa.php [NC,L]
 	RewriteRule Formacion formacion.php [NC,L]
-	RewriteRule formacion_permanente formacion.php?m=permanente [NC,L]
-	RewriteRule formacion_online formacion.php?m=online [NC,L]
+	RewriteRule formacion/permanente formacion.php?m=permanente [NC,L]
+	RewriteRule formacion/online formacion.php?m=online [NC,L]
 	RewriteRule formacion_historico formacion.php?m=historico [NC,L]
 	
 	ErrorDocument 403 /web/404.php 

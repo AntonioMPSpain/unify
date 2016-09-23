@@ -20,6 +20,9 @@
 		elseif (contieneUri("formacion") !== false){
 			$formacionactive=" active ";
 			$title = "Formación | ".$title;
+		}	
+		elseif (contieneUri("contacto") !== false){ 
+			$title = "Contacto | ".$title;
 		}			
 		elseif (contieneUri("perfil") !== false){
 			$title = "Perfil | ".$title;
@@ -64,7 +67,6 @@
 	<link rel="stylesheet" href="assets/plugins/animate.css">
 	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
 	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/parallax-slider/css/parallax-slider.css">
 	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
 	<link rel="stylesheet" href="assets/plugins/login-signup-modal-window/css/style.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">

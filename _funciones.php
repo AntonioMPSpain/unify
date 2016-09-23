@@ -44,15 +44,6 @@ function buscarLinkGenerarHTML($texto){
 	return $texto;
 }
 
-function calcularHorasOdiasHastaAhora($time){
-				
-			
-		
-					
-	return date("Y-m-d", $time);			
-	
-}
-
 function time_elapsed_string($datetime, $full = false) {
     $now = new DateTime;
     $ago = new DateTime($datetime);

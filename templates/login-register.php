@@ -71,7 +71,7 @@
 
 				<p class="fieldset">
 					<input type="checkbox" id="accept-terms">
-					<label for="accept-terms">Acepto las <a href="page_terms.html">condiciones de servicio</a></label>
+					<label for="accept-terms">Acepto las <a href="AvisoLegal">condiciones de servicio</a></label>
 				</p>
 
 				<p class="fieldset">

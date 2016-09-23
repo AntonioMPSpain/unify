@@ -1,14 +1,5 @@
-<!--=== Breadcrumbs ===-->
-<div class="breadcrumbs">
-	<div class="container">
-		<h1 class="pull-left">Terms of Service</h1>
-		<ul class="pull-right breadcrumb">
-			
-			
-		</ul>
-	</div>
-</div><!--/breadcrumbs-->
-<!--=== End Breadcrumbs ===-->
+
+{% include 'breadcrumbs.php' %}
 
 <!--=== Content Part ===-->
 <div class="container content">

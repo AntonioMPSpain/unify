@@ -1,76 +1,44 @@
-<?php
 
-// Make the page validate
-ini_set('session.use_trans_sid', '0');
+{% include 'breadcrumbs.php' %}
 
-// Create a random string, leaving out 'o' to avoid confusion with '0'
-$char = strtoupper(substr(str_shuffle('abcdefghjkmnpqrstuvwxyz'), 0, 4));
-
-// Concatenate the random string onto the random numbers
-// The font 'Anorexia' doesn't have a character for '8', so the numbers will only go up to 7
-// '0' is left out to avoid confusion with 'O'
-$str = rand(1, 7) . rand(1, 7) . $char;
-
-// Begin the session
-session_start();
-
-// Set the session contents
-$_SESSION['captcha_id'] = $str;
-
-?>
-<!--=== Breadcrumbs ===-->
-<div class="breadcrumbs">
-	<div class="container">
-		<h1 class="pull-left">Contacto</h1>
-	</div>
-</div><!--/breadcrumbs-->
-<!--=== End Breadcrumbs ===-->
 <!--=== Content Part ===-->
 <div class="container content">
 	<div class="row margin-bottom-30">
 		<div class="col-md-12 mb-margin-bottom-30">
-			<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat. Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet, consectetur adipiscing elit landitiis.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non libero magna. Sed et quam lacus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas feugiat.</p><br>
-
+					
 			<form action="assets/php/sky-forms-pro/demo-contacts-process.php" method="post" id="sky-form3" class="sky-form sky-changes-3">
 				<fieldset>
+					
+					<!--Tag Box v2-->
+					<div class="tag-box tag-box-v2 margin-bottom-40">
+						<p>Para efectuar la consulta, <strong>seleccione en el desplegable su colegio</strong>, y si no pertenece a estos colegios, seleccione activatie.</p>
+					</div>
+					<!--End Tag Box v2-->
+					
+					<section>
+						<label class="label">Colegio</label> 
+						<label class="select">
+							<i class="icon-append fa"></i>
+							<select name="colegio" data-width="100%">
+							    {% for colegio in colegios %}
+							        <option value="{{ colegio.id }}">{{ colegio.nombre }}</option>
+							    {% endfor %}
+							</select>	
+						</label>
+					</section>
 					<div class="row">
-						<section class="col col-12">
-							<label class="label">Colegio</label>
-							<label class="input">
-								<i class="icon-append fa"></i>
-								<select name="colegio" id="colegio">
-									<option value="0">Choose name</option>
-									
-								</select>	
-							</label>
-						</section>
 						<section class="col col-6">
-							<label class="label">Nombre</label>
+							<label class="label">Nombre y apellidos</label>
 							<label class="input">
-								<i class="icon-append fa fa-user"></i>
+								<i class="icon-prepend fa fa-user"></i>
 								<input type="text" name="name" id="name">
-							</label>
-						</section>
-						<section class="col col-6">
-							<label class="label">Apellidos</label>
-							<label class="input">
-								<i class="icon-append fa fa-user"></i>
-								<input type="text" name="surname" id="surname">
 							</label>
 						</section>
 						<section class="col col-6">
 							<label class="label">E-mail</label>
 							<label class="input">
-								<i class="icon-append fa fa-envelope-o"></i>
+								<i class="icon-prepend fa fa-envelope-o"></i>
 								<input type="email" name="email" id="email">
-							</label>
-						</section>
-						<section class="col col-6">
-							<label class="label">Teléfono</label>
-							<label class="input">
-								<i class="icon-append fa fa-phone"></i>
-								<input type="email" name="phone" id="phone">
 							</label>
 						</section>
 					</div>
@@ -78,7 +46,6 @@ $_SESSION['captcha_id'] = $str;
 					<section>
 						<label class="label">Mensaje</label>
 						<label class="textarea">
-							<i class="icon-append fa fa-comment"></i>
 							<textarea rows="4" name="message" id="message"></textarea>
 						</label>
 					</section>
@@ -91,14 +58,10 @@ $_SESSION['captcha_id'] = $str;
 						</label>
 					</section>
 
-					<section>
-						<label class="checkbox"><input type="checkbox" name="copy"><i></i>Enviar copia a mi dirección de e-mail</label>
-					</section>
+					<button type="submit" class="btn-u pull-right">Enviar</button>
+					
 				</fieldset>
 
-				<footer>
-					<button type="submit" class="btn-u">Enviar</button>
-				</footer>
 
 				<div class="message">
 					<i class="rounded-x fa fa-check"></i>
@@ -111,5 +74,4 @@ $_SESSION['captcha_id'] = $str;
 	</div><!--/row-->
 </div><!--/container-->
 <!--=== End Content Part ===-->
-
 	
