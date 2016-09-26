@@ -36,6 +36,24 @@ function getColegios($orderby="nombre"){
 	
 }
 
+function getModalidadTexto($modalidad){
+		
+	if ($modalidad==0){ 
+		$modalidadtexto="On-line";
+	}
+	if ($modalidad==1){
+		$modalidadtexto="Presencial";
+	}
+	if ($modalidad==2){
+		$modalidadtexto="Presencial y On-line";
+	}
+	if ($modalidad==3){
+		$modalidadtexto="Permanente";
+	}
+	
+	return $modalidadtexto;
+}
+
 
 
 

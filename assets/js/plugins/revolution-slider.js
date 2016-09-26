@@ -8,11 +8,11 @@ var RevolutionSlider = function () {
 	        jQuery(document).ready(function() {
 	            revapi = jQuery('.tp-banner').revolution(
 	            {
-	                delay:9000,
+	                delay:7000,
 	                startwidth:1170,
-	                startheight:500,
+	                startheight:400,
 	                hideThumbs:10,
-									navigationStyle:"preview4"
+					navigationStyle:"preview5"
 	            });
 	        });
         },

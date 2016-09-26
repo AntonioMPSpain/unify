@@ -68,13 +68,16 @@
 	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
 	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	
+	<script src="assets/plugins/master-slider/masterslider/masterslider.js"></script>
+	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+	<script src="assets/js/plugins/master-slider-showcase2.js"></script>
+	
 	<!-- JS Customization -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	<!-- JS Page Level -->
 	<script type="text/javascript" src="assets/js/app.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/parallax-slider.js"></script>
 	<script type="text/javascript" src="assets/js/forms/reg.js"></script>
 	<script type="text/javascript" src="assets/js/forms/checkout.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
@@ -83,6 +86,7 @@
 			App.init();
 			OwlCarousel.initOwlCarousel();
 			RevolutionSlider.initRSfullWidth();
+			MasterSliderShowcase2.initMasterSliderShowcase2();
 		});
 	</script>
 	<!--[if lt IE 9]>

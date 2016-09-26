@@ -36,7 +36,9 @@ $year = date("Y");
 
 
 
+/** Colores **/
 
+$coloractivatie = "#e74c3c";
 
 
 ?>

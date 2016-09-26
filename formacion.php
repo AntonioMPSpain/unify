@@ -1,23 +1,5 @@
 ﻿<? 
 
-function getModalidadTexto($modalidad){
-		
-	if ($modalidad==0){ 
-		$modalidadtexto="On-line";
-	}
-	if ($modalidad==1){
-		$modalidadtexto="Presencial";
-	}
-	if ($modalidad==2){
-		$modalidadtexto="Presencial y On-line";
-	}
-	if ($modalidad==3){
-		$modalidadtexto="Permanente";
-	}
-	
-	return $modalidadtexto;
-}
-
 include_once "_config.php";
 
 $accion=($_REQUEST['accion']); 
@@ -74,6 +56,7 @@ for ($i=0;$i<$totalCursos;$i++){
 	$fecha_fin_inscripcion=$row["fecha_fin_publicacion"];	
 	$modalidadtexto = getModalidadTexto($modalidad);
 	$plazopermanente = $row["plazopermanente"];
+	
 	$curso = "";
 	
 	$curso['id'] = $idcurso;
@@ -82,6 +65,7 @@ for ($i=0;$i<$totalCursos;$i++){
 	$curso['privado'] = $privado;
 	$curso['modalidadtexto'] = $modalidadtexto;
 	$curso['imagen'] = $imgcursosbackendpath.$imagen;
+	$curso['link'] = "curso.php";
 	
 	if ($modalidad==3){
 		$curso['fecha_inicio'] = "Inmediato";

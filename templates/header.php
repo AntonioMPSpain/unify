@@ -58,6 +58,7 @@
 	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="assets/css/blog.style.css">
 
 	<!-- CSS Header and Footer -->
 	<link rel="stylesheet" href="assets/css/headers/header-default.css">
@@ -72,6 +73,8 @@
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
 	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
 	<link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/skins/default/style.css">
 	
 	<!-- CSS Page Style -->
 	<link rel="stylesheet" href="assets/css/pages/profile.css">
