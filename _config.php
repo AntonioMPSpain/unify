@@ -10,7 +10,7 @@ $wwwpath = "/var/www/".$path;
 $templatepath = "templates/";
 $backendpath = "backend/";
 $moodlepath = "../moodle/";
-$actividadpath = "../actividad/";
+$actividadpath = "actividad/";
 $rsspath = "rss/";
 
 

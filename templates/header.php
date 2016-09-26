@@ -57,8 +57,9 @@
 
 	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+ 	<link rel="stylesheet" href="assets/css/shop.style.css">
 	<link rel="stylesheet" href="assets/css/blog.style.css">
+	<link rel="stylesheet" href="assets/css/style.css">
 
 	<!-- CSS Header and Footer -->
 	<link rel="stylesheet" href="assets/css/headers/header-default.css">

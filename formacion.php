@@ -85,6 +85,13 @@ for ($i=0;$i<$totalCursos;$i++){
 	$cursos[$i] = $curso;
 }
 
+/** CATEGORÍAS **/
+
+$etiquetas = getCategorias();
+
+/** FIN CATEGORÍAS **/
+
+
 /** BANNERS **/
 include_once($backendpath."p_funciones.php"); 
 $idbanner = 4;
@@ -103,7 +110,7 @@ $breadcrumbs["p1"] = $breadcrumb1;
 /** FIN BREADCRUMBS **/
 
 include ($templatepath."header.php");
-$twig->display('formacion.php', array('cursos'=>$cursos, 'breadcrumbs'=>$breadcrumbs,'banner1'=>$banner1, 'banner2'=>$banner2));
+$twig->display('formacion.php', array('cursos'=>$cursos, 'etiquetas'=>$etiquetas ,'breadcrumbs'=>$breadcrumbs,'banner1'=>$banner1, 'banner2'=>$banner2));
 include ($templatepath."footer.php");
 
 

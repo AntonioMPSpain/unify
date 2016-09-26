@@ -25,7 +25,7 @@ include ("index-formacion.php");
 
 <!--=== Content ===-->
 <div class="container">
-	<div class="margin-bottom-20 margin-top-20 col-md-offset-1"><?=$banner2?></div>
+	<div class="margin-bottom-20 margin-top-20 col-md-offset-2"><?=$banner2?></div>
 </div>
 <!--=== End Content ===-->
 

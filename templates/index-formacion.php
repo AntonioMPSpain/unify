@@ -4,8 +4,8 @@
 		
 		{% for curso in cursos %}
 			<div class="ms-slide blog-slider">
-				<a href=" {{ curso.link}} " ></a><img src="assets/plugins/master-slider/masterslider/style/blank.gif" data-src="{{ curso.imagen }}" alt=" {{ curso.nombre }} "/></a>
-				<span style="opacity:0.8; background-color: {{ curso.color }} ;" class="blog-slider-badge">{{ curso.area }}</span>
+				<img src="assets/plugins/master-slider/masterslider/style/blank.gif" data-src="{{ curso.imagen }}" alt=" {{ curso.nombre }} "/>
+				{% if curso.area!="" %} <span style="opacity:0.8; background-color: {{ curso.color }} ;" class="blog-slider-badge">{{ curso.area }}</span> {% endif %}
 				<div class="ms-info"></div>
 				<div style="opacity:0.8; background-color: {{ curso.color }} ;" class="blog-slider-title">
 					

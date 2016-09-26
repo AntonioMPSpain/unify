@@ -81,12 +81,14 @@
 	<script type="text/javascript" src="assets/js/forms/reg.js"></script>
 	<script type="text/javascript" src="assets/js/forms/checkout.js"></script>
 	<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
+	<script type="text/javascript" src="assets/js/plugins/form-sliders.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			App.init();
 			OwlCarousel.initOwlCarousel();
 			RevolutionSlider.initRSfullWidth();
 			MasterSliderShowcase2.initMasterSliderShowcase2();
+			FormSliders.initFormSliders();
 		});
 	</script>
 	<!--[if lt IE 9]>
