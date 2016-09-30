@@ -53,6 +53,9 @@ function getNinforme(){
 
 
 
+
+
+
 if ($accion=="guardar"){
 		
 	$detectadapor=($_POST['detectadapor']);
@@ -133,6 +136,94 @@ if (($idcurso<>"")&&($idcurso<>0)){
 	$nombrecurso = $row['nombre'];
 }
 
+
+if ($correctora==0){
+	$correctoratexto = "Si";
+}
+else{
+	$correctoratexto= "No";
+}
+
+if ($preventiva==0){
+	$preventivatexto = "Si";
+}
+else{
+	$preventivatexto= "No";
+}
+
+if ($revision==0){
+	$revisiontexto = "Abierta";
+}
+else{
+	$revisiontexto= "Cerrada";
+}
+
+
+if ($id>0){
+	if (isset($_REQUEST['xls'])){
+		
+		require_once dirname(__FILE__) . '/../librerias/PHPExcel/Classes/PHPExcel.php';
+		
+		$objPHPExcel = new PHPExcel();
+		$objPHPExcel->setActiveSheetIndex(0);
+				
+		$objPHPExcel->getActiveSheet()->SetCellValue('A1', "Nº Informe");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A2', "Curso");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A3', "Detectada por");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A4', "Fecha de detección");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A5', "Área trabajo");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A6', "Descripción y / o Investigación completa de la incidencia (Análisis de causas)");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A7', "Solución inmediata y su seguimiento");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A8', "Acción correctora");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A9', "Acción preventiva");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A10', "Responsable de llevarla a cabo");
+		$objPHPExcel->getActiveSheet()->SetCellValue('A11', "Revisión de cierre");
+		
+		$objPHPExcel->getActiveSheet()->getColumnDimension('A')->setWidth(68);
+			
+		$objPHPExcel->getActiveSheet()->SetCellValue('B1', $ninforme);
+		
+		$objPHPExcel->getActiveSheet()->getStyle('B1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_LEFT);
+	
+		$objPHPExcel->getActiveSheet()->SetCellValue('B2', $nombrecurso);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B3', $detectadapor);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B4', cambiaf_a_normal($fecha));
+		$objPHPExcel->getActiveSheet()->SetCellValue('B5', $area);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B6', $analisis);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B7', $solucion);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B8', $correctoratexto);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B9', $preventivatexto);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B10', $responsable);
+		$objPHPExcel->getActiveSheet()->SetCellValue('B11', $revisiontexto);
+		
+		$objPHPExcel->getActiveSheet()->getColumnDimension('B')->setWidth(300);
+		
+		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
+		$nombre = "sc_noconformidad-".$id."-".time();
+		$objWriter->save('./files/'.$nombre.'.xls');
+		
+		$path = './files/'.$nombre.'.xls';
+		ob_clean();
+		header("Content-Description: File Transfer");
+		header("Content-Type: application/octet-stream");
+		header('Content-Disposition: attachment; filename="'.basename($path).'"');
+		header("Content-Transfer-Encoding: binary");
+		header('Expires: 0');
+		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+		header('Pragma: public');
+		header("Content-Type: application/force-download");
+		header("Content-Type: application/download");
+		header("Content-Length: ".filesize($path));
+		readfile($path);
+		
+
+		
+	}
+}
+
+
+
+
 include("plantillaweb01admin.php");
 
 ?>
@@ -151,6 +242,7 @@ include("plantillaweb01admin.php");
 		<div class="bloque-lateral acciones">		
 			<p>
 				<a href="sc_noconformidades.php" class="btn btn-success" type="button">Volver</a>
+				<a href="sc_noconformidad.php?xls&id=<?=$id?>" class="btn btn-success" type="button">Descargar excel</a>
 			</p>
 		</div>
 		<br>

@@ -11,7 +11,7 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	
-	RewriteRule ^(?!web/)[^/]+/((?:assets|img|backend)/.+)$ /web/$1 [NC,R]
+	# RewriteRule ^(?!web/)[^/]+/((?:assets|img|backend)/.+)$ /web/$1 [NC,R]
 	
 	RewriteRule Portada index.php [NC,L]
 	RewriteRule Perfil perfil.php [NC,L]
@@ -22,6 +22,11 @@
 	RewriteRule Formacion\/online formacion.php?m=online [NC,L]
 	RewriteRule Formacion_historico formacion.php?m=historico [NC,L]
 	RewriteRule Formacion formacion.php [NC,L]
+	
+	
+	
+	
+	RewriteRule ^Materiales materiales.php [NC,L]
 	
 	ErrorDocument 403 /web/404.php 
 	ErrorDocument 404 /web/404.php 

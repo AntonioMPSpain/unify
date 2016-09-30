@@ -18,6 +18,7 @@ $imgpath = "img/";
 $imglogospath = $imgpath."logos/";
 $imgcursospath = $imgpath."cursos/";
 $imgbannerspath = $imgpath."banners/";
+$imgmaterialespath = $imgpath."materiales/";
 $imgcursosbackendpath = $backendpath."imagen/";
 
 

@@ -189,10 +189,10 @@
 				<div class="container">
 					<ul class="nav navbar-nav">
 						
-						<!-- Actividad -->
+						<!-- Ahora -->
 						<li class="dropdown mega-menu-fullwidth">
 							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-								Actividad
+								Ahora
 							</a>
 							<ul class="dropdown-menu">
 								<li>
@@ -246,7 +246,7 @@
 								</li>
 							</ul>
 						</li>
-						<!-- End Actividad -->
+						<!-- End Ahora -->
 
 						<!-- Formación -->
 						<li class="dropdown sindesplegable <?=$formacionactive?>">
@@ -268,6 +268,7 @@
 											<div class="row equal-height">
 												<div class="col-md-4 equal-height-in">
 													<ul class="list-unstyled equal-height-list">
+														<li><a href="Materiales">Todos las categorías</a></li>
 														<li><a href="One-Pages/Travel/index.html">Aislamiento</a></li>
 														<li><a href="One-Pages/RealEstate/index.html">Bloques de vidrio <small class="color-red">New</small></a></li>
 						                				<li><a href="One-Pages/Courses/index.html">Cementos, morteros y yesos</a></li>
@@ -307,133 +308,30 @@
 								Profesionales
 							</a>
 							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Blog Large Image</a>
-									<ul class="dropdown-menu">
-										<li><a href="blog_large_right_sidebar1.html">Right Sidebar</a></li>
-										<li><a href="blog_large_left_sidebar1.html">Left Sidebar</a></li>
-										<li><a href="blog_large_full_width1.html">Full Width</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Blog Medium Image</a>
-									<ul class="dropdown-menu">
-										<li><a href="blog_medium_right_sidebar1.html">Right Sidebar</a></li>
-										<li><a href="blog_medium_left_sidebar1.html">Left Sidebar</a></li>
-										<li><a href="blog_medium_full_width1.html">Full Width</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Blog Item Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="blog_large_right_sidebar_item1.html">Right Sidebar Item</a></li>
-										<li><a href="blog_large_left_sidebar_item1.html">Left Sidebar Item</a></li>
-										<li><a href="blog_large_full_width_item1.html">Full Width Item</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Blog Simple Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="blog_large_right_sidebar.html">Right Sidebar Large</a></li>
-										<li><a href="blog_medium_right_sidebar.html">Right Sidebar Medium</a></li>
-										<li><a href="blog_large_full_width.html">Full Width</a></li>
-										<li><a href="blog_large_right_sidebar_item.html">Right Sidebar Item</a></li>
-										<li><a href="blog_large_full_width_item.html">Full Width Item</a></li>
-									</ul>
-								</li>
-								<li><a href="blog_masonry_3col.html">Masonry Grid Blog</a></li>
-								<li><a href="blog_timeline.html">Blog Timeline</a></li>
+								
+								<li><a href="blog_masonry_3col.html">Arquitectos técnicos</a></li>
+								<li><a href="blog_timeline.html">Empresas</a></li>
 							</ul>
 						</li>
 						<!-- End Profesionales -->
 
 						<!-- Publicaciones -->
-						<li class="dropdown">
-							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
+						<li class="dropdown sindesplegable">
+							<a href="publicaciones" >
 								Publicaciones
 							</a>
-							<ul class="dropdown-menu">
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">No Space Boxed</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_grid_no_space.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_grid_no_space.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_grid_no_space.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Grid Boxed</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_grid.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_grid.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_grid.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Grid Text Boxed</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_grid_text.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_grid_text.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_grid_text.html">4 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">No Space Full Width</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_fullwidth_no_space.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_fullwidth_no_space.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_fullwidth_no_space.html">4 Columns</a></li>
-										<li><a href="portfolio_5_columns_fullwidth_no_space.html">5 Columns</a></li>
-										<li><a href="portfolio_6_columns_fullwidth_no_space.html">6 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Grid Full Width</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_fullwidth.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_fullwidth.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_fullwidth.html">4 Columns</a></li>
-										<li><a href="portfolio_5_columns_fullwidth.html">5 Columns</a></li>
-										<li><a href="portfolio_6_columns_fullwidth.html">6 Columns</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Grid Text Full Width</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_2_columns_fullwidth_text.html">2 Columns</a></li>
-										<li><a href="portfolio_3_columns_fullwidth_text.html">3 Columns</a></li>
-										<li><a href="portfolio_4_columns_fullwidth_text.html">4 Columns</a></li>
-										<li><a href="portfolio_5_columns_fullwidth_text.html">5 Columns</a></li>
-										<li><a href="portfolio_6_columns_fullwidth_text.html">6 Columns</a></li>
-									</ul>
-								</li>
-								<li><a href="portfolio_hover_colors.html">Portfolio Hover Colors</a></li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Portfolio Items</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_single_item.html">Single Item</a></li>
-										<li><a href="portfolio_old_item.html">Basic Item 1</a></li>
-										<li><a href="portfolio_old_item1.html">Basic Item 2</a></li>
-									</ul>
-								</li>
-								<li class="dropdown-submenu">
-									<a href="javascript:void(0);">Portfolio Basic Pages</a>
-									<ul class="dropdown-menu">
-										<li><a href="portfolio_old_text_blocks.html">Basic Grid Text</a></li>
-										<li><a href="portfolio_old_2_column.html">Basic 2 Columns</a></li>
-										<li><a href="portfolio_old_3_column.html">Basic 3 Columns</a></li>
-										<li><a href="portfolio_old_4_column.html">Basic 4 Columns</a></li>
-									</ul>
-								</li>
-							</ul>
 						</li>
 						<!-- End Publicaciones -->
 
 						<!-- Trabajo -->
-						<li class="dropdown sindesplegable">
-							<a href="portada" >
+						<li class="dropdown">
+							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
 								Trabajo
 							</a>
+							<ul class="dropdown-menu">
+								<li><a href="ofertas">Ofertas</a></li>
+								<li><a href="tutorias">Tutorías profesionales</a></li>
+							</ul>
 						</li>
 						<!-- End Trabajo -->
 

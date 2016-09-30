@@ -5052,8 +5052,8 @@
 /*Owl Clients v2
 ------------------------------------*/
 .owl-clients-v1 img {
-  width: 120px;
-  height: auto;
+    max-width: 100%;
+    height: 100px;
 }
 
 .owl-clients-v1 .owl-pagination {

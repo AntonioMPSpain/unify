@@ -58,7 +58,7 @@ function do_tabs($tab_name, $tab_selected = false, $extra_tab = false) {
 function do_header($title, $id='home', $options = false) {
 	
 	global $current_user, $dblang, $globals, $db;
-
+	
 	header('Content-Type: text/html; charset=utf-8');
 
 	// Security headers
@@ -144,6 +144,11 @@ function do_header($title, $id='home', $options = false) {
 	}
 
 	$vars = compact('title', 'greeting', 'id', 'left_options', 'right_options', 'sites', 'this_site', 'this_site_properties');
+	
+	
+	//include ("../_config.php");
+	//include ("../templates/header.php");
+	
 	return Haanga::Load('header.html', $vars);
 }
 
@@ -163,7 +168,9 @@ function do_js_from_array($array) {
 }
 
 function do_footer($credits = true) {
-	return Haanga::Load('footer.html');
+	include_once ("../_config.php");
+	include ("../templates/footer.php");
+	//return Haanga::Load('footer.html');
 }
 
 function do_footer_menu() {

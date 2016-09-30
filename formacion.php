@@ -115,7 +115,7 @@ include ($templatepath."footer.php");
 
 
 
-
+/*
 	
 		
 		if (($accion=="buscar")&&($texto<>"")){
@@ -239,7 +239,6 @@ include ($templatepath."footer.php");
 			}
 			
 			
-			/* include ("_cortaparrafo.php"); */
 			$enlace=substr($row["nombre"],0,strrpos(substr($row["nombre"],0,$cantidadCaracteres)," "));
 			$descri=substr($presentacion,0,strrpos(substr($presentacion,0,$cantidadCaracteres2)," "))." ";
 	
@@ -254,5 +253,5 @@ include ($templatepath."footer.php");
 			
 		} //fin del while
 		
-
-		
+*/
+?>		
