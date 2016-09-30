@@ -46,6 +46,25 @@ function getCategorias($orderby="texto"){
 	
 }
 
+function getFamilias($orderby="nombre"){
+	
+	$familias = "";
+	
+	$i = 0;
+		
+	$result=posgre_query("SELECT * FROM materiales_familias WHERE borrado=0 ORDER BY ".$orderby) ; 
+	while($row= pg_fetch_array($result)) {
+		$familia['id'] = $row["id"];
+		$familia['texto'] = $row["texto"];
+		$familias[$i] = $familia;
+		
+		$i++;
+	} 
+	
+	return $familias;
+	
+}
+
 function getModalidadTexto($modalidad){
 		
 	if ($modalidad==0){ 
