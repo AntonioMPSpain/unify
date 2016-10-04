@@ -145,6 +145,7 @@
 							
 							<li class="hoverSelector">
 								<i class="fa fa-bell-o"></i>
+								<span class="badge badge-red rounded">2</span>
 							</li>
 							
 							<li class="topbar-devider"></li>
@@ -310,15 +311,10 @@
 						<!-- End Materiales -->
 						
 						<!-- Profesionales -->
-						<li class="dropdown">
-							<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown">
-								Profesionales
+						<li class="dropdown sindesplegable">
+							<a href="profesionales" >
+								Arquitectos técnicos
 							</a>
-							<ul class="dropdown-menu">
-								
-								<li><a href="blog_masonry_3col.html">Arquitectos técnicos</a></li>
-								<li><a href="blog_timeline.html">Empresas</a></li>
-							</ul>
 						</li>
 						<!-- End Profesionales -->
 

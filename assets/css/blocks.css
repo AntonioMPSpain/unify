@@ -5052,8 +5052,10 @@
 /*Owl Clients v2
 ------------------------------------*/
 .owl-clients-v1 img {
+    margin:auto;
     max-width: 100%;
     height: 100px;
+    display:block;
 }
 
 .owl-clients-v1 .owl-pagination {

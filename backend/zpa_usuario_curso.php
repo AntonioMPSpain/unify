@@ -179,8 +179,8 @@ if (isset($_REQUEST['datos'])){
 	$objPHPExcel->getActiveSheet()->SetCellValue('B1', "NOMBRE");
 	$objPHPExcel->getActiveSheet()->SetCellValue('C1', "APELLIDOS");
 	$objPHPExcel->getActiveSheet()->SetCellValue('D1', "EMAIL");
-	$objPHPExcel->getActiveSheet()->SetCellValue('E1', "TELÉFONO");
-	$objPHPExcel->getActiveSheet()->SetCellValue('F1', "TELÉFONO 2");
+	$objPHPExcel->getActiveSheet()->SetCellValue('E1', "MÓVIL");
+	$objPHPExcel->getActiveSheet()->SetCellValue('F1', "COLEGIO");
 	
 	$rowCount = 2;
 	$result = posgre_query($sql);
@@ -192,13 +192,21 @@ if (isset($_REQUEST['datos'])){
 		$email = $row['email'];
 		$telefono = $row['telefono'];
 		$telefono2 = $row['telefono2'];
+		$idcolegio = $row['idcolegio'];
+		
+		$r_datos2=posgre_query("SELECT nombre FROM usuario WHERE id='$idcolegio' AND borrado = 0 ORDER BY id;");// or die (mysql_error());  
+		if($rowdg2= pg_fetch_array($r_datos2)) {	
+			$nombrecolegio=$rowdg2['nombre'];
+		}else{
+			$nombrecolegio="Sin colegiar";
+		}
 		
 		$objPHPExcel->getActiveSheet()->SetCellValue('A'.$rowCount, $nif);
 		$objPHPExcel->getActiveSheet()->SetCellValue('B'.$rowCount, $nombre);
 		$objPHPExcel->getActiveSheet()->SetCellValue('C'.$rowCount, $apellidos);
 		$objPHPExcel->getActiveSheet()->SetCellValue('D'.$rowCount, $email);
 		$objPHPExcel->getActiveSheet()->SetCellValue('E'.$rowCount, $telefono);
-		$objPHPExcel->getActiveSheet()->SetCellValue('F'.$rowCount, $telefono2);
+		$objPHPExcel->getActiveSheet()->SetCellValue('F'.$rowCount, $nombrecolegio);
 		$rowCount++;
 		
 	}
@@ -715,7 +723,9 @@ $cuantos = $total_registros;
 //fin Paginacion 1
 	$cplazas=0;
 	$fechafinacceso="";
-	while(($row = pg_fetch_array($result))&&($plazas>=$cplazas)) { 
+	$j=0;
+	while(($row = pg_fetch_array($result))&&($plazas>=$cplazas)) {
+		$j++;
 		$idcursousuario = $row['cursousuarioid'];
 		$idusuario=$row["idusuario"];
 		$fechafinacceso=($row["fechalimitepermanente"]);
@@ -854,7 +864,7 @@ $cuantos = $total_registros;
 		
 		<tr>
 			<td bgcolor="<?=$bgcolor?>">
-  			<input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
+  			<span style="font-size:9px"><?=$j?> </span><input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
 			</td>
 			<td class="thnombre1" bgcolor="<?=$bgcolor?>"><?=$nombre?></td>
 			<td class="thapellidos1" bgcolor="<?=$bgcolor?>"><?=$apellidos?></td>
@@ -1027,7 +1037,7 @@ $cuantos = $total_registros;
 			<th class="thfecha1"><a href="zpa_usuario_curso.php?idcurso=<?=$idcurso.$getcursodual?>&campo=fechahora&orden=<? if ($orden=="ASC"){ echo "DESC"; }else{ echo "ASC"; }?>">FECHA INSCRIPCIÓN</a></th>	
 			<th class="thprecio1">PRECIO</th>	
 			<th class="thmodopago1"><a href="zpa_usuario_curso.php?idcurso=<?=$idcurso.$getcursodual?>&campo=modopago&orden=<? if ($orden=="ASC"){ echo "DESC"; }else{ echo "ASC"; }?>">MODO PAGO</a></th>
-			<th class="thresguardo1">RESGUARDO / DOMICILIACIÓN</th>
+			<th class="thresguardo1">RESGUARDO</th>
 			<th width='10%' class="thpago1">PAGO</th>		
 			<th style="display:none;" class="thasistencia1">ASISTENCIA</th>	
 			<th style="display:none;" class="thnota1">NOTA</th>	
@@ -1077,7 +1087,9 @@ $cuantos = $total_registros;
 	$cplazas=0;
 	
 	$fechafinacceso="";
+	$j=0;
 	while(($row = pg_fetch_array($result))&&($plazas>=$cplazas)) { 
+		$j++;
 		$idcursousuario = $row['id'];
 		$idusuario=$row["idusuario"];
 		$fechafinacceso=($row["fechalimitepermanente"]);
@@ -1216,7 +1228,7 @@ $cuantos = $total_registros;
 		
 		<tr>
 			<td bgcolor="<?=$bgcolor?>">
-  			<input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
+  			<span style="font-size:9px"><?=$j?> </span><input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
 			</td>
 			<td class="thnombre1" bgcolor="<?=$bgcolor?>"><?=$nombre?></td>
 			<td class="thapellidos1" bgcolor="<?=$bgcolor?>"><?=$apellidos?></td>
@@ -1388,7 +1400,7 @@ $cuantos = $total_registros;
 			<th class="thfecha1"><a href="zpa_usuario_curso.php?idcurso=<?=$idcurso.$getcursodual?>&campo=fechahora&orden=<? if ($orden=="ASC"){ echo "DESC"; }else{ echo "ASC"; }?>">FECHA INSCRIPCIÓN</a></th>
 			<th class="thprecio1">PRECIO</th>	
 			<th class="thmodopago1"><a href="zpa_usuario_curso.php?idcurso=<?=$idcurso.$getcursodual?>&campo=modopago&orden=<? if ($orden=="ASC"){ echo "DESC"; }else{ echo "ASC"; }?>">MODO PAGO</a></th>
-			<th class="thresguardo1">RESGUARDO / DOMICILIACIÓN</th>
+			<th class="thresguardo1">RESGUARDO</th>
 			<th width='10%' class="thpago1">PAGO</th>		
 			<th style="display:none;" class="thasistencia1">ASISTENCIA</th>	
 			<th style="display:none;" class="thnota1">NOTA</th>	
@@ -1419,7 +1431,9 @@ $cuantos = $total_registros;
 //fin Paginacion 1
 	$cplazas=0;
 	$fechafinacceso="";
+	$j=0;
 	while(($row = pg_fetch_array($result))&&($plazas>=$cplazas)) { 
+		$j++;
 		$idcursousuario = $row['id'];
 		$idusuario=$row["idusuario"];
 		$fechafinacceso=($row["fechalimitepermanente"]);
@@ -1559,7 +1573,7 @@ $cuantos = $total_registros;
 		
 		<tr>
 			<td bgcolor="<?=$bgcolor?>">
-  			<input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
+  			<span style="font-size:9px"><?=$j?> </span><input type="checkbox" title="Envios genéricos" name="EM_<?=$row['idusuario']?>" id="EM_<?=$row['idusuario']?>">
 			</td>
 			<td class="thnombre1" bgcolor="<?=$bgcolor?>"><?=$nombre?></td>
 			<td class="thapellidos1" bgcolor="<?=$bgcolor?>"><?=$apellidos?></td>

@@ -6,7 +6,7 @@ include_once "_config.php";
 
 <div class="slider-colegios md-margin-bottom-40">
 	<div class="headline"><h2 class="heading-sm">Colegios y colaboradores</h2></div>
-	<div class="owl-clients-v1 ">
+	<div class="owl-clients-v1">
 		<div class="item">
 			<a target="_blank" href="https://wwdadaw.com"><img src="<?=$imglogospath?>ALBACETE.png" alt="ALBACETE"></a>
 		</div>

@@ -101,10 +101,10 @@ var OwlCarousel = function () {
             jQuery(".owl-clients-v1").owlCarousel({
                 items : 5,
                 autoPlay : 1500,
-                itemsDesktop : [1000,5],
-                itemsDesktopSmall : [900,4],
-                itemsTablet: [600,3],
-                itemsMobile : [300,2]
+                itemsDesktop2 : [1300,4],
+                itemsDesktopSmall : [1000,3],
+                itemsTablet: [650,2],
+                itemsMobile : [450,1]
             });
 
 

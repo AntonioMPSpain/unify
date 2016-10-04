@@ -13,7 +13,7 @@ var MasterSliderShowcase2 = function () {
 		        width:400,
 		        height:266,
 		        layout:'partialview',
-		        space:5,
+		        space:0,
 		        autoplay:true,
 		        speed:20,
 		        view:'basic',

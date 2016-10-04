@@ -1,5 +1,5 @@
 <!-- Master Slider -->
-<div class="blog-ms-v1 blog-ms-v1-extend bg-color-darker">
+<div class="blog-ms-v1">
 	<div class="master-slider ms-skin-default" id="masterslider">
 		
 		{% for curso in cursos %}
