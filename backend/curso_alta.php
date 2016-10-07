@@ -698,7 +698,7 @@ $(function() {
 									</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="inputName">Nombre del curso:</label>
+								<label class="control-label" for="inputName">Nombre del curso(concepto que saldrá en la factura):</label>
 									<div class="controls">
 										<input required type="text" id="inputName" class="input-xxlarge" name="nombre" value='<?=$nombre?>' />
 									</div>

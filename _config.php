@@ -6,7 +6,7 @@ $baseUrl = "https://".$_SERVER[HTTP_HOST]."/";
 $path = "web/";
 $wwwpath = "/var/www/".$path;
 
-
+$libspath = "libs/"; 
 $templatepath = "templates/";
 $backendpath = "backend/";
 $moodlepath = "../moodle/";
@@ -18,8 +18,10 @@ $imgpath = "img/";
 $imglogospath = $imgpath."logos/";
 $imgcursospath = $imgpath."cursos/";
 $imgbannerspath = $imgpath."banners/";
+$imgdiplomapath = $imgpath."diploma/";
 $imgmaterialespath = $imgpath."materiales/";
 $imgcursosbackendpath = $backendpath."imagen/";
+
 
 
 /** Includes **/

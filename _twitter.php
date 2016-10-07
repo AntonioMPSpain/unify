@@ -1,6 +1,8 @@
 <?
 
-require "libs/twitteroauth/autoload.php";
+include_once "_config.php";
+
+require $libspath."twitteroauth/autoload.php";
 use Abraham\TwitterOAuth\TwitterOAuth;
 
 $consumer_key = "pL5K3qImFsQT2xYG2dVHcEArl";

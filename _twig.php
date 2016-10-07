@@ -1,6 +1,8 @@
 <?
 
-require_once 'libs/Twig/lib/Twig/Autoloader.php';
+include_once "_config.php"; 
+
+require_once $libspath.'Twig/lib/Twig/Autoloader.php';
 Twig_Autoloader::register();
 
 $loader = new Twig_Loader_Filesystem($templatepath);

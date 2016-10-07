@@ -2,6 +2,7 @@
 
 include_once "_cone.php";
 include_once "_funciones.php";
+include_once "_config.php";
 
 if (isset($_GET['test'])){		
 
@@ -180,7 +181,7 @@ function generarExcelFacturaCurso($idcurso){
 }
  
 function generarExcelFacturas($sql,$tipoexportacion=0){
-
+	echo "llegafuncion"; exit();
 	$cursonombre="";
 	if ($tipoexportacion==2){
 		$iniciorango = explode(">='",$sql);
@@ -191,7 +192,8 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 	}
 	
 	// Exportar facturas de activatie a Excel para importar en Factusol. Documentación en ./contabilidad/FactuSOL Importacion Excel Calc.pdf
-	require_once dirname(__FILE__) . '/../librerias/PHPExcel/Classes/PHPExcel.php';
+	global $b_libspath;
+	require_once $b_libspath .'PHPExcel/Classes/PHPExcel.php';
 	
 	// Facturas emitidas
 	$objPHPExcel = new PHPExcel();
@@ -813,7 +815,6 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 
 
 function imprimirXLS($idcurso=0, $fecha1, $fecha2, $rango1, $rango2){
-	
 	$sqlcurso = "";
 	if (($idcurso<>0)||($idcurso<>"")){
 		$sqlcurso .= " AND idgenerica='$idcurso' AND tipo=1 ";
@@ -841,7 +842,8 @@ function imprimirXLS($idcurso=0, $fecha1, $fecha2, $rango1, $rango2){
 	
 	
 	// Exportar facturas de activatie a Excel para importar en Factusol. Documentación en ./contabilidad/FactuSOL Importacion Excel Calc.pdf
-	require_once dirname(__FILE__) . '/../librerias/PHPExcel/Classes/PHPExcel.php';
+	global $b_libspath;
+	require_once $b_libspath .'PHPExcel/Classes/PHPExcel.php';
 	
 	// Facturas emitidas
 	$objPHPExcel = new PHPExcel();

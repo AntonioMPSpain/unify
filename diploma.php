@@ -319,8 +319,8 @@ ob_start();
 
 
 <page>
-<div style="position:absolute; "><img width="1122" src="http://www.activatie.org/web/img/diploma-back-02.png" alt="watermark"></div>
-<div style="position:absolute; "><img height="793" src="http://www.activatie.org/web/img/diploma-firmalateral.jpg" alt="watermark"></div>
+<div style="position:absolute; "><img width="1122" src="<?=$imgdiplomapath?>diploma-back-02.png" alt="watermark"></div>
+<div style="position:absolute; "><img height="793" src="<?=$imgdiplomapath?>diploma-firmalateral.jpg" alt="watermark"></div>
 
 <table id="diploma">
 
@@ -328,7 +328,7 @@ ob_start();
 		<td class="cabecera">
 				<table id="cabecera">
 				<tr>
-					<td class="logo"><img src="http://www.activatie.org/web/img/diploma-logo-activatie.png" alt="ACTIVATIE"></td>
+					<td class="logo"><img src="<?=$imgdiplomapath?>diploma-logo-activatie.png" alt="ACTIVATIE"></td>
 				</tr>
 				</table>
 
@@ -386,16 +386,16 @@ ob_start();
 						
 					</tr>
 					<tr>
-						<td><img style="margin-left:200px;" src="http://www.activatie.org/web/img/diploma-presidente.png" alt="Firma"></td>
+						<td><img style="margin-left:200px;" src="<?=$imgdiplomapath?>diploma-presidente.png" alt="Firma"></td>
 						<td></td>
-						<td><img style="margin-left:200px;" height="100" src="http://www.activatie.org/web/img/diploma-secretario.png" alt="Firma"></td>
+						<td><img style="margin-left:200px;" height="100" src="<?=$imgdiplomapath?>diploma-secretario.png" alt="Firma"></td>
 					</tr>
 					</table>
 				</td>
 			</tr>
 
 			<tr>
-					<td class="logocolegios"><img src="http://www.activatie.org/web/img/diploma-logo-colegios-02.png" alt="Colegios Profesionales"></td>
+					<td class="logocolegios"><img src="<?=$imgdiplomapath?>diploma-logo-colegios-02.png" alt="Colegios Profesionales"></td>
 			</tr>
 			</table>
 		</td>
@@ -407,7 +407,7 @@ ob_start();
 
 
 <page>
-<div style="position:absolute; "><img height="793" src="http://www.activatie.org/web/img/diploma-firmalateral.jpg" alt="watermark"></div>
+<div style="position:absolute; "><img height="793" src="<?=$imgdiplomapath?>diploma-firmalateral.jpg" alt="watermark"></div>
 
 <table id="diploma">
 
@@ -415,7 +415,7 @@ ob_start();
 		<td class="cabecera">
 				<table id="cabecera">
 				<tr>
-					<td class="logo"><img src="http://www.activatie.org/web/img/diploma-logo-activatie.png" alt="ACTIVATIE"></td>
+					<td class="logo"><img src="<?=$imgdiplomapath?>diploma-logo-activatie.png" alt="ACTIVATIE"></td>
 					<td class="space"></td>
 					<td class="logocolegios">
 						<p>

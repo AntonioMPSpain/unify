@@ -31,7 +31,7 @@ include("plantillaweb01admin.php");
 	<div class="grid-9 contenido-principal">
 	<div class="clearfix"></div>
 	<div class="pagina zonaprivada blog">
-	<h2 class="titulonoticia">ETIQUETAS/ÁREAS</h2>
+	<h2 class="titulonoticia">Etiquetas</h2>
 		<br />
 	<? include("_aya_mensaje.php"); ?>
 		<div class="bloque-lateral acciones">		

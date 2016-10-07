@@ -1,6 +1,8 @@
 <?php
 include("_funciones.php"); 
 include("_cone.php"); 
+include_once "_config.php";
+
 $safe="Sistema de calidad";
 $titulo1="sistema";
 $titulo2="calidad";
@@ -162,7 +164,7 @@ else{
 if ($id>0){
 	if (isset($_REQUEST['xls'])){
 		
-		require_once dirname(__FILE__) . '/../librerias/PHPExcel/Classes/PHPExcel.php';
+		require_once $b_libspath .'PHPExcel/Classes/PHPExcel.php';
 		
 		$objPHPExcel = new PHPExcel();
 		$objPHPExcel->setActiveSheetIndex(0);
@@ -200,9 +202,9 @@ if ($id>0){
 		
 		$objWriter = new PHPExcel_Writer_Excel2007($objPHPExcel);
 		$nombre = "sc_noconformidad-".$id."-".time();
-		$objWriter->save('./files/'.$nombre.'.xls');
+		$objWriter->save('./informes/'.$nombre.'.xls');
 		
-		$path = './files/'.$nombre.'.xls';
+		$path = './informes/'.$nombre.'.xls';
 		ob_clean();
 		header("Content-Description: File Transfer");
 		header("Content-Type: application/octet-stream");
@@ -237,12 +239,12 @@ include("plantillaweb01admin.php");
 		<br />
 		<? include("_aya_mensaje_session.php"); ?>
 
-
-
 		<div class="bloque-lateral acciones">		
 			<p>
 				<a href="sc_noconformidades.php" class="btn btn-success" type="button">Volver</a>
-				<a href="sc_noconformidad.php?xls&id=<?=$id?>" class="btn btn-success" type="button">Descargar excel</a>
+				<? if ($id>0){ ?>
+					<a href="sc_noconformidad.php?xls&id=<?=$id?>" class="btn btn-success" type="button">Descargar excel</a> 
+				<? } ?> 
 			</p>
 		</div>
 		<br>

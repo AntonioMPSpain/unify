@@ -38,22 +38,7 @@ $c_ano=$data_c["c_ano"];
 	<link rel="stylesheet" href="css/style-pp.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link media="print" rel="stylesheet" href="css/print.css" type="text/css" /> 		
-	<!--[if IE 6]>
-	<link rel="stylesheet" type="text/css" href="css/hacksie6.css" />
-	<![endif]-->
 	
-	<!--[if IE 7]>
-	<link rel="stylesheet" type="text/css" href="css/hacksie7.css" />
-	<![endif]-->
-	
-	<!--[if IE 8]>
-	<link rel="stylesheet" type="text/css" href="css/hacksie8.css" />
-	<![endif]-->
-	
-	<!--[if IE 9]>
-	<link rel="stylesheet" type="text/css" href="css/hacksie9.css" />
-		<script src="js/html5.js"></script>
-	<![endif]--> 
 	<!-- FONTS-->
 	<link rel="stylesheet" href="css/fonts.css" />
 	<!-- Favicons-->
@@ -125,34 +110,9 @@ $c_ano=$data_c["c_ano"];
 	-->
 	<div class="grids">
 		<div class="row">
-			<?
-			//iconos de cabecera
-			/*
-			<div class="grids">
-				<div class="row">
-				<div class="grid-12 titulo-seccion index-destacados">
-					<!-- añadiremos al div.titulo-seccion las clases:
-						ofertas-de-trabajo, publicaciones, formacion
-						para que el gráfico del H2 sea el correspondiente a
-						cada sección.-->
-					<!-- pej: <div class="grid-12 titulo-seccion formacion index-destacados"> -->
-					<h2><span>Información</span> destacada</h2>
-				</div>
-				</div>
-			</div>			
-						*/
-			if ($menu=="formacion.php"){
-				$textocabezah=" formacion";
-			}elseif ($menu=="publicaciones.php"){
-				$textocabezah=" publicaciones";				
-			}elseif ($menu=="trabajos.php"){
-				$textocabezah=" ofertas-de-trabajo";				
-			}else{
-				 $textocabezah=" index-destacados";
-			}	
-			?>
+			
 			<div class="grid-12 titulo-seccion<?=$textocabezah?>">
-				<h2><span><?=$titulo1?></span> <?=$titulo2?></h2>
+				<h2><span>panel de</span> administración</h2>
 			</div>
 		</div>
 	</div><!-- fin grids-->
@@ -172,84 +132,59 @@ $c_ano=$data_c["c_ano"];
 						session_start();
 				}
 								
-					if ($_SESSION[nivel]==4) { //Alumno    
-						/*
-								<li><i class="icon-book"></i> <a href="zona-privada_usuario_1.php">Mis Cursos</a></li>
-								<li><i class="icon-book"></i> <a href="z-privada_usuario_5.php">Mis Compras</a></li>
-								<li><i class="icon-user"></i> <a href="zona-privada_usuario_3.php">Mis Datos</a></li>
-								<li><i class="icon-bell"></i> <a href="zona-privada_usuario_alertas.php">Mis Alertas</a></li>	
-								<li><i class="icon-off"></i> <a href="http://www.activatie.org/moodle/login/logout.php?sesskey=<?=$_SESSION[sesskey]?>">Salir</a></li>
-						
-						*/
+					if ($_SESSION[nivel]==5) { //Directivo
 						?>
-						<li><a href="zona-privada_usuario_1.php"><i class="icon-book"></i> Mis Cursos</a></li>
-						<li><a href="z-privada_usuario_5.php"><i class="icon-user"></i> Mis Compras</a></li>
-						<li><a href="zona-privada_usuario_3.php"><i class="icon-user"></i> Mis Datos</a></li>
-						<li><a href="zona-privada_usuario_alertas.php"><i class="icon-bell"></i> Mis Alertas</a></li>	
-						<? 
-					}elseif ($_SESSION[nivel]==3) { //Profe
-						?>
-						<li><a href="zona-privada_usuario_1.php"><i class="icon-book"></i> Mis Cursos</a></li>
-						<li><a href="z-privada_usuario_5.php"><i class="icon-user"></i> Mis Compras</a></li>
-						<li><a href="zona-privada_usuario_3.php"><i class="icon-user"></i> Mis Datos</a></li>
-						<li><a href="zona-privada_usuario_alertas.php"><i class="icon-bell"></i> Mis Alertas</a></li>	
-						<li><a href="zona-privada_admin_cursos_1-profe.php"><i class="icon-book"></i> Cursos</a>
-						
-						<?
-					}elseif ($_SESSION[nivel]==5) { //Directivo
-						?>
-						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-book"></i> Cursos</a></li>
-						<!--<li><a href="zona-privada_admin_informes_1.php"><i class="icon-edit"></i> Informes</a></li>-->
-						
+						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-education"></i> Cursos</a></li>
 						<?
 					}elseif ($_SESSION[nivel]==2) { //Admin Colegio
 						?>
-						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-book"></i> Cursos</a></li>
-						<li><a href="zona-privada_admin_usuario.php"><i class="icon-th"></i> Usuarios</a></li>	
-						<li><a href="zona-privada_admin_profesores_1.php"><i class="icon-user"></i> Profesores</a></li>
-						<li><a href="e_inicio.php"><i class="icon-book"></i> Encuestas</a></li>			
-						<li><a href="zona-privada_admin_comunicaciones_5_historico-de-envios.php"><i class="icon-envelope"></i> Comunicaciones</a></li>							
-						<li><a href="admin_contenido.php"><i class="icon-edit"></i> Publicaciones</a></li>	
-						<li><a href="admin_trabajo.php"><i class="icon-edit"></i> Ofertas de trabajo</a></li>											
-						<li><a href="zona-privada_admin_informes_1.php"><i class="icon-edit"></i> Informes</a></li>	
+						<li><a href="zona-privada_admin_usuario.php"><i class="icon-user"></i> Usuarios</a></li>		
+						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-calendar"></i> Cursos</a>	
+							<ul>
+								<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-calendar"></i> Cursos</a></li>
+								<li><a href="zona-privada_admin_profesores_1.php"><i class="icon-user"></i> Profesores</a></li>
+								<li><a href="e_inicio.php"><i class="icon-check"></i> Encuestas</a></li>
+							</ul>
+						</li>					
+						<li><a href="admin_contenido.php"><i class="icon-book"></i> Publicaciones</a></li>	
+						<li><a href="admin_trabajo.php"><i class="icon-wrench"></i> Trabajo</a></li>	
+						<li><a href="zona-privada_admin_comunicaciones_5_historico-de-envios.php"><i class="icon-envelope"></i> Comunicaciones</a></li>													
+						<li><a href="zona-privada_admin_informes_1.php"><i class="icon-list-alt"></i> Informes</a></li>	
 						<? if ($_SESSION[idcolegio]==111) { //Murcia ?>	
-							<li><a href="a_facturacion.php"><i class="icon-edit"></i> Facturación</a></li>	
+							<li><a href="a_facturacion.php"><i class="icon-shopping-cart"></i> Facturación</a></li>	
 						<? } ?>
-						<li><a href="sc_noconformidades.php"><i class="icon-edit"></i> Sistema calidad</a></li>
+						<li><a href="sc_noconformidades.php"><i class="icon-thumbs-up"></i> Sistema calidad</a></li>
 						<li><a href="zona-privada_colegio_3.php"><i class="icon-user"></i> Datos</a></li>
 						<li><a href="http://www.activatie.org/interno"><i class="icon-edit"></i> Interno</a></li>
+						<li><a href="empresas_marketing.php"><i class="icon-briefcase"></i> Empresas</a></li>
 						<?
 					}elseif ($_SESSION[nivel]==1) { //Admin Total 
-						?>
-						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-book"></i> Cursos</a></li>
-						<li><a href="zona-privada_admin_profesores_1.php"><i class="icon-user"></i> Profesores</a></li>
-						<li><a href="zona-privada_admin_usuario.php"><i class="icon-th"></i> Usuarios</a></li>
-						<li><a href="e_inicio.php"><i class="icon-book"></i> Encuestas</a></li>
-						<li><a href="zona-privada_admin_comunicaciones_5_historico-de-envios.php"><i class="icon-envelope"></i> Comunicaciones</a></li>						
-						<li><a href="zona-privada_admin_informes_1.php"><i class="icon-edit"></i> Informes</a></li>											
-						<li><a href="admin_trabajo.php"><i class="icon-edit"></i> Ofertas de trabajo</a></li> 											
-						<li><a href="admin_contenido.php"><i class="icon-edit"></i> Publicaciones</a></li> 											
-						<li><a href="#"><i class="icon-edit"></i> Configuración</a>	
+						?>	
+						<li><a href="zona-privada_admin_usuario.php"><i class="icon-user"></i> Usuarios</a></li> 								
+						<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-calendar"></i> Cursos</a>	
 							<ul>
-								<li><a href="zona-privada_admin_cuentas.php"><i class="icon-lock"></i> Gestión de Cuentas</a></li>
-								<li><a href="a_facturacion.php">Facturación</a></li>
-								<li><a href="p_anuncios.php">Banners publicitarios</a></li>
-								<li><a href="sc_noconformidades.php">Sistema calidad</a></li>
-								<li><a href="generica_correo.php?id=95">Texto Publicaciones</a></li>
-								<li><a href="generica_correo0.php">Textos Emails Cursos</a></li>
-								<li><a href="z_admin_SMS_genericos.php">Textos SMS</a></li>
-								<li><a href="etiqueta.php"><i class="icon-film"></i> Áreas/Etiquetas</a></li>
-								<li><a href="provincia_comunidad.php"><i class="icon-film"></i>Comunidad/Provincia</a></li>
-								<li><a href="provincia.php"><i class="icon-film"></i>Provincias</a></li>
-								<li><a href="c_n_noticias.php">Nº Noticias Inicio</a></li>
-								<li><a href="__informes.php">Textos Informes</a></li>
-								<li><a href="z_admin_boletin_oficial.php">Boletines oficiales</a></li>
-								<li><a href="generica_aviso_legal.php">Aviso Legal</a></li>
-								<li><a href="generica_politica_venta.php">Política de venta</a></li>
-								<li><a href="generica_sobre_ActivATIE.php">Sobre activATIE</a></li>
-								<li><a href="generica_preguntas_frecuentes.php">Preguntas Frecuentes</a></li>
-								<li><a href="_z_visitas.php">Estadísticas</a></li>
-								<li><a href="c_pass.php">Cambiar Contraseña</a></li>
+								<li><a href="zona-privada_admin_cursos_1.php"><i class="icon-calendar"></i> Cursos</a></li>
+								<li><a href="zona-privada_admin_profesores_1.php"><i class="icon-user"></i> Profesores</a></li>
+								<li><a href="e_inicio.php"><i class="icon-check"></i> Encuestas</a></li>
+							</ul>
+						</li>				
+						<li><a href="m_materiales.php"><i class="icon-pencil"></i> Materiales</a></li> 					
+						<li><a href="admin_contenido.php"><i class="icon-book"></i> Publicaciones</a></li> 											
+						<li><a href="admin_trabajo.php"><i class="icon-wrench"></i> Trabajo</a></li> 	
+						<li><a href="zona-privada_admin_comunicaciones_5_historico-de-envios.php"><i class="icon-envelope"></i> Comunicaciones</a></li>						
+						<li><a href="zona-privada_admin_informes_1.php"><i class="icon-list-alt"></i> Informes</a></li>												
+						<li><a href="#"><i class="icon-cog"></i> Configuración</a>	
+							<ul>
+								<li><a href="zona-privada_admin_cuentas.php"><i class="icon-home"></i> Colegios</a></li>
+								<li><a href="empresas_marketing.php"><i class="icon-briefcase"></i> Empresas</a></li>
+								<li><a href="a_facturacion.php"><i class="icon-shopping-cart"></i> Facturación</a></li>
+								<li><a href="p_anuncios.php"><i class="icon-align-justify"></i> Banners</a></li>
+								<li><a href="sc_noconformidades.php"><i class="icon-thumbs-up"></i> Sistema calidad</a></li>
+								<li><a href="etiqueta.php"><i class="icon-tags"></i> Etiquetas</a></li>  
+								<li><a href="familias.php"><i class="icon-tags"></i> Familias</a></li> 
+								<li><a href="generica_correo0.php"><i class="icon-font"></i> Cursos: Textos Emails</a></li>
+								<li><a href="z_admin_SMS_genericos.php"><i class="icon-font"></i> Cursos: Textos SMS</a></li> 
+								
 							</ul>
 						</li>
 						<?
@@ -259,7 +194,7 @@ $c_ano=$data_c["c_ano"];
 					} 
 					session_start();
 					?>
-					<li><a href="http://www.activatie.org/moodle/login/logout.php?sesskey=<?=$_SESSION[sesskey]?>"><i class="icon-off"></i> Salir Seguro</a></li>	
+					<li><a href="../_control-user.php?logout"><i class="icon-off"></i> Salir</a></li>	
 			</ul>
 		</div>
 		<!--FIN MENU HORIZONTAL-->

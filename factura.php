@@ -1,6 +1,8 @@
 <?
-include("_cone.php");
-include("_funciones.php");
+
+include_once "_config.php";
+
+include($backendpath."_funciones.php");
 
 ////////// Filtros de nivel por usuario //////////////////////
 session_start();
@@ -337,7 +339,7 @@ ob_start();
 <div class="body">
 <div class="header clearfix">
   <div id="logo">
-		<img src="http://www.activatie.org/web/img/diploma-logo-activatie.png">
+		<img src="<?=$imgdiplomapath?>diploma-logo-activatie.png">
   </div>
   
   <div id="company">
@@ -403,9 +405,9 @@ ob_start();
 		  <tr>
 			<td class="no"><?=$idgenerica?></td>
 			<td class="desc"><h3><?=$ItemDescription?></h3></td>
-			<td class="unit"><?=$UnitPriceWithoutTax?>€</td>
+			<td class="unit"><?=$UnitPriceWithoutTax?>â‚¬</td>
 			<td class="qty"><?=$Quantity?></td>
-			<td class="total"><?=$totalproducto?>€</td>
+			<td class="total"><?=$totalproducto?>â‚¬</td>
 		  </tr>
 		<?
 		
@@ -420,17 +422,17 @@ ob_start();
   <tr>
 	<td colspan="2"></td>
 	<td colspan="2">SUBTOTAL</td>
-	<td><?=number_format($subtotal,2,'.','')?>€</td>
+	<td><?=number_format($subtotal,2,'.','')?>â‚¬</td>
   </tr>
   <tr>
 	<td colspan="2"></td>
 	<td colspan="2">IVA <?=$iva?>%</td>
-	<td><?=number_format($subtotal*($iva/100),2,'.','');?>€</td>
+	<td><?=number_format($subtotal*($iva/100),2,'.','');?>â‚¬</td>
   </tr>
   <tr>
 	<td colspan="2"></td>
 	<td colspan="2">TOTAL (Euros)</td>
-	<td><?=number_format(($subtotal*($iva/100))+$subtotal,2,'.','');?>€</td>
+	<td><?=number_format(($subtotal*($iva/100))+$subtotal,2,'.','');?>â‚¬</td>
   </tr>
 </tfoot>
 </table>
@@ -470,7 +472,7 @@ ob_start();
 
 $content = ob_get_clean();
 
-require_once('../librerias/html2pdf/html2pdf.class.php');
+require_once($libspath.'html2pdf/html2pdf.class.php');
 try
 {
 	$margin = array(7,10,10,10);

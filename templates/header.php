@@ -123,7 +123,7 @@
 						*/ ?>
 						
 						<? if ($_SESSION[controlactiva]){ ?> 
-							<? if (($_SESSION[nivel]==1)||($_SESSION[nivel]==2)){ ?>
+							<? if (($_SESSION[nivel]==1)||($_SESSION[nivel]==2)||($_SESSION[nivel]==5)){ ?>
 								
 								<li><a href="<?=$backendpath?>zona-privada_admin_cursos_1.php">Administración</a></li>
 								<li class="topbar-devider"></li>

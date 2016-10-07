@@ -153,7 +153,6 @@ if (isset($_GET['exportarrangosexcel'])){
 	else{
 		$rango2="";
 	}
-	
 	imprimirXLS($idcurso, $fecha1, $fecha2, $rango1, $rango2);
 	
 	header("Location: a_facturacion.php");
@@ -434,7 +433,7 @@ $cuantos = $total_registros;
 			<? } ?>
 			</td>
 			<td>
-				<a href="factura.php?id=<?=$invoiceNumber;?>" class="btn btn-success">ver</a>
+				<a href="../factura.php?id=<?=$invoiceNumber;?>" class="btn btn-success">ver</a>
 				
 			<? if ($rectificativa<>2){ ?>	
 				<? if ($exportada<>1){ ?>	
