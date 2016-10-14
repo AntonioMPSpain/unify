@@ -1,4 +1,5 @@
 <!-- Master Slider -->
+<!--
 <div class="blog-ms-v1">
 	<div class="master-slider ms-skin-default" id="masterslider">
 		
@@ -24,4 +25,5 @@
 
 	</div>
 </div>
+-->
 <!-- End Master Slider -->

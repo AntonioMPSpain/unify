@@ -72,6 +72,11 @@
 	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
 	<script src="assets/js/plugins/master-slider-showcase2.js"></script>
 	
+	<script src="assets/plugins/skrollr/skrollr-ini.js"></script>
+	<script src="assets/plugins/counter/waypoints.min.js"></script>
+	<script src="assets/plugins/counter/jquery.counterup.min.js"></script>
+	<script src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+
 	<!-- JS Customization -->
 	<script type="text/javascript" src="assets/js/custom.js"></script>
 	<!-- JS Page Level -->
@@ -91,6 +96,34 @@
 			FormSliders.initFormSliders();
 		});
 	</script>
+	
+	<!-- Package Nav -->
+	  <script>
+	  jQuery(window).scroll(function() {
+	    if (jQuery(window).scrollTop() > 642) {
+	    	jQuery('.package__nav').addClass('package__nav-is-fixed');
+	    } else {
+	    	jQuery('.package__nav').removeClass('package__nav-is-fixed');
+	    }
+	  });
+	
+	  $(function() {
+	    $('a[href*=#pkg-]:not([href=#pkg-])').click(function() {
+	      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	        if (target.length) {
+	          $('html,body').animate({
+	            scrollTop: target.offset().top
+	          }, 1500);
+	          return false;
+	        }
+	      }
+	    });
+	  });
+	  </script>
+  <!-- Package Nav -->
+  
 	<!--[if lt IE 9]>
 	<script src="assets/plugins/respond.js"></script>
 	<script src="assets/plugins/html5shiv.js"></script>

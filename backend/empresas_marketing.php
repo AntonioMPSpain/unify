@@ -75,24 +75,68 @@ include("plantillaweb01admin.php");
 			<th>Localidad</th>
 			<th>Provincia</th>
 			<th>Teléfono</th>
-			<th>Teléfono </th>
-			<th>Email</th>
 			<th>Email</th>
 			<th>Web</th>
-			<th>Colegio contacto</th>
-			<th>Trámites realizados</th>
-			<th>Contestaciones</th>
-			<th width='20%'>Acciones</th>
+			<th>Colegio</th>
+			<th>Notas</th>
+			<th>Acciones</th>
 		</tr>
 		<tr>
-			<td>A</td>
-			<td>B</td>
-			<td>C</td> 
-			<td>D</td>
-			<td>E</td>
-			<td>F</td>
+			<td>Revestech</td>
+			<td>Aislamiento<br>
+				Iluminación
+			</td>
+			<td>Antonio</td> 
+			<td>C/ Falsa 123</td>
+			<td>Murcia</td>
+			<td>Murcia</td>
+			<td>666111222</td>
+			<td>asd@asd.com</td>
+			<td>www.falsa.com</td>
+			<td>COAATIE_Murcia</td>
+			<td><a>1</a></td>
+			<td><a href="empresas_nueva.php?accion=editar&amp;id=691375&amp;idmoodleduplica=225" class="btn btn-primary">editar</a></td>
+			
 		</tr>
-	
+	<tr>
+			<td>ACTIU Logísitica</td>
+			<td>Revestimientos<br>
+				Invernaderos
+			</td>
+			<td>Jose</td> 
+			<td>C/ Verdadera 123</td>
+			<td>Alicante</td>
+			<td>Alicante</td>
+			<td>666111222</td>
+			<td>qwerty@qwerty.com</td>
+			<td>www.verdadera.com</td>
+			<td>COAATIE_Alicante</td>
+			<td><a>3</a></td>
+			<td><a href="empresas_nueva.php?accion=editar&amp;id=691375&amp;idmoodleduplica=225" class="btn btn-primary">editar</a></td>
+			
+		</tr>
+		<tr>
+			<td>Yantram Animation Studio</td>
+			<td>Aislamiento<br>
+				Iluminación<br>
+				Sillones<br>
+				Sillas de espera<br>
+				Archivo<br>
+				Mesas de oficina
+			</td>
+			<td>Antonio</td> 
+			<td>C/ Falsa 123</td>
+			<td>Gandía</td>
+			<td>País Valencià</td>
+			<td>789798798</td>
+			<td>asd@asd.com</td>
+			<td>www.falsa.com</td>
+			<td>COAATIE_Valencia</td>
+			<td><a>1</a></td>
+			<td><a href="empresas_nueva.php?accion=editar&amp;id=691375&amp;idmoodleduplica=225" class="btn btn-primary">editar</a></td>
+			
+		</tr>
+		
 	</table>
 	<?
 

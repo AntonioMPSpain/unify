@@ -22,6 +22,7 @@
 	RewriteRule Formacion\/online formacion.php?m=online [NC,L]
 	RewriteRule Formacion_historico formacion.php?m=historico [NC,L]
 	RewriteRule Formacion formacion.php [NC,L]
+	RewriteRule APPs apps.php [NC,L]
 	
 	
 	

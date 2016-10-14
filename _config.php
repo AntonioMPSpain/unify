@@ -16,11 +16,11 @@ $rsspath = "rss/";
 
 $imgpath = "img/";
 $imglogospath = $imgpath."logos/";
-$imgcursospath = $imgpath."cursos/";
+$imgcursospath = $backendpath."imagen/";
 $imgbannerspath = $imgpath."banners/";
 $imgdiplomapath = $imgpath."diploma/";
 $imgmaterialespath = $imgpath."materiales/";
-$imgcursosbackendpath = $backendpath."imagen/";
+$imgpublicacionespath = $imgpath."publicaciones/";
 
 
 

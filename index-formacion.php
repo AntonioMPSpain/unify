@@ -1,5 +1,5 @@
 <? 
-		
+/*		
 $result=posgre_query("SELECT * FROM curso WHERE modalidad!=3 AND borrado=0 AND (estado=1 OR estado=2) AND fecha_publicacion<='NOW()' AND fecha_fin_publicacion>='NOW()' ORDER BY fecha_fin_publicacion ASC, fecha_inicio ASC, RANDOM();") ;
 $numCursos = pg_num_rows($result);
 
@@ -63,7 +63,7 @@ for ($i=0;$i<$totalCursos;$i++){
 	$cursos[$i] = $curso;
 }	
 		
-	$twig->display('index-formacion.php', array('cursos'=>$cursos));
-	
+$twig->display('index-formacion.php', array('cursos'=>$cursos));
+*/	
 ?>
 	

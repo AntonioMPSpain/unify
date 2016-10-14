@@ -64,7 +64,7 @@ for ($i=0;$i<$totalCursos;$i++){
 	$curso['modalidad'] = $modalidad;
 	$curso['privado'] = $privado;
 	$curso['modalidadtexto'] = $modalidadtexto;
-	$curso['imagen'] = $imgcursosbackendpath.$imagen;
+	$curso['imagen'] = $imgcursospath.$imagen;
 	$curso['link'] = "curso.php";
 	
 	if ($modalidad==3){

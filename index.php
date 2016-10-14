@@ -19,7 +19,8 @@ $banner2 = getBanner($idbanner);
 /** FIN BANNERS **/
 
 include ($templatepath."slider.php");
-include ("index-formacion.php");
+//include ("index-formacion.php");
+include ("index-navegacion.php");
 
 ?>
 
