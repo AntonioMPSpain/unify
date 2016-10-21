@@ -8,10 +8,10 @@ include_once "_config.php";
 	<div class="headline"><h2 class="heading-sm">Colegios y colaboradores</h2></div>
 	<div class="owl-clients-v1">
 		<div class="item">
-			<a target="_blank" href="http://www.aparejadoresalbacete.es"><img src="<?=$imglogospath?>ALBACETE.png" alt="ALBACETE"></a>
+			<a target="_blank" href="http://www.aparejadoresalbacete.es"><img src="<?=$baseUrl.$path.$imglogospath?>ALBACETE.png" alt="ALBACETE"></a>
 		</div>
 		<div class="item">
-			<a target="_blank" href="http://www.coaatalicante.org"><img src="<?=$imglogospath?>ALICANTE.png" alt="ALICANTE"></a>
+			<a target="_blank" href="http://www.coaatalicante.org"><img src="<?=$baseUrl.$path.$imglogospath?>ALICANTE.png" alt="ALICANTE"></a> 
 		</div>
 		<div class="item">
 			<a target="_blank" href="http://www.coaatba.com"><img src="<?=$imglogospath?>BADAJOZ.png" alt="BADAJOZ"></a>

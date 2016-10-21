@@ -19,7 +19,7 @@ if (isset($_REQUEST['logout'])){
 	session_start();
 	session_regenerate_id(true);
 	
-	// logoutUser();
+	logoutUser();
 	
 	header("Location: ".$baseUrl.$path);
 	exit();

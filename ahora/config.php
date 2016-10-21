@@ -424,10 +424,9 @@ if (!isset($globals['basic_config']) || !$globals['basic_config']) {
 	}
 		
 	// @include($_SERVER['SERVER_ADDR'].'-local.php');
-	
 	include_once( mnminclude.'init.php');
 	include mnminclude.'login.php';
 
 	// For production servers
-	//$db->hide_errors();
+	$db->hide_errors();
 }

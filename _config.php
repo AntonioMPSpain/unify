@@ -10,7 +10,7 @@ $libspath = "libs/";
 $templatepath = "templates/";
 $backendpath = "backend/";
 $moodlepath = "../moodle/";
-$actividadpath = "actividad/";
+$actividadpath = "ahora/";
 $rsspath = "rss/";
 
 

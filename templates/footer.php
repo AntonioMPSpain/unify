@@ -51,42 +51,42 @@
 	</div><!--/wrapper-->
 	
 	<!-- JS Global Compulsory -->
-	<script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/jquery/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/jquery/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 	<!-- JS Implementing Plugins -->
-	<script type="text/javascript" src="assets/plugins/back-to-top.js"></script>
-	<script type="text/javascript" src="assets/plugins/smoothScroll.js"></script>
-	<script type="text/javascript" src="assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
-	<script type="text/javascript" src="assets/plugins/login-signup-modal-window/js/main.js"></script> <!-- Gem jQuery -->
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/back-to-top.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/smoothScroll.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/owl-carousel/owl-carousel/owl.carousel.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/login-signup-modal-window/js/main.js"></script> <!-- Gem jQuery -->
 	
-	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/js/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/js/jquery.maskedinput.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/js/jquery.form.min.js"></script>
 	
-	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-	<script type="text/javascript" src="assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/plugins/revolution-slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 	
-	<script src="assets/plugins/master-slider/masterslider/masterslider.js"></script>
-	<script src="assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
-	<script src="assets/js/plugins/master-slider-showcase2.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/master-slider/masterslider/masterslider.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/master-slider/masterslider/jquery.easing.min.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/js/plugins/master-slider-showcase2.js"></script>
 	
-	<script src="assets/plugins/skrollr/skrollr-ini.js"></script>
-	<script src="assets/plugins/counter/waypoints.min.js"></script>
-	<script src="assets/plugins/counter/jquery.counterup.min.js"></script>
-	<script src="assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/skrollr/skrollr-ini.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/counter/waypoints.min.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/counter/jquery.counterup.min.js"></script>
+	<script src="<?=$baseUrl.$path?>assets/plugins/cube-portfolio/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
 
 	<!-- JS Customization -->
-	<script type="text/javascript" src="assets/js/custom.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/custom.js"></script>
 	<!-- JS Page Level -->
-	<script type="text/javascript" src="assets/js/app.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/owl-carousel.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/style-switcher.js"></script>
-	<script type="text/javascript" src="assets/js/forms/reg.js"></script>
-	<script type="text/javascript" src="assets/js/forms/checkout.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/revolution-slider.js"></script>
-	<script type="text/javascript" src="assets/js/plugins/form-sliders.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/app.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/plugins/owl-carousel.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/plugins/style-switcher.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/forms/reg.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/forms/checkout.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/plugins/revolution-slider.js"></script>
+	<script type="text/javascript" src="<?=$baseUrl.$path?>assets/js/plugins/form-sliders.js"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function() {
 			App.init();

@@ -50,46 +50,46 @@
 	<meta name="author" content="">
 
 	<!-- Favicon -->
-	<link rel="shortcut icon" href="<?=$imgpath?>favicon.ico">
+	<link rel="shortcut icon" href="<?=$baseUrl.$path.$imgpath?>favicon.ico">
 
 	<!-- Web Fonts -->
 	<link rel='stylesheet' type='text/css' href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600&amp;subset=cyrillic,latin'>
 
 	<!-- CSS Global Compulsory -->
-	<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
- 	<link rel="stylesheet" href="assets/css/shop.style.css">
-	<link rel="stylesheet" href="assets/css/blog.style.css">
-	<link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/bootstrap/css/bootstrap.min.css">
+ 	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/shop.style.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/blog.style.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/style.css">
 
 	<!-- CSS Header and Footer -->
-	<link rel="stylesheet" href="assets/css/headers/header-default.css">
-	<link rel="stylesheet" href="assets/css/footers/footer-v2.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/headers/header-default.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/footers/footer-v2.css">
 
 	<!-- CSS Implementing Plugins -->
-	<link rel="stylesheet" href="assets/plugins/animate.css">
-	<link rel="stylesheet" href="assets/plugins/line-icons/line-icons.css">
-	<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
-	<link rel="stylesheet" href="assets/plugins/login-signup-modal-window/css/style.css">
-	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
-	<link rel="stylesheet" href="assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
-	<link rel="stylesheet" href="assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
-	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/style/masterslider.css">
-	<link rel="stylesheet" href="assets/plugins/master-slider/masterslider/skins/default/style.css">
-	<link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
-	<link rel="stylesheet" href="assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/animate.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/line-icons/line-icons.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/owl-carousel/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/login-signup-modal-window/css/style.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/revolution-slider/rs-plugin/css/settings.css" type="text/css" media="screen">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/master-slider/masterslider/style/masterslider.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/master-slider/masterslider/skins/default/style.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/cube-portfolio/cubeportfolio/css/cubeportfolio.min.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/plugins/cube-portfolio/cubeportfolio/custom/custom-cubeportfolio.css">
 	
 	<!-- CSS Page Style -->
-	<link rel="stylesheet" href="assets/css/pages/profile.css">
-	<link rel="stylesheet" href="assets/css/pages/page_404_error.css">
-  	<link rel="stylesheet" href="assets/css/pages/page_intro.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/pages/profile.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/pages/page_404_error.css">
+  	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/pages/page_intro.css">
 	
 	<!-- CSS Theme -->
-	<link rel="stylesheet" href="assets/css/theme-colors/red.css" id="style_color">
-	<link rel="stylesheet" href="assets/css/theme-skins/dark.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/theme-colors/red.css" id="style_color">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/theme-skins/dark.css">
 
 	<!-- CSS Customization -->
-	<link rel="stylesheet" href="assets/css/custom.css">
+	<link rel="stylesheet" href="<?=$baseUrl.$path?>assets/css/custom.css">
 </head>
 
 
@@ -100,7 +100,7 @@
 			<div class="container">
 				<!-- Logo -->
 				<a class="logo" href="portada">
-					<img src="<?=$imgpath?>activatie-logo.png" alt="Logo">
+					<img src="<?=$baseUrl.$path.$imgpath?>activatie-logo.png" alt="Logo">
 				</a>
 				<!-- End Logo -->
 

@@ -11,8 +11,8 @@
 	RewriteCond %{REQUEST_FILENAME} !-f
 	RewriteCond %{REQUEST_FILENAME} !-d
 	
-	# RewriteRule ^(?!web/)[^/]+/((?:assets|img|backend)/.+)$ /web/$1 [NC,R]
-	
+	RewriteRule ^(?!web/)[^/]+/((?:assets|img|backend)/.+)$ /web/$1 [NC,R]
+		
 	RewriteRule Portada index.php [NC,L]
 	RewriteRule Perfil perfil.php [NC,L]
 	RewriteRule Contacto contacto.php [NC,L]

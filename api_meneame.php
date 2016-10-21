@@ -1,7 +1,7 @@
 <?
 
 include("_config.php"); 
-include_once "../actividad/config.php";
+include_once $actividadpath."config.php";
 
 if (isset($_GET['test'])){
 	// updateUser(6264);
