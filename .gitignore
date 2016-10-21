@@ -10,3 +10,4 @@ actividad/config.php
 img/materiales
 backend/files
 img/publicaciones
+libs/Twig/cache

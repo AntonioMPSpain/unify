@@ -1,9 +1,7 @@
 <?php
 
-session_start();
-include("_cone.php"); 
 include("_config.php"); 
-// include_once "api_meneame.php";
+include_once "api_meneame.php";
 
 if (isset($_REQUEST['logout'])){
 	
@@ -76,7 +74,7 @@ else{
 					exit();
 				}
 						
-				// authenticateUser($usuario, $pass);		
+				authenticateUser($usuario, $pass);		/* Meneame */
 							
 				$_SESSION[controlactiva] = true;
 				$_SESSION[nivel] =$data["nivel"];

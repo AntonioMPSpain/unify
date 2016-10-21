@@ -57,8 +57,8 @@ include("plantillaweb01admin.php");
       ?><tr>
 	  	<td align="left"><?=$row["nombre"]?> </td>
 		<td>
-		<a href="familias.php?id=<?=$row["id"]?>&accion=borrar" onclick="return confirmar('&iquest;Eliminar elemento? \n\n')" class="btn btn-primary">eliminar</a> 
 		<a href="familias2.php?id=<?=$row["id"]?>&accion=editar" class="btn btn-primary">editar</a>
+		<a href="familias.php?id=<?=$row["id"]?>&accion=borrar" onclick="return confirmar('&iquest;Eliminar elemento? \n\n')" class="btn btn-primary">eliminar</a> 
 		</td>
 	</tr>
    <? 

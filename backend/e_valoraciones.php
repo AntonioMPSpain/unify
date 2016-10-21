@@ -39,7 +39,7 @@ $apellidos = $row['apellidos'];
 
 $titulo1="encuestas";
 $titulo2="activatie";
-include("plantillaweb01.php");
+include("plantillaweb01admin.php");
 ?>		
 
 <div class="grid-12 contenido-principal">
@@ -164,5 +164,5 @@ include("plantillaweb01.php");
 </div>
 
 <? 
-include("plantillaweb02.php"); 
+include("plantillaweb02admin.php"); 
 ?>

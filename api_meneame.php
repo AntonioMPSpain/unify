@@ -1,11 +1,7 @@
 <?
 
-include_once "_funciones.php"; 
-include_once"_cone.php"; 
-include_once "_config.php";
-
-include_once $actividadpath."/config.php";
-
+include("_config.php"); 
+include_once "../actividad/config.php";
 
 if (isset($_GET['test'])){
 	// updateUser(6264);
@@ -16,8 +12,8 @@ if (isset($_GET['test'])){
 	
 	// logoutUser();
 }
-
-
+ 
+ 
 
 function authenticateUser($login, $pass){
 	global $current_user;

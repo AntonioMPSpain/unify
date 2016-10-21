@@ -2,6 +2,8 @@
 $safe="Multimedia de curso";
 include("_cone.php");
 include("_funciones.php");
+include_once "_config.php";
+
 $c_directorio_img = "/var/www/web";
 ////////// Filtros de nivel por usuario //////////////////////
 session_start();
@@ -439,7 +441,7 @@ include("plantillaweb01admin.php");
 			while($row2= pg_fetch_array($result2)) {							
 						if ($row2["imagen"]<>""){?>
 								<span class="actions">
-									<a href="imagen/<?=$row2["imagen"]?>" rel="shadowbox[galery]" ><img SRC="imagen/<?=$row2["imagen"]?>" ALT width=60><i class="icon-zoom-in"></i> Ver</a> 
+									<a href="<?=$b_imgcursospath?><?=$row2["imagen"]?>" rel="shadowbox[galery]" ><img SRC="<?=$b_imgcursospath?><?=$row2["imagen"]?>" ALT width=60><i class="icon-zoom-in"></i> Ver</a> 
 									<a onclick="return confirmar('&iquest;Eliminar elemento?')" href="curso_alta_mas.php?accionfoto=borrar&accion=<?=$accion?>&tipo=<?=$tipo?>&id=<?=$row["id"]?>&archivo=<?=$imagen?>&directorio=imagen"></i> Eliminar</a>
 								</span>
 						<? }?>					

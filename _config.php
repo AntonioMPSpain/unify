@@ -16,7 +16,7 @@ $rsspath = "rss/";
 
 $imgpath = "img/";
 $imglogospath = $imgpath."logos/";
-$imgcursospath = $backendpath."imagen/";
+$imgcursospath = $imgpath."cursos/";
 $imgbannerspath = $imgpath."banners/";
 $imgdiplomapath = $imgpath."diploma/";
 $imgmaterialespath = $imgpath."materiales/";
@@ -26,6 +26,7 @@ $imgpublicacionespath = $imgpath."publicaciones/";
 
 /** Includes **/
 
+session_start();
 setlocale(LC_TIME, 'es_ES.UTF-8');
 include_once "_cone.php";
 include_once "_funciones.php";

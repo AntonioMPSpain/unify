@@ -44,8 +44,8 @@ define('config_done', 1);
 // Specify the name of the ssl server, ensure you have also setup "cookies_domain
 $globals['ssl_server'] = true; 
 
-$globals['site_name'] = 'actividad activatie';
-$globals['site_shortname'] = 'actividad'; //Used to differentiate in keys
+$globals['site_name'] = 'ahora activatie';
+$globals['site_shortname'] = 'ahora'; //Used to differentiate in keys
 
 // If you user version, be careful to rewrite the directory for img, css and js
 // Example for nginx:
@@ -104,7 +104,7 @@ $globals['click_counter'] = 1; // Put a value since which id should show in "lin
 
 // Specify you base url, "/" if is the root document
 // $globals['base_dir'] = '/meneame/';
-$globals['base_url'] = '/actividad/';
+$globals['base_url'] = '/web/ahora/';
 $globals['top_logo'] = 'img/mnm/eli.png';
 $globals['thumbnail_logo'] = 'img/mnm/eli_thumbnail.png';
 $globals['legal'] = '/legal';
@@ -424,10 +424,10 @@ if (!isset($globals['basic_config']) || !$globals['basic_config']) {
 	}
 		
 	// @include($_SERVER['SERVER_ADDR'].'-local.php');
-
+	
 	include_once( mnminclude.'init.php');
 	include mnminclude.'login.php';
 
 	// For production servers
-	$db->hide_errors();
+	//$db->hide_errors();
 }

@@ -20,7 +20,7 @@
       <!-- #1 Formación -->
       <div id="pkg-formacion" class="content-md" style="padding-right: 30px; padding-left: 30px; padding-top: 120px">
         <div class="container text-center margin-bottom-50">
-          <h2 class="margin-bottom-20" style="font-weight: bold; letter-spacing: 2px;"><span class="color-green">#1</span> FORMACIÓN</h2>
+          <h2 class="margin-bottom-20" style="font-weight: bold; letter-spacing: 2px;"><span class="color-green"><a href="formacion">#1</span>FORMACIÓN</a></h2>
           <p style="font-size: 15px; letter-spacing: 1px;">Descrubre las magnificas <strong>actividades y jornadas gratuitas</strong>. <br> Enfocados para mejorar en la profesión de arquitecto técnico.</p>
         </div>
         <!-- Section Row -->
@@ -127,12 +127,12 @@
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<img class="img-responsive intro-page__img" src="assets/img/main/img15.jpg" alt="">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -154,12 +154,12 @@
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<img class="img-responsive intro-page__img" src="assets/img/main/img15.jpg" alt="">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -181,12 +181,12 @@
 				<div class="col-md-3 col-sm-6 news-v3">
 					<img class="img-responsive intro-page__img" src="assets/img/main/img16.jpg" alt="">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Susan</a></li>
 							<li>In: <a href="#">Wordpress</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -209,12 +209,12 @@
 				<div class="col-md-3 col-sm-6 news-v3">
 					<img class="img-responsive intro-page__img" src="assets/img/main/img13.jpg" alt="">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Joe</a></li>
 							<li>In: <a href="#">Unify</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -245,12 +245,12 @@
 		        </div>
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -271,12 +271,12 @@
 				</div>
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -297,12 +297,12 @@
 				</div>
 				<div class="col-md-3 col-sm-6 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Susan</a></li>
 							<li>In: <a href="#">Wordpress</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -324,12 +324,12 @@
 
 				<div class="col-md-3 col-sm-6 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Joe</a></li>
 							<li>In: <a href="#">Unify</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -358,12 +358,12 @@
 		        </div>
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -384,12 +384,12 @@
 				</div>
 				<div class="col-md-3 col-sm-6 sm-margin-bottom-40 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Incredible standard post</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Alex</a></li>
 							<li>In: <a href="#">Design</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Incredible standard post</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -410,12 +410,12 @@
 				</div>
 				<div class="col-md-3 col-sm-6 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Susan</a></li>
 							<li>In: <a href="#">Wordpress</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Imperdiet molesti volutpa</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -437,12 +437,12 @@
 
 				<div class="col-md-3 col-sm-6 news-v3">
 					<div class="news-v3-in-sm bg-color-white">
+						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<ul class="list-inline posted-info-sm">
 							<li>By: <a href="#">Joe</a></li>
 							<li>In: <a href="#">Unify</a></li>
 							<li>Posted: Jan 24, 2015</li>
 						</ul>
-						<h2><a href="#">Nullam non metus inmi</a></h2>
 						<p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin sed.</p>
 						<ul class="post-shares">
 							<li>
@@ -528,10 +528,10 @@
         
         <div class="row margin-bottom-40">
 			{% for publicacion in publicaciones %}
-				<div class="col-md-3 col-sm-6 md-margin-bottom-40">
+				<div class="col-md-2 col-sm-6 md-margin-bottom-40">
 					<a class="intro-page__link" href="{{ publicacion.link }}">
-						<img class="img-responsive intro-page__img" src="{{ publicacion.imagen }}" alt="{{ publicacion.nombre }}">
-						{{ publicacion.nombre }}
+						<img class="img-responsive intro-page__img" src="{{ publicacion.imagen }}" alt="{{ publicacion.titulo }}">
+						{{ publicacion.titulo }}
 					</a>
 				</div>
 			{% endfor %}

@@ -135,7 +135,7 @@ $materiales[3] = $material;
 
 	$publicaciones = "";
 	
-	$result=posgre_query("SELECT * FROM generica WHERE borrado=0  AND activo=1 AND tipo='publicacion' ORDER BY RANDOM() LIMIT 4;") ;//or die (mysqli_error());  
+	$result=posgre_query("SELECT * FROM generica WHERE borrado=0  AND activo=1 AND tipo='publicacion' ORDER BY id DESC LIMIT 6;") ;//or die (mysqli_error());  
 
 	$i=0;
 	while($row = pg_fetch_array($result)) {
@@ -143,7 +143,7 @@ $materiales[3] = $material;
 		$publicacion["id"] = $row["id"];
 		$publicacion["titulo"] = $row["titulo"];
 		$publicacion["informacion"] = $row["informacion"];
-		$publicacion["imagen"] = $row["img2"];
+		$publicacion["imagen"] = $imgpublicacionespath.$row["img2"]; 
 		
 		$publicaciones[$i]= $publicacion;				
 		$i++;	

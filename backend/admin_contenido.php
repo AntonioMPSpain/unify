@@ -13,12 +13,12 @@ $titulo2="administración";
 
 $accion=strip_tags($_REQUEST['accion']);
 if($accion=='borrar'){
-	$id=strip_tags($_REQUEST['id']);
+	$id=strip_tags($_REQUEST['id']);  
 	if ($id==''){
 		header("Location: index.php?salir=true");
 		exit();
 	}
-	$_SESSION[esterror]="No se ha podido eliminar, datos incorrectos.";
+	$_SESSION[esterror]="No se ha podido eliminar, datos incorrectos."; 
 	//Eliminar de BD
 	$link=conectar(); //Postgrepsql
 	$Query = pg_query($link,"UPDATE generica SET borrado='1' WHERE $sql id='$id' ;");
@@ -97,7 +97,7 @@ if ($dir=="") $dir="DESC";
 			<a href="admin_contenido3_archivo.php?id=<?=$row["id"]?>&tipo=<?=$tipo?>"  class="btn btn-primary"> documentos </a> 
 			<a href="admin_contenido3_areas.php?id=<?=$row["id"]?>"  class="btn btn-primary"> áreas </a> 	 
 			<a href="admin_contenido.php?id=<?=$row["id"]?>&accion=borrar&tipo=<?=$tipo?>" onclick="return confirmar('¿Eliminar elemento?')"  class="btn btn-primary"> eliminar </a> 
-			<a href="admin_redes_sociales.php?tabla=generica&idtabla=<?=$row["id"];?>" class="btn btn-primary">redes sociales</a>
+			<!--<a href="admin_redes_sociales.php?tabla=generica&idtabla=<?=$row["id"];?>" class="btn btn-primary">redes sociales</a>-->
 			<!-- 
 			<a href="admin_contenido2.php?id=< ?=$row["id"]?>&accion=copiar&tipo=< ?=$tipo?>"  class="btn btn-primary"> copiar </a>
 			<a href="admin_contenido2.php?id=< ?=$row["id"]?>&accion=copiar&tipo=< ?=$tipo?>"  class="btn btn-primary"> <img src="generica/copiar.gif" border="0" alt="COPIAR" /> </a> -->

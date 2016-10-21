@@ -79,8 +79,8 @@ include("plantillaweb01admin.php");
 	<h2 class="titulonoticia">Administrador Ofertas de trabajo</h2>
 		<div class="bloque-lateral acciones">		
    	 				<p>
-   	 					<a href="admin_trabajo_boe.php" class="btn btn-warning" type="button">BOE <i class="icon-edit"></i></a> 
-   	 					<a href="admin_trabajo_rss.php" class="btn btn-warning" type="button">Infoempleo <i class="icon-edit"></i></a> 
+   	 					<!--<a href="admin_trabajo_boe.php" class="btn btn-warning" type="button">BOE <i class="icon-edit"></i></a> 
+   	 					<a href="admin_trabajo_rss.php" class="btn btn-warning" type="button">Infoempleo <i class="icon-edit"></i></a>-->
    	 					<a href="__trabajo2.php" class="btn btn-success" type="button">Nuevo <i class="icon-plus"></i></a> 
    	 				</p>
 		</div>
@@ -141,18 +141,18 @@ include("plantillaweb01admin.php");
 					<td>
 						<? if (($_SESSION[nivel]==2)&&($row["idcolegio"]!=$_SESSION[idcolegio])){ } else {?>
 						
-						<a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=borrar" onclick="return confirmar('¿Eliminar elemento?')"  class="btn btn-primary"> Eliminar</a> 
-						- <a href="__trabajo2.php?id=<?=$row["id"]?>&accion=modificar&tipo=<?=$tipo?>"  class="btn btn-primary"> Editar </a>
-						<?
+						<a href="__trabajo2.php?id=<?=$row["id"]?>&accion=modificar&tipo=<?=$tipo?>"  class="btn btn-primary"> editar </a><?
 						if ($row["estado"]==0){ ?>
-							- <a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=estadoa1&tipo=<?=$tipo?>"  class="btn btn-success"> NO activado </a>
+							<a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=estadoa1&tipo=<?=$tipo?>"  class="btn btn-success"> NO activado </a>
 							<?
 						}else{ ?>
-							- <a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=estadoa0&tipo=<?=$tipo?>"  class="btn btn-primary">  activado </a>
+							<a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=estadoa0&tipo=<?=$tipo?>"  class="btn btn-primary">  activado </a>
 							<?	
 						}
 						?>
-						<a href="admin_redes_sociales.php?tabla=trabajo&idtabla=<?=$row["id"];?>" class="btn btn-primary">Redes Sociales</a>
+						<a href="admin_trabajo.php?id=<?=$row["id"]?>&accion=borrar" onclick="return confirmar('¿Eliminar elemento?')"  class="btn btn-primary"> eliminar</a> 
+						
+						<!--<a href="admin_redes_sociales.php?tabla=trabajo&idtabla=<?=$row["id"];?>" class="btn btn-primary">Redes Sociales</a>--> 
 							<!-- <a href="__email2_ofertas_de_trabajo.php?id=< ?=$row["id"]?>" class="a3"> <img src="generica/envio_mail.png" border="0" alt="envio_mail" /> </a>
 							- <a href="#__email2_contenido.php?id=< ?=$row["id"]?>&amp;tipo=ofertas_trabajo"  class="btn btn-primary"> envio_mail </a>-->
 						<? } ?>
