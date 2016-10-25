@@ -43,7 +43,7 @@
 </div>
 <!--fin wrapper-->
 <div id="footer">
-        <p>2015 &copy; ACTIVATIE</p>
+        <p>2016 &copy; ACTIVATIE</p>
 </div>
 <script type="text/javascript" >
 	head.js( "js/jquery-1.7.2.min.js","js/plugins.js", "js/scripts.js" );

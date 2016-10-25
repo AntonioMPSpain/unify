@@ -9,9 +9,7 @@ session_start();
 if ($_SESSION[nivel]==2) { //Admin Colegio
 	if ($_SESSION[idcolegio]<>"") {
 		$idcolegio=strip_tags($_SESSION[idcolegio]);
-		$idusuario = $idcolegio;
 		$sqlcolegio="";
-		$sqlcolegio = " AND idcurso IN (SELECT id FROM curso WHERE idcolegio='$idcolegio') ";
 	}else{
 		$_SESSION[esterror]="Parámetros incorrectos";	
 		header("Location: index.php?salir=true");
@@ -27,7 +25,62 @@ else{
 }
 ////////// FIN Filtros de nivel por usuario ////////////////////// 
 
+$id = $_REQUEST['id'];
+$accion = $_REQUEST['accion'];
 
+
+
+if ($accion=="guardar"){
+	
+	$error="";
+	
+	$nombre = pg_escape_string(strip_tags($_REQUEST['nombre']));
+	$cif = pg_escape_string(strip_tags($_REQUEST['cif']));
+	$domicilio = pg_escape_string(strip_tags($_REQUEST['domicilio']));
+	$localidad = pg_escape_string(strip_tags($_REQUEST['localidad']));
+	$cp = pg_escape_string(strip_tags($_REQUEST['cp']));
+	$provincia = pg_escape_string(strip_tags($_REQUEST['provincia']));
+	$persona = pg_escape_string(strip_tags($_REQUEST['persona']));
+	$email = pg_escape_string(strip_tags($_REQUEST['email']));
+	$movil = pg_escape_string(strip_tags($_REQUEST['movil']));
+	$telefono = pg_escape_string(strip_tags($_REQUEST['telefono']));
+	$fax = pg_escape_string(strip_tags($_REQUEST['fax']));
+	$web = pg_escape_string(strip_tags($_REQUEST['web']));
+	
+	if ($nombre == ""){
+		$error= "Nombre obligatorio";	
+	}
+	
+	if ($cif != ""){
+		// Validate CIF
+	}
+	
+	if ($error==""){
+	
+		if ($id<=0){
+			$sql = "INSERT INTO empresas_marketing(nombre, cif, domicilio, localidad, cp, provincia, persona, email, movil, telefono, fax, web) 
+			VALUES ('$nombre','$cif', '$domicilio', '$localidad', '$cp','$provincia' , '$persona', '$email', '$movil', '$telefono', '$fax', '$web')";
+		}
+		else{
+			$sql = "UPDATE empresas_marketing SET nombre='$nombre',cif='$cif',domicilio='$domicilio',localidad='$localidad',cp='$cp',provincia='$provincia',
+					persona='$persona',email='$email',movil='$movil',telefono='$telefono',fax='$fax',web='$web' WHERE id='$id'";
+			$sql = "DELETE FROM empresas_marketing_familias WHERE idempresa='$id'";
+		}
+		
+		foreach($_POST as $key => $value){
+			$pos=strpos($key,"fam_");
+			if($pos!==false){
+				$pieces = explode("fam_", $key);
+				$famid = $pieces[1];
+				
+				$sql = "INSERT INTO empresas_marketing_familias(idempresa, idfamilia) VALUES ($idempresa, $idfamilia)";
+				
+			}
+		}
+	}
+	
+	
+}
 
 $titulo1="nueva";
 $titulo2="empresa";
@@ -39,21 +92,25 @@ include("plantillaweb01admin.php");
 <div class="grid-9 contenido-principal">
 <div class="clearfix"></div>
 	<div class="pagina zonaprivada blog">
-	<h2 class="titulonoticia">Insertar Nueva Empresa</h2>
-			
-		<legend></legend>
-		<form id="formcontacto" method="post" action="empresas_nueva.php?accion=guardar" enctype="multipart/form-data" >
+	<h2 class="titulonoticia"><? if ($id==0) { echo 'Insertar';} else {echo 'Editar';}?> empresa</h2>
+		<div class="bloque-lateral acciones">		
+			<p>
+				<a href="empresas_marketing.php" class="btn btn-success">Volver <i class="icon-circle-arrow-left"></i></a>
+			</p>
+		</div>
+		<span style="font-size:20px; color:red;"><? echo $error; $error=""; ?></span>
+		<form id="formcontacto" method="post" action="empresas_nueva.php?accion=guardar&id=<?=$id?>" enctype="multipart/form-data" >
 		<p>
 			<label class="description"><strong><br />Datos de la empresa</strong><br /></label>
 		</p>		
 		<p>
 			<label class="description" for="nombre">Nombre*:<br />
-				<input id="nombre" name="nombre" type="text" maxlength="255"  size="80"  class="input-xxlarge"  />  
+				<input id="nombre" name="nombre" type="text" maxlength="255"  size="80"  class="input-xxlarge" value="<?=$nombre?>" />  
 			</label>
 		</p>
 							
 		<p>
-			<label class="description" for="nombre">CIF:<br />
+			<label class="description" for="cif">CIF:<br />
 				<input id="cif" name="cif" type="text" maxlength="255"  size="80"  class="input-xxlarge"  />  
 			</label>
 		</p>	
@@ -87,13 +144,18 @@ include("plantillaweb01admin.php");
 					$r_datos=pg_query($link,$consulta);// or die (mysql_error());  
 					while($rowdg= pg_fetch_array($r_datos)) {	
 						?>
-						<option class="input-large" value="<?=$rowdg['deno']?>"><? echo ($rowdg['deno']); ?></option>
+						<option class="input-xxlarge" value="<?=$rowdg['deno']?>"><? echo ($rowdg['deno']); ?></option>
 						<? 
 					} ?>
 			  </select>
 			</label>
 		</p>
 		
+		<hr>
+		
+		<p>
+			<label class="description"><strong><br />Datos de contacto</strong><br /></label>
+		</p>
 		<p>
 			<label class="description" for="persona">Persona de contacto:<br />
 				<input id="persona" name="persona" type="text" maxlength="255" size="80"  class="input-xxlarge"  />  
@@ -107,28 +169,24 @@ include("plantillaweb01admin.php");
 		</p>
 		
 		<p>
-			<label class="description" for="fax">Web:<br />
-				<input id="web" name="web" type="text" maxlength="255"  class="input-xxlarge"  />  
-			</label>
-		</p>
-		<p>
 			<label class="description" for="telefono">Móvil:<br />
 				<input id="movil" name="movil" type="text" maxlength="255"  size="80" class="input-xxlarge"  />  
 			</label>
 		</p>
 		<p>
-			<label class="description" for="telefono">Teléfono 1:<br />
+			<label class="description" for="telefono">Teléfono:<br />
 				<input id="telefono" name="telefono" type="text" maxlength="255"  size="80" class="input-xxlarge"  />  
-			</label>
-		</p>
-		<p>
-			<label class="description" for="telefono">Teléfono 2:<br />
-				<input id="telefono2" name="telefono2" type="text" maxlength="255"  size="80" class="input-xxlarge"  />  
 			</label>
 		</p>
 		<p>
 			<label class="description" for="fax">Fax:<br />
 				<input id="fax" name="fax" type="text" maxlength="255"  class="input-xxlarge"  />  
+			</label>
+		</p>
+		
+		<p>
+			<label class="description" for="fax">Web:<br />
+				<input id="web" name="web" type="text" maxlength="255"  class="input-xxlarge"  />  
 			</label>
 		</p>
 		<hr>
@@ -143,61 +201,32 @@ include("plantillaweb01admin.php");
 			while ($rowfam = pg_fetch_array($resultfam)){ 
 				$idfam = $rowfam['id'];	
 				$nombrefam = $rowfam['nombre'];	
-			?> &nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" value="<?=$idfam?>" /><?=$nombrefam?> <br><? } ?>
+			?> &nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="fam_<?=$idfam?>" value="<?=$idfam?>" /><?=$nombrefam?> <br><? } ?>
 		</p>
 		
 		<hr>
 	
-		<p>
-			<label class="description"><strong><br />Empresa en activatie</strong><br /></label>
-		</p>		
+		<? if ($id>0){ ?>
+				
+			<p>
+				<label class="description"><strong><br />Metadatos</strong><br /></label>
+			</p>		
+					
+			<p>
+				<label class="description" for="fecha_insercion">Creador:<br /> 
+					<input disabled size="10" id="colegio" name="colegio" type="text" maxlength="12"  class="input-xlarge"  value="<?=$colegiocreador?>"  />  
+				</label>
+			</p>
 			
-		<p>
-			<label class="description" for="fecha_insercion">Tipo cuenta:<br />
-				<select name="tipocuenta" class="input-large" >
-					<option value="0">Nada contratado(Cuenta no activa)</option>
-					<option value="1">Pack Básico</option>
-					<option value="2">Pack Premium</option>
-					
-					
-				</select>	
-			</label>
-		</p>		
-		
-		<p>
-			<label class="description" for="fecha_insercion">Fecha inserción:<br /> 
-				<input size="10" id="fecha_insercion" name="fecha_insercion" type="text" maxlength="12"  class="input-xxlarge"  value="<?=cambiaf_a_normal($row["fecha_insercion"])?>"  />  
-			</label>
-		</p>
-		
-		<p>
-			<label class="description" for="fecha_insercion">Colegio inserción:<br /> 
-				<input size="10" id="fecha_insercion" name="fecha_insercion" type="text" maxlength="12"  class="input-xxlarge"  value="<?=cambiaf_a_normal($row["fecha_insercion"])?>"  />  
-			</label>
-		</p>
-		
-		<p>
-			<label class="description" for="fecha_insercion">Fecha modificación:<br />
-				<input size="10" id="fecha_insercion" name="fecha_insercion" type="text" maxlength="12"  class="input-xxlarge"  value="<?=cambiaf_a_normal($row["fecha_insercion"])?>"  />  
-			</label>
-		</p>		
-		<p>
-			<label class="description" for="requisitos">Requisitos*:<br />
-				<textarea id="requisitos" name="requisitos" rows="2" cols="45" class="input-xxlarge" ></textarea> 
-			</label>
-		</p>
-		
-		<p>
-			<label class="description"><strong><br />Notas</strong><br /></label>
-		</p>	
-		
-		<p>
-			<label class="description" for="otros_datos">Otros datos:<br />
-				<textarea id="otros_datos" name="otros_datos" rows="2" cols="45" class="input-xxlarge" ></textarea> 
-			</label>
-		</p>
-		
-		
+			<p>
+				<label class="description" for="fecha_insercion">Fecha inserción:<br /> 
+					<input disabled size="10" id="fecha_insercion" name="fecha_insercion" type="text" maxlength="12"  class="input-xlarge"  value="<?=$fechainserccion?>"  /> 
+				</label>
+			</p>
+			
+			<hr>
+			
+		<? } ?> 
 		
 		<p>
 			<label class="description" for="ostos">
@@ -205,7 +234,29 @@ include("plantillaweb01admin.php");
 			</label>
 		</p>
 		
-		</form>		
+		</form>	
+		
+		
+		<form method="post" action="empresas_nueva.php?accion=guardarcomentario&id=<?=$id?>" enctype="multipart/form-data">
+			
+		<p>
+			<label id="comentarios" class="description"><strong><br />Comentarios</strong><br /></label>
+		</p>	
+		
+		<p>
+			<textarea id="comentario" name="comentario" rows="4" cols="45" class="input-xxlarge" ></textarea> 
+		</p>
+		
+		<p>
+			<label class="comentarios" for="comentarios">
+				<input <? if ($id==0) echo 'disabled' ?> class="btn btn-primary" name="enviar" value="Comentar" type="submit" />
+				<? if ($id==0){ echo 'Para comentar es necesario guardar la empresa previamente';} ?>
+			</label>
+		</p>
+		
+		</form>	
+		
+			
 <div class="clearfix"></div>
 	</div>
 </div>

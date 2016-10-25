@@ -99,7 +99,7 @@
 		<div class="header header-sticky">
 			<div class="container">
 				<!-- Logo -->
-				<a class="logo" href="portada">
+				<a class="logo" href="<?=$baseUrl.$path?>">
 					<img src="<?=$baseUrl.$path.$imgpath?>activatie-logo.png" alt="Logo">
 				</a>
 				<!-- End Logo -->
@@ -207,7 +207,7 @@
 													<ul class="list-unstyled equal-height-list">
 														<li><h3>Noticias</h3></li>
 
-														<li><a href="<?=$actividadpath?>m/noticias"><i class="fa fa-sort-alpha-asc"></i> Portada</a></li>
+														<li><a href="<?=$baseUrl.$path.$actividadpath?>m/noticias"><i class="fa fa-sort-alpha-asc"></i> Portada</a></li>
 														<li><a href="shortcode_typo_headings.html"><i class="fa fa-magic"></i> Nuevas</a></li>
 														<li><a href="shortcode_typo_dividers.html"><i class="fa fa-ellipsis-h"></i> Populares</a></li>
 														<li><a href="shortcode_typo_blockquote.html"><i class="fa fa-quote-left"></i> Más visitadas</a></li>

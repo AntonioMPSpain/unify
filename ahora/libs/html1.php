@@ -146,8 +146,8 @@ function do_header($title, $id='home', $options = false) {
 	$vars = compact('title', 'greeting', 'id', 'left_options', 'right_options', 'sites', 'this_site', 'this_site_properties');
 	
 	
-	include ("../_config.php");
-	include ("../templates/header.php");
+	include ($globals['activatie_path']."_config.php");
+	include ($globals['activatie_path']."templates/header.php");
 	
 	return Haanga::Load('header.html', $vars);
 }
@@ -168,8 +168,9 @@ function do_js_from_array($array) {
 }
 
 function do_footer($credits = true) {
-	include_once ("../_config.php");
-	include ("../templates/footer.php");
+	global $globals;
+	include_once ($globals['activatie_path']."_config.php");
+	include ($globals['activatie_path']."templates/footer.php");
 	
 	return Haanga::Load('footer.html');
 }

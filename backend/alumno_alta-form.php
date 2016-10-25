@@ -1,5 +1,5 @@
 <?
-include_once "_funciones.php";  
+include_once "_funciones.php"; 
 ?>
 <form action="alumno_alta.php?accion=guardar<?=$actionform?>" method="post" enctype="multipart/form-data">
 			<fieldset>				    
@@ -12,7 +12,7 @@ include_once "_funciones.php";
 								<?
 								// Generar listado 
 									if ($_SESSION[nivel]==2){
-										$consulta = "SELECT * FROM usuario WHERE borrado=0 AND id='$_SESSION[idcolegio]'";
+										$consulta = "SELECT * FROM usuario WHERE borrado=0 AND id IN('$_SESSION[idcolegio]', '$idcolegio')";
 									}
 									else{
 										$consulta = "SELECT * FROM usuario WHERE nivel=2 AND borrado = 0 ORDER BY nombre,id;";

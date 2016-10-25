@@ -104,6 +104,7 @@ $globals['click_counter'] = 1; // Put a value since which id should show in "lin
 
 // Specify you base url, "/" if is the root document
 // $globals['base_dir'] = '/meneame/';
+$globals['activatie_path'] = "../";
 $globals['base_url'] = '/web/ahora/';
 $globals['top_logo'] = 'img/mnm/eli.png';
 $globals['thumbnail_logo'] = 'img/mnm/eli_thumbnail.png';

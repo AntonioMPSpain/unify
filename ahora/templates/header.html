@@ -91,7 +91,8 @@
 
 </head>
 <body>
-
+	
+<!--
 <div id="header-top">
   <div id="nav-menu"></div>
   <a href="/web/" title="{% trans _('Inicio') %}" id="header-logo" class="logo-mnm">{% trans _('Inicio') %}</a>
@@ -128,6 +129,7 @@
 	data-title="{{ title }}">
 </span>
 {% endif %} {# PARTIAL partial #}
+-->
 
 <script type="text/javascript">
 	{% include 'js/basic.js' %}
@@ -136,7 +138,7 @@
 
 
 <div id="header">
-
+<!--
 	{% if globals.mobile AND (this_site.sub OR this_site.logo_url) %}
 		<div id="header-sub" style="{% if this_site.color1 %}color:{{ this_site.color1 }};{% endif %}{% if this_site.color2 %}background-color:{{ this_site.color2 }}{% endif %}">
 
@@ -150,7 +152,6 @@
 			&nbsp;{% if this_site.sub %}{% exec print_follow_sub this_site.id as dummy %}{% endif %}
 		</div>
 	{% endif %}
-
 
 	<div id="header-center"
 		style="{% if this_site.color1 %}color:{{ this_site.color1 }};{% endif %}{% if this_site.color2 %}background-color:{{ this_site.color2 }};{% endif %}">
@@ -198,7 +199,9 @@
 		{% endif %}
 	  </div>
 
+-->
 	<!--search-->
+	<!--
 	  <div id="searchform" class="searchform">
 		<form action="{{ globals.base_url }}search" method="get" name="top_search">
 			{% if globals.search_options %}
@@ -209,10 +212,11 @@
 			<input class="searchbox" name="q" type="search" {% if globals.q %}value="{{globals.q|escape}}"{% endif %}/>
 		</form>
 	  </div>
+	 -->
 	<!--end search-->
 
 	</div><!--header-center-->
-
+<!--
 	<div id="header-menu">
 		<div class="header-menu01">
 		
@@ -233,7 +237,7 @@
 			</ul>
 
 		</div>
-
+-->
 	</div><!--header-menu01-->
 
 </div><!--header-->

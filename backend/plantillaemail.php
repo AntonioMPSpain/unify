@@ -647,8 +647,9 @@ $texto.="
 			}
 $texto.="						
 			</tr>
-
-			</table>
+			</table>	
+			<p style=\"text-align:right;\"><a style=\"color:#ee1717; text-decoration:none;\" href=\"https://www.activatie.org/web/formacion.php\"> Ver más</a></p>
+			
 		</td>
 	</tr>
 
@@ -692,6 +693,8 @@ $texto.="
 			</tr>
 
 			</table>
+			
+			<p style=\"text-align:right;\"><a style=\"color:#ee1717; text-decoration:none;\" href=\"https://www.activatie.org/web/publicaciones.php\"> Ver más</a></p>
 		</td>
 	</tr>
 
@@ -731,6 +734,8 @@ $texto.="
 			}
 	$texto.="
 			</table>
+			
+			<p style=\"text-align:right;\"><a style=\"color:#ee1717; text-decoration:none;\" href=\"https://www.activatie.org/web/trabajos.php\"> Ver más</a></p>
 		</td>
 	</tr>
 
@@ -2167,7 +2172,7 @@ function getPlantillaEmail($idemail=0, $texto="",$visorweb=0){
 				              src="http://www.activatie.org/web/img/activatie-logo.png" /></a></td>
 
 				      <td style="text-align: right; color: #888; padding-top: 10px;">
-							<p style="font-size: 11px;">La red social y de servicios de<br>Aparejadores y Arquitectos Técnicos</p>
+							<p style="font-size: 11px;">La red social y de servicios de<br>Aparejadores y Arquitectos Técnicos</p> 
 				      </td>
 
 					</tr>
@@ -2228,19 +2233,26 @@ function getPlantillaEmail($idemail=0, $texto="",$visorweb=0){
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; margin-bottom:5px;" href="http://www.aparejadoresalbacete.es" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-albacete.png" alt="APAREJADORES ALBACETE" title="COAATIIE ALBACETE"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatalicante.org" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-alicante.png" alt="APAREJADORES ALICANTE" title="COAATIE ALICANTE"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatba.com" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-badajoz.png" alt="APAREJADORES BADAJOZ" title="COAATIE BAJADOZ"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatburgos.com/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/BURGOS.png" alt="APAREJADORES BURGOS" title="COAATIE BURGOS"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatcaceres.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/CACERES.jpg" alt="APAREJADORES CACERES" title="COAATIE CACERES"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatcan.com" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-cantabria.png" alt="APAREJADORES CANTABRIA" title="COAATIE CANTABRIA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatcuenca.com" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-cuenca.png" alt="APAREJADORES CUENCA" title="COAATIE CUENCA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatfuerteventura.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/FUERTEVENTURA.jpg" alt="APAREJADORES FUERTEVENTURA" title="COAATIE FUERTEVENTURA"></a></li>				
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatcr.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/CIUDADREAL.png" alt="APAREJADORES CIUDAD REAL" title="COAATIE CIUDAD REAL"></a></li>		
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatcordoba.com" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-cordoba.png" alt="APAREJADORES CÓRDOBA" title="COAATIE CÓRDOBA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatgr.es" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-granada.png" alt="APAREJADORES GRANADA" title="COAATIE GRANADA"></a></li>	
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatgrancanaria.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/GRANCANARIA.jpg" alt="APAREJADORES GRANCANARIA" title="COAATIE GRANCANARIA"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.aparejadoresguadalajara.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/GUADALAJARA.png" alt="APAREJADORES GUADALAJARA" title="COAATIE GUADALAJARA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaathuesca.com/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/HUESCA.jpg" alt="APAREJADORES HUESCA" title="COAATIE HUESCA"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="https://coaatlanz.org" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/LANZAROTE.png" alt="APAREJADORES LANZAROTE" title="COAATIE LANZAROTE"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatleon.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/LEON.png" alt="APAREJADORES LEÓN" title="COAATIE LEÓN"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatlugo.com/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/LUGO.jpg" alt="APAREJADORES LUGO" title="COAATIE LUGO"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.aparejadoresmadrid.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/MADRID.png" alt="APAREJADORES MADRID" title="COAATIE MADRID"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatiemu.es" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-murcia.png" alt="APAREJADORES MURCIA" title="COAATIE MURCIA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.aparejadoresou.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/OURENSE.jpg" alt="APAREJADORES OURENSE" title="COAATIE OURENSE"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatpo.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/PONTEVEDRA.jpg" alt="APAREJADORES PONTEVEDRA" title="COAATIE PONTEVEDRA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatsa.org" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-salamanca.png" alt="APAREJADORES SALAMANCA"  title="COAATIE SALAMANCA"></a></li>
+					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaat-tfe.com/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/TENERIFE.png" alt="APAREJADORES TENERIFE" title="COAATIE TENERIFE"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://coaatteruel.es/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/TERUEL.jpg" alt="APAREJADORES TERUEL" title="COAATIE TERUEL"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.caatvalencia.es" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/logo-valencia.png" alt="APAREJADORES VALENCIA"  title="COAATIE VALENCIA"></a></li>
 					<li style="display: inline; list-style: disc;"><a style="display: inline-block; text-align: center; width: 100px; " href="http://www.coaatz.org/" ><img style="width:80px;" width="80" src="http://www.activatie.org/web/img/ZARAGOZA.jpg" alt="APAREJADORES ZARAGOZA" title="COAATIE ZARAGOZA"></a></li>
