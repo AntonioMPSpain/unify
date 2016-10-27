@@ -12,13 +12,21 @@ include_once "_funciones.php";
 								<?
 								// Generar listado 
 									if ($_SESSION[nivel]==2){
-										$consulta = "SELECT * FROM usuario WHERE borrado=0 AND id IN('$_SESSION[idcolegio]', '$idcolegio')";
+										if ($idcolegio<>""){
+											
+											$consulta = "SELECT * FROM usuario WHERE borrado=0 AND id IN('$_SESSION[idcolegio]', '$idcolegio')";
+										}
+										else{
+											
+											$consulta = "SELECT * FROM usuario WHERE borrado=0 AND id IN('$_SESSION[idcolegio]')";
+										}
 									}
 									else{
 										$consulta = "SELECT * FROM usuario WHERE nivel=2 AND borrado = 0 ORDER BY nombre,id;";
 									}
 									$link=iConectarse(); 
 									$r_datos=pg_query($link,$consulta);// or die (mysql_error());  
+									
 									while($rowdg= pg_fetch_array($r_datos)) {	
 										?>
 										<option class="input-large" value="<?=$rowdg['id']?>"<? if  ($idcolegio == $rowdg['id']) { echo " selected "; } ?>><? echo ($rowdg['nombre']); ?></option>

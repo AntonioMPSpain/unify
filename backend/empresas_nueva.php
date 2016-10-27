@@ -16,6 +16,7 @@ if ($_SESSION[nivel]==2) { //Admin Colegio
 		exit();
 	}
 }elseif ($_SESSION[nivel]==1) { //Admin Total
+	$idcolegio=0;
 	$sqlcolegio="";
 }
 else{
@@ -58,26 +59,83 @@ if ($accion=="guardar"){
 	if ($error==""){
 	
 		if ($id<=0){
-			$sql = "INSERT INTO empresas_marketing(nombre, cif, domicilio, localidad, cp, provincia, persona, email, movil, telefono, fax, web) 
-			VALUES ('$nombre','$cif', '$domicilio', '$localidad', '$cp','$provincia' , '$persona', '$email', '$movil', '$telefono', '$fax', '$web')";
+			$sql = "INSERT INTO empresas_marketing(idcolegio, nombre, cif, domicilio, localidad, cp, provincia, persona, email, movil, telefono, fax, web) 
+			VALUES ('$idcolegio','$nombre','$cif', '$domicilio', '$localidad', '$cp','$provincia' , '$persona', '$email', '$movil', '$telefono', '$fax', '$web') RETURNING id;";
+			$result = posgre_query($sql);
+			echo pg_last_error();
+			$row = pg_fetch_array($result);
+			$id = $row['id'];
 		}
 		else{
 			$sql = "UPDATE empresas_marketing SET nombre='$nombre',cif='$cif',domicilio='$domicilio',localidad='$localidad',cp='$cp',provincia='$provincia',
-					persona='$persona',email='$email',movil='$movil',telefono='$telefono',fax='$fax',web='$web' WHERE id='$id'";
-			$sql = "DELETE FROM empresas_marketing_familias WHERE idempresa='$id'";
-		}
+					persona='$persona',email='$email',movil='$movil',telefono='$telefono',fax='$fax',web='$web' WHERE id='$id'";	
+			posgre_query($sql);
+			
+			$sql2 = "DELETE FROM empresas_marketing_familias WHERE idempresa='$id'";
+			posgre_query($sql2);
+		}	
+		
 		
 		foreach($_POST as $key => $value){
 			$pos=strpos($key,"fam_");
 			if($pos!==false){
 				$pieces = explode("fam_", $key);
-				$famid = $pieces[1];
+				$idfamilia = $pieces[1];
 				
-				$sql = "INSERT INTO empresas_marketing_familias(idempresa, idfamilia) VALUES ($idempresa, $idfamilia)";
+				$sql = "INSERT INTO empresas_marketing_familias(idempresa, idfamilia) VALUES ($id, $idfamilia)";
+				posgre_query($sql);
 				
 			}
 		}
+	}	
+}
+elseif ($accion=="guardarcomentario"){
+			
+	$comentario = $_REQUEST['comentario'];
+	
+	$sql = "INSERT INTO empresas_marketing_comentarios(idcolegio, idempresa, comentario) VALUES ('$idcolegio', '$id', '$comentario')";
+	posgre_query($sql);
+}
+
+if ($id>0){
+				
+	$sql = "SELECT * FROM empresas_marketing WHERE id='$id'";
+	$result = posgre_query($sql);
+	if ($row = pg_fetch_array($result)){
+	
+		$nombre = $row['nombre'];
+		$cif = $row['cif'];
+		$domicilio = $row['domicilio'];
+		$localidad = $row['localidad'];
+		$cp = $row['cp'];
+		$provincia = $row['provincia'];
+		$persona = $row['persona'];
+		$email = $row['email'];
+		$movil = $row['movil'];
+		$telefono = $row['telefono'];
+		$fax = $row['fax'];
+		$web = $row['web'];
+		$fechainserccion = cambiaf_a_normal($row['fecha']);
+		$idcolegiocreador = $row['idcolegio'];
+		
+		if ($idcolegiocreador==0){
+			$colegiocreador="Admin";
+		}
+		else{
+			
+			$sql = "SELECT nombre FROM usuario WHERE id='$idcolegiocreador'";
+			$result = posgre_query($sql);
+			if ($row = pg_fetch_array($result)){
+				$colegiocreador=$row['nombre'];
+			}
+		}
+			
+						
+			
+		
 	}
+			
+		
 	
 	
 }
@@ -111,32 +169,32 @@ include("plantillaweb01admin.php");
 							
 		<p>
 			<label class="description" for="cif">CIF:<br />
-				<input id="cif" name="cif" type="text" maxlength="255"  size="80"  class="input-xxlarge"  />  
+				<input id="cif" name="cif" type="text" maxlength="255"  size="80" value="<?=$cif?>" class="input-xxlarge"  />  
 			</label>
 		</p>	
 		
 		<p>
 			<label class="description" for="domicilio">Domicilio:<br />
-				<input id="domicilio" name="domicilio" type="text" maxlength="255"  size="80" class="input-xxlarge" 	 />  
+				<input id="domicilio" name="domicilio" type="text" maxlength="255"  size="80" value="<?=$domicilio?>" class="input-xxlarge" 	 />  
 			</label>
 		</p>
 		<p>
 			<label class="description" for="localidad">Localidad:<br />
-				<input id="localidad" name="localidad" type="text" maxlength="255"  size="80" class="input-xxlarge" 	/>  
+				<input id="localidad" name="localidad" type="text" maxlength="255"  size="80" value="<?=$localidad?>" class="input-xxlarge" 	/>  
 			</label>
 		</p>
 		
 		<p>
 			<label class="description" for="cp">Código Postal:<br />
-				<input id="cp" name="cp" type="text" maxlength="255"  class="input-xxlarge" 	 />  
+				<input id="cp" name="cp" type="text" maxlength="255" value="<?=$cp?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		
 		<p>
 			<label class="description" for="provincia">Ámbito/Provincia:<br />
 				<select name="provincia" class="input-large" >
-					<option class="input-large" value="Internacional">--Internacional--</option>
-					<option class="input-large" value="Nacional">--Nacional--</option>
+					<option <? if ($provincia=="Internacional"){echo 'selected';} ?> class="input-large" value="Internacional">--Internacional--</option>
+					<option  <? if ($provincia=="Nacional"){echo 'selected';} ?> class="input-large" value="Nacional">--Nacional--</option>
 				<?
 				// Generar listado 
 					$consulta = "SELECT * FROM etiqueta_provincia WHERE borrado = 0 ORDER BY id,deno;";
@@ -144,7 +202,7 @@ include("plantillaweb01admin.php");
 					$r_datos=pg_query($link,$consulta);// or die (mysql_error());  
 					while($rowdg= pg_fetch_array($r_datos)) {	
 						?>
-						<option class="input-xxlarge" value="<?=$rowdg['deno']?>"><? echo ($rowdg['deno']); ?></option>
+						<option <? if ($provincia==$rowdg['deno']){echo 'selected';} ?> class="input-xxlarge" value="<?=$rowdg['deno']?>"><? echo ($rowdg['deno']); ?></option>
 						<? 
 					} ?>
 			  </select>
@@ -158,35 +216,35 @@ include("plantillaweb01admin.php");
 		</p>
 		<p>
 			<label class="description" for="persona">Persona de contacto:<br />
-				<input id="persona" name="persona" type="text" maxlength="255" size="80"  class="input-xxlarge"  />  
+				<input id="persona" name="persona" type="text" maxlength="255" size="80" value="<?=$persona?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		 
 		<p>
 			<label class="description" for="fax">Email:<br />
-				<input id="email" name="email" type="text" maxlength="255"  class="input-xxlarge"  />  
+				<input id="email" name="email" type="text" maxlength="255" value="<?=$email?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		
 		<p>
 			<label class="description" for="telefono">Móvil:<br />
-				<input id="movil" name="movil" type="text" maxlength="255"  size="80" class="input-xxlarge"  />  
+				<input id="movil" name="movil" type="text" maxlength="255" value="<?=$movil?>" size="80" class="input-xxlarge"  />  
 			</label>
 		</p>
 		<p>
 			<label class="description" for="telefono">Teléfono:<br />
-				<input id="telefono" name="telefono" type="text" maxlength="255"  size="80" class="input-xxlarge"  />  
+				<input id="telefono" name="telefono" type="text" maxlength="255" size="80" value="<?=$telefono?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		<p>
 			<label class="description" for="fax">Fax:<br />
-				<input id="fax" name="fax" type="text" maxlength="255"  class="input-xxlarge"  />  
+				<input id="fax" name="fax" type="text" maxlength="255" value="<?=$fax?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		
 		<p>
 			<label class="description" for="fax">Web:<br />
-				<input id="web" name="web" type="text" maxlength="255"  class="input-xxlarge"  />  
+				<input id="web" name="web" type="text" maxlength="255" value="<?=$web?>" class="input-xxlarge"  />  
 			</label>
 		</p>
 		<hr>
@@ -201,7 +259,17 @@ include("plantillaweb01admin.php");
 			while ($rowfam = pg_fetch_array($resultfam)){ 
 				$idfam = $rowfam['id'];	
 				$nombrefam = $rowfam['nombre'];	
-			?> &nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="fam_<?=$idfam?>" value="<?=$idfam?>" /><?=$nombrefam?> <br><? } ?>
+				
+				
+				$selected = "";
+				$sql = "SELECT * FROM empresas_marketing_familias WHERE idfamilia='$idfam' AND idempresa='$id'";
+				$result = posgre_query($sql); 
+				if ($row = pg_fetch_array($result)){
+					$selected="checked";
+				}
+				
+				
+			?> &nbsp;&nbsp;	&nbsp;&nbsp;&nbsp;&nbsp;<input <?=$selected?> type="checkbox" name="fam_<?=$idfam?>" value="<?=$idfam?>" /><?=$nombrefam?> <br><? } ?>
 		</p>
 		
 		<hr>
@@ -228,28 +296,63 @@ include("plantillaweb01admin.php");
 			
 		<? } ?> 
 		
-		<p>
-			<label class="description" for="ostos">
-				<input  class="btn btn-primary" name="enviar" value="Guardar" type="submit" />
-			</label>
-		</p>
+		<? if (($idcolegio==0)||($idcolegio==$idcolegiocreador)) { ?>
+			
+			<p>
+				<label class="description" for="ostos">
+					<input  class="btn btn-primary" name="enviar" value="Guardar" type="submit" />
+				</label>
+			</p>
+		
+		<? } ?>
 		
 		</form>	
 		
-		
+		<br>
 		<form method="post" action="empresas_nueva.php?accion=guardarcomentario&id=<?=$id?>" enctype="multipart/form-data">
 			
 		<p>
-			<label id="comentarios" class="description"><strong><br />Comentarios</strong><br /></label>
+			<label style="font-size:22px;" id="comentarios" class="description"><strong><br />Comentarios</strong><br /></label>
 		</p>	
 		
-		<p>
-			<textarea id="comentario" name="comentario" rows="4" cols="45" class="input-xxlarge" ></textarea> 
-		</p>
+		<? 
+			$sql = "SELECT * FROM empresas_marketing_comentarios WHERE idempresa='$id' AND borrado=0 ORDER BY fecha";
+			$result = posgre_query($sql);
+			
+			$i=1;
+			while ($row = pg_fetch_array($result)){
+				$comentario = $row['comentario'];
+				$idcolegiocomentario = $row['idcolegio'];
+				$fechacomentario = cambiaf_a_normal($row['fecha']);
+				
+				if ($idcolegiocomentario==0){
+					$colegiocreadorcomentario="Admin";
+				}
+				else{
+					
+					$sql = "SELECT nombre FROM usuario WHERE id='$idcolegiocomentario'";
+					$result = posgre_query($sql);
+					if ($row = pg_fetch_array($result)){
+						$colegiocreadorcomentario=$row['nombre'];
+					}
+				}
+				
+				
+				?>
+					Comentario <strong><?=$i?></strong>:  por <?=$colegiocreadorcomentario?> el <?=$fechacomentario?><br>
+					<textarea disabled> <?=$comentario?></textarea><br><br>
+				<?
+				$i++;
+			}
+		?>
 		
-		<p>
+		<br><br>
+		<p> 
+			<strong>Nuevo comentario</strong><br>
+			<textarea id="comentario" name="comentario" rows="4" cols="45" class="input-xxlarge" ></textarea> 
+			
 			<label class="comentarios" for="comentarios">
-				<input <? if ($id==0) echo 'disabled' ?> class="btn btn-primary" name="enviar" value="Comentar" type="submit" />
+				<input style="margin-left:450px;" <? if ($id==0) echo 'disabled' ?> class="btn btn-primary" name="enviar" value="Comentar" type="submit" />
 				<? if ($id==0){ echo 'Para comentar es necesario guardar la empresa previamente';} ?>
 			</label>
 		</p>
