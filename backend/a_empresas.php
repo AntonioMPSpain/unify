@@ -55,14 +55,14 @@ if (isset($_GET['test'])){
 /**
 * crea empresa como un usuario más, con sus propiedades y genera sus datos de facturación
 */
-function crearActualizarEmpresa($cif, $nombre, $direccion, $idprovincia, $municipio, $cp){
+function crearActualizarEmpresa($cif, $nombre, $direccion, $idprovincia, $municipio, $cp, $pais){
 	
 	if (!existeEmpresa($cif)){
 		
 		$idempresa = generarIDempresa();
 		$login = solonumeros($cif);
 		
-		$sql="INSERT INTO usuario (id, nivel, confirmado, nombre, nif, login, direccion, idprovincia, municipio, cp) VALUES ('$idempresa','9','0','$nombre','$cif','$login', '$direccion', '$idprovincia', '$municipio', '$cp')";
+		$sql="INSERT INTO usuario (id, nivel, confirmado, nombre, nif, login, direccion, idprovincia, municipio, cp, pais) VALUES ('$idempresa','9','0','$nombre','$cif','$login', '$direccion', '$idprovincia', '$municipio', '$cp', '$pais')";
 		
 		if ($result = posgre_query($sql)){
 			return $idempresa;
@@ -74,7 +74,7 @@ function crearActualizarEmpresa($cif, $nombre, $direccion, $idprovincia, $munici
 	else{
 		$idempresa = getIDempresa($cif);
 		
-		$sql="UPDATE usuario SET nombre='$nombre', direccion='$direccion', idprovincia='$idprovincia', municipio='$municipio', cp='$cp' WHERE id='$idempresa' AND nivel='9'";
+		$sql="UPDATE usuario SET nombre='$nombre', direccion='$direccion', idprovincia='$idprovincia', municipio='$municipio', cp='$cp', pais='$pais' WHERE id='$idempresa' AND nivel='9'";
 		posgre_query($sql);
 		
 		$sql = "UPDATE usuario SET exportadofactusol=0 WHERE id='$idempresa' AND nivel='9'";

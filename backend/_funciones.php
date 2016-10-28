@@ -1468,6 +1468,243 @@ function getRealIP(){
 }
 
 
+function getPais($pais){
+	if ($pais=="ES"){ return "España"; }
+	elseif ($pais=="AF"){ return "Afganistán";}
+	elseif ($pais=="AL"){ return "Albania";}
+	elseif ($pais=="DE"){ return "Alemania";}
+	elseif ($pais=="AD"){ return "Andorra";}
+	elseif ($pais=="AO"){ return "Angola";}
+	elseif ($pais=="AI"){ return "Anguilla";}
+	elseif ($pais=="AQ"){ return "Antártida";}
+	elseif ($pais=="AG"){ return "Antigua y Barbuda";}
+	elseif ($pais=="AN"){ return "Antillas Holandesas";}
+	elseif ($pais=="SA"){ return "Arabia Saudí";}
+	elseif ($pais=="DZ"){ return "Argelia";}
+	elseif ($pais=="AR"){ return "Argentina";}
+	elseif ($pais=="AM"){ return "Armenia";}
+	elseif ($pais=="AW"){ return "Aruba";}
+	elseif ($pais=="AU"){ return "Australia";}
+	elseif ($pais=="AT"){ return "Austria";}
+	elseif ($pais=="AZ"){ return "Azerbaiyán";}
+	elseif ($pais=="BS"){ return "Bahamas";}
+	elseif ($pais=="BH"){ return "Bahrein";}
+	elseif ($pais=="BD"){ return "Bangladesh";}
+	elseif ($pais=="BB"){ return "Barbados";}
+	elseif ($pais=="BE"){ return "Bélgica";}
+	elseif ($pais=="BZ"){ return "Belice";}
+	elseif ($pais=="BJ"){ return "Benin";}
+	elseif ($pais=="BM"){ return "Bermudas";}
+	elseif ($pais=="BY"){ return "Bielorrusia";}
+	elseif ($pais=="MM"){ return "Birmania";}
+	elseif ($pais=="BO"){ return "Bolivia";}
+	elseif ($pais=="BA"){ return "Bosnia y Herzegovina";}
+	elseif ($pais=="BW"){ return "Botswana";}
+	elseif ($pais=="BR"){ return "Brasil";}
+	elseif ($pais=="BN"){ return "Brunei";}
+	elseif ($pais=="BG"){ return "Bulgaria";}
+	elseif ($pais=="BF"){ return "Burkina Faso";}
+	elseif ($pais=="BI"){ return "Burundi";}
+	elseif ($pais=="BT"){ return "Bután";}
+	elseif ($pais=="CV"){ return "Cabo Verde";} 
+	elseif ($pais=="KH"){ return "Camboya";}
+	elseif ($pais=="CM"){ return "Camerún";}
+	elseif ($pais=="CA"){ return "Canadá";}
+	elseif ($pais=="TD"){ return "Chad";}
+	elseif ($pais=="CL"){ return "Chile";}
+	elseif ($pais=="CN"){ return "China";}
+	elseif ($pais=="CY"){ return "Chipre";}
+	elseif ($pais=="VA"){ return "Ciudad del Vaticano (Santa Sede)";}
+	elseif ($pais=="CO"){ return "Colombia";}
+	elseif ($pais=="KM"){ return "Comores";}
+	elseif ($pais=="CG"){ return "Congo";}
+	elseif ($pais=="CD"){ return "Congo, República Democrática del";}
+	elseif ($pais=="KR"){ return "Corea";}
+	elseif ($pais=="KP"){ return "Corea del Norte";}
+	elseif ($pais=="CI"){ return "Costa de Marfíl";}
+	elseif ($pais=="CR"){ return "Costa Rica";}
+	elseif ($pais=="HR"){ return "Croacia (Hrvatska)";}
+	elseif ($pais=="CU"){ return "Cuba";}
+	elseif ($pais=="DK"){ return "Dinamarca";}
+	elseif ($pais=="DJ"){ return "Djibouti";}
+	elseif ($pais=="DM"){ return "Dominica";}
+	elseif ($pais=="EC"){ return "Ecuador";}
+	elseif ($pais=="EG"){ return "Egipto";}
+	elseif ($pais=="SV"){ return "El Salvador";}
+	elseif ($pais=="AE"){ return "Emiratos Árabes Unidos";}
+	elseif ($pais=="ER"){ return "Eritrea";}
+	elseif ($pais=="SI"){ return "Eslovenia";}
+	elseif ($pais=="US"){ return "Estados Unidos";}
+	elseif ($pais=="EE"){ return "Estonia";}
+	elseif ($pais=="ET"){ return "Etiopía";}
+	elseif ($pais=="FJ"){ return "Fiji";}
+	elseif ($pais=="PH"){ return "Filipinas";}
+	elseif ($pais=="FI"){ return "Finlandia";}
+	elseif ($pais=="FR"){ return "Francia";}
+	elseif ($pais=="GA"){ return "Gabón";}
+	elseif ($pais=="GM"){ return "Gambia";}
+	elseif ($pais=="GE"){ return "Georgia";}
+	elseif ($pais=="GH"){ return "Ghana";}
+	elseif ($pais=="GI"){ return "Gibraltar";}
+	elseif ($pais=="GD"){ return "Granada";}
+	elseif ($pais=="GR"){ return "Grecia";}
+	elseif ($pais=="GL"){ return "Groenlandia";}
+	elseif ($pais=="GP"){ return "Guadalupe";}
+	elseif ($pais=="GU"){ return "Guam";}
+	elseif ($pais=="GT"){ return "Guatemala";}
+	elseif ($pais=="GY"){ return "Guayana";}
+	elseif ($pais=="GF"){ return "Guayana Francesa";}
+	elseif ($pais=="GN"){ return "Guinea";}
+	elseif ($pais=="GQ"){ return "Guinea Ecuatorial";}
+	elseif ($pais=="GW"){ return "Guinea-Bissau";}
+	elseif ($pais=="HT"){ return "Haití";}
+	elseif ($pais=="HN"){ return "Honduras";}
+	elseif ($pais=="HU"){ return "Hungría";}
+	elseif ($pais=="IN"){ return "India";}
+	elseif ($pais=="ID"){ return "Indonesia";}
+	elseif ($pais=="IQ"){ return "Irak";}
+	elseif ($pais=="IR"){ return "Irán";}
+	elseif ($pais=="IE"){ return "Irlanda";}
+	elseif ($pais=="BV"){ return "Isla Bouvet";}
+	elseif ($pais=="CX"){ return "Isla de Christmas";}
+	elseif ($pais=="IS"){ return "Islandia";}
+	elseif ($pais=="KY"){ return "Islas Caimán";}
+	elseif ($pais=="CK"){ return "Islas Cook";}
+	elseif ($pais=="CC"){ return "Islas de Cocos o Keeling";}
+	elseif ($pais=="FO"){ return "Islas Faroe";}
+	elseif ($pais=="HM"){ return "Islas Heard y McDonald";}
+	elseif ($pais=="FK"){ return "Islas Malvinas";}
+	elseif ($pais=="MP"){ return "Islas Marianas del Norte";}
+	elseif ($pais=="MH"){ return "Islas Marshall";}
+	elseif ($pais=="UM"){ return "Islas menores de Estados Unidos";}
+	elseif ($pais=="PW"){ return "Islas Palau";}
+	elseif ($pais=="SB"){ return "Islas Salomón";}
+	elseif ($pais=="SJ"){ return "Islas Svalbard y Jan Mayen";}
+	elseif ($pais=="TK"){ return "Islas Tokelau";}
+	elseif ($pais=="TC"){ return "Islas Turks y Caicos";}
+	elseif ($pais=="VI"){ return "Islas Vírgenes (EEUU)";}
+	elseif ($pais=="VG"){ return "Islas Vírgenes (Reino Unido)";}
+	elseif ($pais=="WF"){ return "Islas Wallis y Futuna";}
+	elseif ($pais=="IL"){ return "Israel";}
+	elseif ($pais=="IT"){ return "Italia";}
+	elseif ($pais=="JM"){ return "Jamaica";}
+	elseif ($pais=="JP"){ return "Japón";}
+	elseif ($pais=="JO"){ return "Jordania";}
+	elseif ($pais=="KZ"){ return "Kazajistán";}
+	elseif ($pais=="KE"){ return "Kenia";}
+	elseif ($pais=="KG"){ return "Kirguizistán";}
+	elseif ($pais=="KI"){ return "Kiribati";}
+	elseif ($pais=="KW"){ return "Kuwait";}
+	elseif ($pais=="LA"){ return "Laos";}
+	elseif ($pais=="LS"){ return "Lesotho";}
+	elseif ($pais=="LV"){ return "Letonia";}
+	elseif ($pais=="LB"){ return "Líbano";}
+	elseif ($pais=="LR"){ return "Liberia";}
+	elseif ($pais=="LY"){ return "Libia";}
+	elseif ($pais=="LI"){ return "Liechtenstein";}
+	elseif ($pais=="LT"){ return "Lituania";}
+	elseif ($pais=="LU"){ return "Luxemburgo";}
+	elseif ($pais=="MK"){ return "Macedonia, Ex-República Yugoslava de";}
+	elseif ($pais=="MG"){ return "Madagascar";}
+	elseif ($pais=="MY"){ return "Malasia";}
+	elseif ($pais=="MW"){ return "Malawi";}
+	elseif ($pais=="MV"){ return "Maldivas";}
+	elseif ($pais=="ML"){ return "Malí";}
+	elseif ($pais=="MT"){ return "Malta";}
+	elseif ($pais=="MA"){ return "Marruecos";}
+	elseif ($pais=="MQ"){ return "Martinica";}
+	elseif ($pais=="MU"){ return "Mauricio";}
+	elseif ($pais=="MR"){ return "Mauritania";}
+	elseif ($pais=="YT"){ return "Mayotte";}
+	elseif ($pais=="MX"){ return "México";}
+	elseif ($pais=="FM"){ return "Micronesia";}
+	elseif ($pais=="MD"){ return "Moldavia";}
+	elseif ($pais=="MC"){ return "Mónaco";}
+	elseif ($pais=="MN"){ return "Mongolia";}
+	elseif ($pais=="MS"){ return "Montserrat";}
+	elseif ($pais=="MZ"){ return "Mozambique";}
+	elseif ($pais=="NA"){ return "Namibia";}
+	elseif ($pais=="NR"){ return "Nauru";}
+	elseif ($pais=="NP"){ return "Nepal";}
+	elseif ($pais=="NI"){ return "Nicaragua";}
+	elseif ($pais=="NE"){ return "Níger";}
+	elseif ($pais=="NG"){ return "Nigeria";}
+	elseif ($pais=="NU"){ return "Niue";}
+	elseif ($pais=="NF"){ return "Norfolk";}
+	elseif ($pais=="NO"){ return "Noruega";}
+	elseif ($pais=="NC"){ return "Nueva Caledonia";}
+	elseif ($pais=="NZ"){ return "Nueva Zelanda";}
+	elseif ($pais=="OM"){ return "Omán";}
+	elseif ($pais=="NL"){ return "Países Bajos";}
+	elseif ($pais=="PA"){ return "Panamá";}
+	elseif ($pais=="PG"){ return "Papúa Nueva Guinea";}
+	elseif ($pais=="PK"){ return "Paquistán";}
+	elseif ($pais=="PY"){ return "Paraguay";}
+	elseif ($pais=="PE"){ return "Perú";}
+	elseif ($pais=="PN"){ return "Pitcairn";}
+	elseif ($pais=="PF"){ return "Polinesia Francesa";}
+	elseif ($pais=="PL"){ return "Polonia";}
+	elseif ($pais=="PT"){ return "Portugal";}
+	elseif ($pais=="PR"){ return "Puerto Rico";}
+	elseif ($pais=="QA"){ return "Qatar";}
+	elseif ($pais=="UK"){ return "Reino Unido";}
+	elseif ($pais=="CF"){ return "República Centroafricana";}
+	elseif ($pais=="CZ"){ return "República Checa";}
+	elseif ($pais=="ZA"){ return "República de Sudáfrica";}
+	elseif ($pais=="DO"){ return "República Dominicana";}
+	elseif ($pais=="SK"){ return "República Eslovaca";}
+	elseif ($pais=="RE"){ return "Reunión";}
+	elseif ($pais=="RW"){ return "Ruanda";}
+	elseif ($pais=="RO"){ return "Rumania";}
+	elseif ($pais=="RU"){ return "Rusia";}
+	elseif ($pais=="EH"){ return "Sahara Occidental";}
+	elseif ($pais=="KN"){ return "Saint Kitts y Nevis";}
+	elseif ($pais=="WS"){ return "Samoa";}
+	elseif ($pais=="AS"){ return "Samoa Americana";}
+	elseif ($pais=="SM"){ return "San Marino";}
+	elseif ($pais=="VC"){ return "San Vicente y Granadinas";}
+	elseif ($pais=="SH"){ return "Santa Helena";}
+	elseif ($pais=="LC"){ return "Santa Lucía";}
+	elseif ($pais=="ST"){ return "Santo Tomé y Príncipe";}
+	elseif ($pais=="SN"){ return "Senegal";}
+	elseif ($pais=="SC"){ return "Seychelles";}
+	elseif ($pais=="SL"){ return "Sierra Leona";}
+	elseif ($pais=="SG"){ return "Singapur";}
+	elseif ($pais=="SY"){ return "Siria";}
+	elseif ($pais=="SO"){ return "Somalia";}
+	elseif ($pais=="LK"){ return "Sri Lanka";}
+	elseif ($pais=="PM"){ return "St Pierre y Miquelon";}
+	elseif ($pais=="SZ"){ return "Suazilandia";}
+	elseif ($pais=="SD"){ return "Sudán";}
+	elseif ($pais=="SE"){ return "Suecia";}
+	elseif ($pais=="CH"){ return "Suiza";}
+	elseif ($pais=="SR"){ return "Surinam";}
+	elseif ($pais=="TH"){ return "Tailandia";}
+	elseif ($pais=="TW"){ return "Taiwán";}
+	elseif ($pais=="TZ"){ return "Tanzania";}
+	elseif ($pais=="TJ"){ return "Tayikistán";}
+	elseif ($pais=="TF"){ return "Territorios franceses del Sur";}
+	elseif ($pais=="TP"){ return "Timor Oriental";}
+	elseif ($pais=="TG"){ return "Togo";}
+	elseif ($pais=="TO"){ return "Tonga";}
+	elseif ($pais=="TT"){ return "Trinidad y Tobago";}
+	elseif ($pais=="TN"){ return "Túnez";}
+	elseif ($pais=="TM"){ return "Turkmenistán";}
+	elseif ($pais=="TR"){ return "Turquía";}
+	elseif ($pais=="TV"){ return "Tuvalu";}
+	elseif ($pais=="UA"){ return "Ucrania";}
+	elseif ($pais=="UG"){ return "Uganda";}
+	elseif ($pais=="UY"){ return "Uruguay";}
+	elseif ($pais=="UZ"){ return "Uzbekistán";}
+	elseif ($pais=="VU"){ return "Vanuatu";}
+	elseif ($pais=="VE"){ return "Venezuela";}
+	elseif ($pais=="VN"){ return "Vietnam";}
+	elseif ($pais=="YE"){ return "Yemen";}
+	elseif ($pais=="YU"){ return "Yugoslavia";}
+	elseif ($pais=="ZM"){ return "Zambia";}
+	elseif ($pais=="ZW"){ return "Zimbabue";}
+}
+
 
 
 

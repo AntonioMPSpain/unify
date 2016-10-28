@@ -55,6 +55,9 @@ while ($row = pg_fetch_array($result)){
 	$cp=$row['cp'];
 	$email=$row['email'];
 	$idprovincia=$row['idprovincia'];
+	$pais=$row['pais'];
+	
+	$paisNombre = getPais($pais);
 	
 	$sql4 = "SELECT deno FROM etiqueta_provincia WHERE id='$idprovincia'";
 	$result4 = posgre_query($sql4);
@@ -358,7 +361,7 @@ ob_start();
   <div class="address"><?=strtoupper($nif)?> </div>
   <div class="address"><?=tildesmayusculas(ucwords(strtolower($direccion)));?></div>
   <div class="address"><?=tildesmayusculas(ucwords(strtolower($municipio)));?> </div> 
-  <div class="address"><?=$cp?> <?=$provinciaNombre?> </div> 
+  <div class="address"><?=$cp?> <? if ($pais=="ES") { echo $provinciaNombre; } ?> <?=$paisNombre?> </div> 
   <? /* <div class="email"><a href="mailto:<?=$email?>"><?=$email?></a></div> */ ?>
 </div>
 <div id="invoice">

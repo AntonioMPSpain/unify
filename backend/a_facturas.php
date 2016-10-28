@@ -181,7 +181,6 @@ function generarExcelFacturaCurso($idcurso){
 }
  
 function generarExcelFacturas($sql,$tipoexportacion=0){
-	echo "llegafuncion"; exit();
 	$cursonombre="";
 	if ($tipoexportacion==2){
 		$iniciorango = explode(">='",$sql);
@@ -237,10 +236,12 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 				$nombrecliente = $nombre." ".$apellidos;
 				$direccion = $row3['direccion'];
 				$idprovincia = $row3['idprovincia'];
+				$pais = $row3['pais'];
 				$telefono = $row3['telefono'];
 				$municipio = $row3['municipio'];
 				$cp = $row3['cp'];
-			
+				
+				$paisNombre = getPais($pais);
 			
 				$sql4 = "SELECT deno FROM etiqueta_provincia WHERE id='$idprovincia'";
 				$result4 = posgre_query($sql4);
@@ -263,11 +264,13 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 						$dni = $row5['nif'];
 						$nombrecliente = $row5['nombre'];
 						$direccion = $row5['direccion'];
+						$pais = $row5['pais'];
 						$idprovincia = $row5['idprovincia'];
 						$municipio = $row5['municipio'];
 						$cp = $row5['cp'];
 						$apellidos="";
 						
+						$paisNombre = getPais($pais);
 						
 						$consulta = "SELECT * FROM etiqueta_provincia WHERE id = '$idprovincia'";
 						$r_datos=posgre_query($consulta);// or die (mysql_error());  
@@ -736,11 +739,18 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 					
 			}
 			
+			$pais = $row3["pais"];	
+			
+			if ($pais!="ES"){
+				$provincia="";
+			}	
+			
+			$paisNombre = getPais($pais);
 			$telefono = $row3["telefono2"];
 			$movil = $row3["telefono"];
 			$email = $row3["email"];
 			$iban = $row3["iban"];
-			include_once "../librerias/swift_codes.php";
+			include_once $b_libspath ."swift_codes.php";
 			$ibanes = explode("-",$iban);
 			$swift = getSwiftBicCode($ibanes[1]);
 			$iban = implode($ibanes);
@@ -761,7 +771,7 @@ function generarExcelFacturas($sql,$tipoexportacion=0){
 			$objPHPExcel->getActiveSheet()->SetCellValue('G'.$rowCount, $poblacion);
 			$objPHPExcel->getActiveSheet()->SetCellValue('H'.$rowCount, $codigoPostal, PHPExcel_Cell_DataType::TYPE_STRING);
 			$objPHPExcel->getActiveSheet()->SetCellValue('I'.$rowCount, $provincia);
-			$objPHPExcel->getActiveSheet()->SetCellValue('J'.$rowCount, $pais);
+			$objPHPExcel->getActiveSheet()->SetCellValue('J'.$rowCount, $paisNombre);
 			$objPHPExcel->getActiveSheet()->SetCellValue('K'.$rowCount, $telefono);
 			$objPHPExcel->getActiveSheet()->SetCellValue('M'.$rowCount, $movil);
 			

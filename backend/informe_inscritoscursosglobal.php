@@ -186,7 +186,56 @@ include("plantillaweb01admin.php");
 
 </TABLE>
  
+<?
 
+$numinscripciones = 100;
+
+?>
+<h3>Últimas <?=$numinscripciones?> inscripciones</h3>
+<TABLE> 
+	<TR>
+		<th>Curso</th>
+		<th>Fecha</th>
+		<th>Importe</th>
+		<th>Usuario</th>
+	</TR> 
+
+
+	<?
+	
+	$result=posgre_query("SELECT * FROM curso_usuario WHERE borrado=0 AND nivel=5 ORDER BY id DESC LIMIT $numinscripciones");// or die (mysql_error());  
+
+	while($row = pg_fetch_array($result)) { 
+		$idusuario = $row["idusuario"];
+		$idcurso = $row["idcurso"];
+		$fechahora = ($row["fechahora"]);
+		$precio = $row["precio"];
+		
+		$result2 = posgre_query("SELECT * FROM usuario WHERE id='$idusuario'");
+		if ($row2 = pg_fetch_array($result2)){
+			$nombrecolegiado = $row2["nombre"]. " ".$row2["apellidos"];
+		}
+		
+		$result2 = posgre_query("SELECT * FROM curso WHERE id='$idcurso'");
+		if ($row2 = pg_fetch_array($result2)){
+			$nombrecurso = $row2["nombre"];
+		}
+		
+		
+		?>
+		
+		<TR>
+			<td><?=$nombrecurso?></th>
+			<td><?=$fechahora?></th>
+			<td><?=$precio?></th>
+			<td><?=$nombrecolegiado?></th>
+		</TR> 
+		
+		<?
+	}
+	?>
+ 
+</TABLE>
 <!--<a href="informe_curso_inscritos_pdf.php?modo=pdf&idcurso=<?=$idcurso?>" title="resumen" class="btn btn-primary">Descargar PDF</a>
 -->
 </div>

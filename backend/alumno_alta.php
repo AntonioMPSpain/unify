@@ -1,4 +1,4 @@
-<? 
+<?
 session_start();
 include("_funciones.php"); 
 include("_email-plantilla-funcion.php"); 
@@ -46,6 +46,7 @@ $alumno["apellidos"]=$apellidos=strip_tags($_POST['apellidos']);
 $alumno["telefono"]=$telefono=strip_tags($_POST['telefono']);
 $alumno["telefono2"]=$telefono2=strip_tags($_POST['telefono2']);
 $alumno["direccion"]=$direccion=strip_tags($_POST['direccion']);
+$alumno["pais"]=$pais=strip_tags($_POST['pais']);
 $alumno["idprovincia"]=$idprovincia=strip_tags($_POST['idprovincia']);
 $alumno["municipio"]=$municipio=strip_tags($_POST['municipio']);
 $alumno["cp"]=$cp=strip_tags($_POST['cp']);
@@ -168,7 +169,7 @@ if($accion=="guardar"){
 	if ($est=="ok"){
 		$login=solonumeros($nif);
 		//$ssql="INSERT INTO usuario (tipo,idcolegio,login, nivel, confirmado, pass, nombre,apellidos, nif, telefono, telefono2, direccion, idprovincia, municipio, cp, email,  ncolegiado) VALUES ('$tipo','$idcolegio','$login', '$nivel', '$confirmado','$pass', '$nombre','$apellidos', '$nif', '$telefono', '$telefono2', '$direccion', '$idprovincia', '$municipio', '$cp', '$email', '$ncolegiado');";
-		$ssql="INSERT INTO usuario (tipo,idcolegio,login, nivel, confirmado, nombre,apellidos, nif, telefono, telefono2, direccion, idprovincia, municipio, cp, email,  ncolegiado, experiencia) VALUES ('$tipo','$idcolegio','$login', '$nivel', '$confirmado', '$nombre','$apellidos', '$nif', '$telefono', '$telefono2', '$direccion', '$idprovincia', '$municipio', '$cp', '$email', '$ncolegiado', '$curriculum');";
+		$ssql="INSERT INTO usuario (tipo,idcolegio,login, nivel, confirmado, nombre,apellidos, nif, telefono, telefono2, direccion, idprovincia, municipio, cp, email,  ncolegiado, experiencia, pais) VALUES ('$tipo','$idcolegio','$login', '$nivel', '$confirmado', '$nombre','$apellidos', '$nif', '$telefono', '$telefono2', '$direccion', '$idprovincia', '$municipio', '$cp', '$email', '$ncolegiado', '$curriculum', '$pais');";
 		$link=iConectarse(); 
 		$Query = pg_query($link, $ssql);// or die ("E1".mysql_error());  
 		if ($Query){
@@ -267,7 +268,7 @@ if($accion=="guardarm"){
 		if ($pass=="") {//Datos incorrectos
 
 		
-			$ssql="UPDATE usuario SET  $sqladmin nivel='$nivel',tipo='$tipo', login = '$login', confirmado = '$confirmado', nombre = '$nombre', apellidos='$apellidos', nif = '$nif', telefono = '$telefono',telefono2 = '$telefono2', direccion = '$direccion', idprovincia = '$idprovincia', municipio = '$municipio', cp = '$cp', email = '$email', ncolegiado = '$ncolegiado', experiencia='$curriculum'   WHERE id ='$id';";	
+			$ssql="UPDATE usuario SET  $sqladmin nivel='$nivel',tipo='$tipo', login = '$login', confirmado = '$confirmado', nombre = '$nombre', apellidos='$apellidos', nif = '$nif', telefono = '$telefono',telefono2 = '$telefono2', direccion = '$direccion', idprovincia = '$idprovincia', municipio = '$municipio', cp = '$cp', email = '$email', ncolegiado = '$ncolegiado', experiencia='$curriculum', pais='$pais'   WHERE id ='$id';";	
 
 		}else{
 			if ($pass<>$pass2){
@@ -352,6 +353,7 @@ include("plantillaweb01admin.php");
 					$telefono=$row["telefono"];
 					$telefono2=$row["telefono2"];
 					$direccion=$row["direccion"];
+					$pais=$row["pais"];
 					$idprovincia=$row["idprovincia"];
 					$idcolegio=$row["idcolegio"];
 					$municipio=$row["municipio"];
@@ -391,6 +393,7 @@ include("plantillaweb01admin.php");
 					$telefono=$row["telefono"];
 					$telefono2=$row["telefono2"];
 					$direccion=$row["direccion"];
+					$pais=$row["pais"];
 					$idprovincia=$row["idprovincia"];
 					$idcolegio=$row["idcolegio"];
 					$municipio=$row["municipio"];

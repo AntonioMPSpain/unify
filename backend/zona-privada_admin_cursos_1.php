@@ -326,7 +326,7 @@ $cuantos = $total_registros;
 			if (($_SESSION[nivel]==1)||($_SESSION[nivel]==2) ) { //Admin 
 				if ($estado==0){ //cerrado o no activo 
 						?>
-						<a onclick="return confirmar('&iquest;Eliminar elemento?')" href="zona-privada_admin_cursos_1.php?accion=borrar&idcurso=<?=$row["id"];?>&idmoodle=<?=$row["idmoodle"];?>" class="btn btn-primary">eliminar</a>
+						<a onclick="return confirm('&iquest;Eliminar elemento?')" href="zona-privada_admin_cursos_1.php?accion=borrar&idcurso=<?=$row["id"];?>&idmoodle=<?=$row["idmoodle"];?>" class="btn btn-primary">eliminar</a>
 				<? }
 				?>
 				<a href="curso_alta.php?accion=editar&id=<?=$row["id"];?>&idmoodleduplica=<?=$row["idmoodle"];?>" class="btn btn-primary">editar</a>
